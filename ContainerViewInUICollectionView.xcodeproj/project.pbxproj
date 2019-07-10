@@ -21,6 +21,11 @@
 		DED26CC822D595D700A36FB4 /* Partial4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED26CC722D595D700A36FB4 /* Partial4ViewController.swift */; };
 		DED26CCD22D5982500A36FB4 /* ContainerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED26CCB22D5982500A36FB4 /* ContainerCollectionViewCell.swift */; };
 		DED26CCE22D5982500A36FB4 /* ContainerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED26CCC22D5982500A36FB4 /* ContainerCollectionViewCell.xib */; };
+		DED26CD022D654C600A36FB4 /* NSObjectProtocolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED26CCF22D654C600A36FB4 /* NSObjectProtocolExtension.swift */; };
+		DED26CD222D654F600A36FB4 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED26CD122D654F600A36FB4 /* UIColorExtension.swift */; };
+		DED26CD422D6553100A36FB4 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED26CD322D6553100A36FB4 /* UICollectionViewExtension.swift */; };
+		DED26CD622D6555300A36FB4 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED26CD522D6555300A36FB4 /* UITableViewExtension.swift */; };
+		DED26CD822D66D4000A36FB4 /* StoryboardInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED26CD722D66D4000A36FB4 /* StoryboardInstantiatable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +68,11 @@
 		DED26CC722D595D700A36FB4 /* Partial4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Partial4ViewController.swift; sourceTree = "<group>"; };
 		DED26CCB22D5982500A36FB4 /* ContainerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerCollectionViewCell.swift; sourceTree = "<group>"; };
 		DED26CCC22D5982500A36FB4 /* ContainerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContainerCollectionViewCell.xib; sourceTree = "<group>"; };
+		DED26CCF22D654C600A36FB4 /* NSObjectProtocolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectProtocolExtension.swift; sourceTree = "<group>"; };
+		DED26CD122D654F600A36FB4 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		DED26CD322D6553100A36FB4 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
+		DED26CD522D6555300A36FB4 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		DED26CD722D66D4000A36FB4 /* StoryboardInstantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiatable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +221,11 @@
 		DED26CCA22D5980400A36FB4 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				DED26CCF22D654C600A36FB4 /* NSObjectProtocolExtension.swift */,
+				DED26CD122D654F600A36FB4 /* UIColorExtension.swift */,
+				DED26CD322D6553100A36FB4 /* UICollectionViewExtension.swift */,
+				DED26CD522D6555300A36FB4 /* UITableViewExtension.swift */,
+				DED26CD722D66D4000A36FB4 /* StoryboardInstantiatable.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -226,7 +241,7 @@
 				DED26C8822D590FC00A36FB4 /* Sources */,
 				DED26C8922D590FC00A36FB4 /* Frameworks */,
 				DED26C8A22D590FC00A36FB4 /* Resources */,
-				9567D5D309FBE396A830BA21 /* [CP] Embed Pods Frameworks */,
+				349E97445A8BF47A30F6E604 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -345,6 +360,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		349E97445A8BF47A30F6E604 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ContainerViewInUICollectionView/Pods-ContainerViewInUICollectionView-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ContainerViewInUICollectionView/Pods-ContainerViewInUICollectionView-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ContainerViewInUICollectionView/Pods-ContainerViewInUICollectionView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3D7629A4B46430B89A9EBF8D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -367,23 +399,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9567D5D309FBE396A830BA21 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ContainerViewInUICollectionView/Pods-ContainerViewInUICollectionView-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ContainerViewInUICollectionView/Pods-ContainerViewInUICollectionView-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ContainerViewInUICollectionView/Pods-ContainerViewInUICollectionView-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -392,10 +407,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DED26C9222D590FD00A36FB4 /* ViewController.swift in Sources */,
+				DED26CD022D654C600A36FB4 /* NSObjectProtocolExtension.swift in Sources */,
 				DED26CC322D595B100A36FB4 /* Partial2ViewController.swift in Sources */,
 				DED26CC122D5957D00A36FB4 /* Partial1ViewController.swift in Sources */,
+				DED26CD422D6553100A36FB4 /* UICollectionViewExtension.swift in Sources */,
+				DED26CD622D6555300A36FB4 /* UITableViewExtension.swift in Sources */,
 				DED26CC822D595D700A36FB4 /* Partial4ViewController.swift in Sources */,
+				DED26CD222D654F600A36FB4 /* UIColorExtension.swift in Sources */,
 				DED26CC522D595C200A36FB4 /* Partial3ViewController.swift in Sources */,
+				DED26CD822D66D4000A36FB4 /* StoryboardInstantiatable.swift in Sources */,
 				DED26CCD22D5982500A36FB4 /* ContainerCollectionViewCell.swift in Sources */,
 				DED26C9022D590FD00A36FB4 /* AppDelegate.swift in Sources */,
 			);

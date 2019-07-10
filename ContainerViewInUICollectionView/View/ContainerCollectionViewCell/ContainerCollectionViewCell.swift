@@ -9,9 +9,15 @@
 import UIKit
 
 class ContainerCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var container: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+
+    func setCell(_ vc: UIViewController) {
+        self.contentView.addSubview(vc.view)
+        vc.view.frame = contentView.frame
     }
 }

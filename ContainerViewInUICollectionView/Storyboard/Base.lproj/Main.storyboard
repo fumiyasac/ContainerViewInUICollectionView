@@ -29,31 +29,49 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="H8m-bw-fEd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="La4-Nl-TaF">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="rql-De-oU2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="26n-nU-HxR"/>
+                            <constraint firstItem="H8m-bw-fEd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5Xl-As-Z3F"/>
+                            <constraint firstItem="H8m-bw-fEd" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="659-pd-Fdg"/>
                             <constraint firstItem="rql-De-oU2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="CV9-WN-bH3"/>
+                            <constraint firstItem="H8m-bw-fEd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HFA-PY-yQs"/>
+                            <constraint firstItem="H8m-bw-fEd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="T75-xc-Xyz"/>
                             <constraint firstItem="rql-De-oU2" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="qwA-DZ-MYy"/>
                             <constraint firstItem="rql-De-oU2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="yWH-QN-50Q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="H8m-bw-fEd" id="Rls-V8-jhq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138.40000000000001" y="120.98950524737631"/>
         </scene>
-        <!--Partial3 View Controller-->
+        <!--Partial4 View Controller-->
         <scene sceneID="aHA-R3-mju">
             <objects>
-                <viewController id="DKz-ob-d27" customClass="Partial3ViewController" customModule="ContainerViewInUICollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Partial4ViewController" id="DKz-ob-d27" customClass="Partial4ViewController" customModule="ContainerViewInUICollectionView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="la9-dN-vaM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3番目のコンテンツ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bW5-6s-URM">
-                                <rect key="frame" x="138.5" y="327" width="98" height="13.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4番目のコンテンツ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bW5-6s-URM">
+                                <rect key="frame" x="138.5" y="326.5" width="98" height="14"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="11"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -69,17 +87,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F4b-UC-fuw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057" y="336"/>
+            <point key="canvasLocation" x="1790" y="303"/>
         </scene>
-        <!--Partial4 View Controller-->
+        <!--Partial3 View Controller-->
         <scene sceneID="Zit-is-wfG">
             <objects>
-                <viewController id="9hl-GF-s18" customClass="Partial4ViewController" customModule="ContainerViewInUICollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Partial3ViewController" id="9hl-GF-s18" customClass="Partial3ViewController" customModule="ContainerViewInUICollectionView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n8n-HO-jce">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4番目のコンテンツ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G76-1O-dBM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3番目のコンテンツ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G76-1O-dBM">
                                 <rect key="frame" x="138.5" y="326.5" width="98" height="14"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="11"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -96,12 +114,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gvX-eD-1AE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1790" y="336"/>
+            <point key="canvasLocation" x="1056.8" y="302.6986506746627"/>
         </scene>
         <!--Partial2 View Controller-->
         <scene sceneID="236-7V-gEw">
             <objects>
-                <viewController id="ql9-t1-oY4" customClass="Partial2ViewController" customModule="ContainerViewInUICollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Partial2ViewController" id="ql9-t1-oY4" customClass="Partial2ViewController" customModule="ContainerViewInUICollectionView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="avH-KG-x6o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,7 +146,7 @@
         <!--Partial1 View Controller-->
         <scene sceneID="MFS-hH-D24">
             <objects>
-                <viewController id="9ox-wX-Xec" customClass="Partial1ViewController" customModule="ContainerViewInUICollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Partial1ViewController" id="9ox-wX-Xec" customClass="Partial1ViewController" customModule="ContainerViewInUICollectionView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KQP-ya-kIr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
