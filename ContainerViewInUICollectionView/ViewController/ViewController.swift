@@ -15,12 +15,16 @@ class ViewController: UIViewController {
 
     @IBOutlet weak private var collectionView: UICollectionView!
 
+    // MARK: - Override
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupDisplayViewControllers()
         setupGalleryCollectionView()
     }
+    
+    // MARK: - Private Function
 
     private func setupDisplayViewControllers() {
 
@@ -59,13 +63,11 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDelegate {
 
-    // MEMO: 利用するかはわからないが一応準備をしておく
+    // MEMO: 利用しないかもしれませんが一応準備をしておく
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-    }
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {}
     
-    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-    }
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {}
 }
 
 // MARK: - UICollectionViewDataSource

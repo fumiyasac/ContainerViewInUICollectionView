@@ -9,15 +9,24 @@
 import UIKit
 
 class ContainerCollectionViewCell: UICollectionViewCell {
-    
-    @IBOutlet weak var container: UIView!
+
+    private var targetViewControllerView: UIView!
+
+    // MARK: - Override
 
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
-    func setCell(_ vc: UIViewController) {
-        self.contentView.addSubview(vc.view)
-        vc.view.frame = contentView.frame
+    override func prepareForReuse() {
+        targetViewControllerView.removeFromSuperview()
+    }
+
+    // MARK: - Function
+
+    func setCell(_ viewController: UIViewController) {
+        targetViewControllerView = viewController.view
+        targetViewControllerView.frame = contentView.frame
+        self.contentView.addSubview(targetViewControllerView)
     }
 }
