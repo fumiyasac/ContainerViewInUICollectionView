@@ -10,7 +10,7 @@ import UIKit
 
 class ContainerCollectionViewCell: UICollectionViewCell {
 
-    private var targetViewControllerView: UIView!
+    private var storedTargetViewController: UIViewController!
 
     // MARK: - Override
 
@@ -19,14 +19,23 @@ class ContainerCollectionViewCell: UICollectionViewCell {
     }
 
     override func prepareForReuse() {
-        targetViewControllerView.removeFromSuperview()
+
+        // Reuse実行時に表示対象のViewControllerから削除し、子として登録を解除する
+        storedTargetViewController.view.removeFromSuperview()
+        storedTargetViewController.willMove(toParent: nil)
     }
 
     // MARK: - Function
 
-    func setCell(_ viewController: UIViewController) {
-        targetViewControllerView = viewController.view
-        targetViewControllerView.frame = contentView.frame
-        self.contentView.addSubview(targetViewControllerView)
+    func setCell(targetViewController: UIViewController, parentViewController: UIViewController) {
+
+        // 表示対象のViewControllerを.contentViewへ追加する
+        storedTargetViewController = targetViewController
+        storedTargetViewController.view.frame = contentView.frame
+        self.contentView.addSubview(storedTargetViewController.view)
+
+        // 表示対象のViewControllerをparentViewControllerの子として登録する
+        parentViewController.addChild(storedTargetViewController)
+        storedTargetViewController.didMove(toParent: parentViewController)
     }
 }

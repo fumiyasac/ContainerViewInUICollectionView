@@ -83,13 +83,15 @@ extension ViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCustomCell(with: ContainerCollectionViewCell.self, indexPath: indexPath)
 
-        let vc = displayViewControllers[indexPath.row]
-        cell.setCell(displayViewControllers[indexPath.row])
+        // MEMO: Containerとして表示したいViewControllerと親要素のViewControllerを渡す
+        let cell = collectionView.dequeueReusableCustomCell(with: ContainerCollectionViewCell.self, indexPath: indexPath)
+        let selectedViewController = displayViewControllers[indexPath.row]
+        cell.setCell(targetViewController: selectedViewController, parentViewController: self)
 
         // MEMO: セルへ適用した後に再び詰め直しを図る
-        displayViewControllers[indexPath.row] = vc
+        displayViewControllers[indexPath.row] = selectedViewController
+
         return cell
     }
 }
