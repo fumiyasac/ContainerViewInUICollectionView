@@ -23,14 +23,16 @@ class ContainerCollectionViewCell: UICollectionViewCell {
         // Reuse実行時に表示対象のViewControllerから削除し、子として登録を解除する
         storedTargetViewController.view.removeFromSuperview()
         storedTargetViewController.willMove(toParent: nil)
+        storedTargetViewController.removeFromParent()
     }
 
     // MARK: - Function
 
     func setCell(targetViewController: UIViewController, parentViewController: UIViewController) {
 
-        // 表示対象のViewControllerを.contentViewへ追加する
         storedTargetViewController = targetViewController
+
+        // 表示対象のViewControllerを.contentViewへ追加する
         storedTargetViewController.view.frame = contentView.frame
         self.contentView.addSubview(storedTargetViewController.view)
 
