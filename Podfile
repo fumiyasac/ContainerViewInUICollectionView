@@ -7,5 +7,10 @@ target 'ContainerViewInUICollectionView' do
 
   # Pods for ContainerViewInUICollectionView
   pod 'AnimatedCollectionViewLayout'
-
+  pod 'Tabman'
+  pod 'MXParallaxHeader'
+  pod 'SwiftyMarkdown'
+  pod 'SwiftyAttributes'
+  pod 'Blueprint'
+  pod 'SPStorkController'
 end

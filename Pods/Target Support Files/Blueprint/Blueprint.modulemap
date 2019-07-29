@@ -1,0 +1,6 @@
+framework module Blueprint {
+  umbrella header "Blueprint-umbrella.h"
+
+  export *
+  module * { export * }
+}
