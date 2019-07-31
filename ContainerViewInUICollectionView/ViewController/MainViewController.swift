@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  ContainerViewInUICollectionView
 //
 //  Created by 酒井文也 on 2019/07/10.
@@ -9,7 +9,7 @@
 import UIKit
 import AnimatedCollectionViewLayout
 
-class ViewController: UIViewController {
+final class MainViewController: UIViewController {
 
     private var displayViewControllers: [UIViewController] = []
 
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
 
 // MARK: - UICollectionViewDataSource
 
-extension ViewController: UICollectionViewDelegate {
+extension MainViewController: UICollectionViewDelegate {
 
     // MEMO: 利用しないかもしれませんが一応準備をしておく
     
@@ -72,7 +72,7 @@ extension ViewController: UICollectionViewDelegate {
 
 // MARK: - UICollectionViewDataSource
 
-extension ViewController: UICollectionViewDataSource {
+extension MainViewController: UICollectionViewDataSource {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -98,7 +98,7 @@ extension ViewController: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegateFlowLayout
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
+extension MainViewController: UICollectionViewDelegateFlowLayout {
     
     // セルのサイズを設定する
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
