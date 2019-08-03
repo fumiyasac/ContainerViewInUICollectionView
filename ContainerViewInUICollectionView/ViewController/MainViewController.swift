@@ -11,8 +11,13 @@ import AnimatedCollectionViewLayout
 
 final class MainViewController: UIViewController {
 
+    // タイトル表示用のView
+    private let titleView = MainNavigationTitleView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44))
+
+    // MEMO: UICollectionViewCell内に表示させる要素を格納するための変数
     private var displayViewControllers: [UIViewController] = []
 
+    // MEMO: UICollectionViewCell内にContainerViewとして他のViewControllerを配置する
     @IBOutlet weak private var collectionView: UICollectionView!
 
     // MARK: - Override
@@ -20,11 +25,16 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupMainNavigationTitleView()
         setupDisplayViewControllers()
         setupGalleryCollectionView()
     }
     
     // MARK: - Private Function
+
+    private func setupMainNavigationTitleView() {
+        self.navigationController?.navigationBar.addSubview(titleView)
+    }
 
     private func setupDisplayViewControllers() {
 

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainNavigationTitleView" customModule="ContainerViewInUICollectionView" customModuleProvider="target">
+            <connections>
+                <outlet property="mainNavigationPageControl" destination="iMS-z7-9Ma" id="SCC-OE-iYv"/>
+                <outlet property="mainNavigationTitleLabel" destination="ftf-gX-son" id="FaD-7i-bUV"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="01f-T4-T8w">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="20"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトルテキストが入ります" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftf-gX-son">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="20"/>
+                            <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="ftf-gX-son" firstAttribute="leading" secondItem="01f-T4-T8w" secondAttribute="leading" id="32y-Rl-gfh"/>
+                        <constraint firstAttribute="height" constant="20" id="VKV-Wa-c43"/>
+                        <constraint firstItem="ftf-gX-son" firstAttribute="top" secondItem="01f-T4-T8w" secondAttribute="top" id="aLw-hJ-sVL"/>
+                        <constraint firstAttribute="bottom" secondItem="ftf-gX-son" secondAttribute="bottom" id="hTO-LD-Oeb"/>
+                        <constraint firstAttribute="trailing" secondItem="ftf-gX-son" secondAttribute="trailing" id="pDr-YJ-HcG"/>
+                    </constraints>
+                </view>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="iMS-z7-9Ma">
+                    <rect key="frame" x="0.0" y="20" width="240" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="SZ7-2d-8cU"/>
+                    </constraints>
+                    <color key="pageIndicatorTintColor" red="0.80784313730000001" green="0.80784313730000001" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="currentPageIndicatorTintColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                </pageControl>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="iMS-z7-9Ma" secondAttribute="trailing" id="257-71-UaM"/>
+                <constraint firstItem="01f-T4-T8w" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="RnE-Df-gdo"/>
+                <constraint firstItem="iMS-z7-9Ma" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="U9X-RI-oPT"/>
+                <constraint firstItem="iMS-z7-9Ma" firstAttribute="top" secondItem="01f-T4-T8w" secondAttribute="bottom" id="iMb-Pq-iDc"/>
+                <constraint firstItem="01f-T4-T8w" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ivV-Mj-dwZ"/>
+                <constraint firstItem="01f-T4-T8w" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="uC0-3Z-Bca"/>
+                <constraint firstItem="iMS-z7-9Ma" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="zij-3J-tH5"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="52.799999999999997" y="49.475262368815599"/>
+        </view>
+    </objects>
+</document>

@@ -10,7 +10,24 @@ import UIKit
 
 final class CategoryViewController: UIViewController {
 
+    // MARK: - Override
+
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+}
+
+// MARK: - StoryboardInstantiatable
+
+extension CategoryViewController: StoryboardInstantiatable {
+
+    // このViewControllerに対応するStoryboard名
+    static var storyboardName: String {
+        return "Category"
+    }
+
+    // このViewControllerに対応するViewControllerのIdentifier名
+    static var viewControllerIdentifier: String? {
+        return CategoryViewController.className
     }
 }
