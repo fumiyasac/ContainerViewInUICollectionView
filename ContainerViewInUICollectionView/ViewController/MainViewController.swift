@@ -76,8 +76,11 @@ extension MainViewController: UICollectionViewDelegate {
     // MEMO: 利用しないかもしれませんが一応準備をしておく
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {}
-    
-    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {}
+
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        //let info: MainNavigationTitleView.MainNavigationTitleInformation = (title: "サンプルタイトル", cellIndex: indexPath.row)
+        //titleView.setCurrentDisplayTitleInformation(info)
+    }
 }
 
 // MARK: - UICollectionViewDataSource

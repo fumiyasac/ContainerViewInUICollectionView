@@ -85,8 +85,9 @@ final class MainNavigationTitleView: CustomViewBase {
 
     // NavigationTitleにはめ込むView要素の初期設定を行う
     private func setupMainNavigationTitleView() {
-        
+
         // MEMO: UIPageControl及びUILabelのデザイン調整はInterfaceBuilderで行う
         mainNavigationPageControl.numberOfPages = maxPageCount
+        mainNavigationPageControl.isEnabled = false
     }
 }
