@@ -59,6 +59,7 @@ final class MainViewController: UIViewController {
         // UICollectionViewDelegate & UICollectionViewDataSourceに関する初期設定
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.decelerationRate = .normal
         collectionView.registerCustomCell(ContainerCollectionViewCell.self)
 
         // UICollectionViewに付与するアニメーションに関する設定
@@ -69,18 +70,40 @@ final class MainViewController: UIViewController {
     }
 }
 
+// MARK: - UIScrollViewDelegate
+
+extension MainViewController: UIScrollViewDelegate {
+
+    // 配置したUICollectionViewをスクロールが止まった際に実行される処理
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+
+        // スクロールが停止した際に見えているセルのインデックス値を格納して、真ん中にあるものを取得する
+        // 参考: https://stackoverflow.com/questions/18649920/uicollectionview-current-visible-cell-index
+        var visibleIndexPathList: [IndexPath] = []
+        for cell in collectionView.visibleCells {
+            if let visibleIndexPath = collectionView.indexPath(for: cell) {
+                visibleIndexPathList.append(visibleIndexPath)
+            }
+        }
+
+        /*
+        print(visibleIndexPathList)
+        let targetIndexPath = visibleIndexPathList[visibleIndexPathList.count - 1]
+        let info: MainNavigationTitleView.MainNavigationTitleInformation = (title: "サンプルタイトル\(targetIndexPath)", cellIndex: targetIndexPath.row)
+        titleView.setCurrentDisplayTitleInformation(info)
+        */
+    }
+}
+
 // MARK: - UICollectionViewDataSource
 
 extension MainViewController: UICollectionViewDelegate {
 
     // MEMO: 利用しないかもしれませんが一応準備をしておく
-    
+
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {}
 
-    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        //let info: MainNavigationTitleView.MainNavigationTitleInformation = (title: "サンプルタイトル", cellIndex: indexPath.row)
-        //titleView.setCurrentDisplayTitleInformation(info)
-    }
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {}
 }
 
 // MARK: - UICollectionViewDataSource
