@@ -59,7 +59,7 @@ final class MainViewController: UIViewController {
         // UICollectionViewDelegate & UICollectionViewDataSourceに関する初期設定
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.decelerationRate = .fast
+        collectionView.decelerationRate = .normal
         collectionView.registerCustomCell(ContainerCollectionViewCell.self)
 
         // UICollectionViewに付与するアニメーションに関する設定
