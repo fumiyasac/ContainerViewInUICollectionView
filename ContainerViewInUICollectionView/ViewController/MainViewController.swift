@@ -59,7 +59,7 @@ final class MainViewController: UIViewController {
         // UICollectionViewDelegate & UICollectionViewDataSourceに関する初期設定
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.decelerationRate = .normal
+        collectionView.decelerationRate = .fast
         collectionView.registerCustomCell(ContainerCollectionViewCell.self)
 
         // UICollectionViewに付与するアニメーションに関する設定
@@ -74,24 +74,16 @@ final class MainViewController: UIViewController {
 
 extension MainViewController: UIScrollViewDelegate {
 
-    // 配置したUICollectionViewをスクロールが止まった際に実行される処理
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    // オフセット時の変更を検知した（スクロールが実行されている）場合の処理
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
 
-        // スクロールが停止した際に見えているセルのインデックス値を格納して、真ん中にあるものを取得する
-        // 参考: https://stackoverflow.com/questions/18649920/uicollectionview-current-visible-cell-index
-        var visibleIndexPathList: [IndexPath] = []
-        for cell in collectionView.visibleCells {
-            if let visibleIndexPath = collectionView.indexPath(for: cell) {
-                visibleIndexPathList.append(visibleIndexPath)
-            }
+        // 画面内に見えているセルの中央値を基準としてIndexPath.rowを取得してタイトルへ反映する
+        let visibleRect = CGRect(origin: collectionView.contentOffset, size: collectionView.bounds.size)
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        if let visibleIndexPath = collectionView.indexPathForItem(at: visiblePoint) {
+            let info: MainNavigationTitleView.MainNavigationTitleInformation = (title: "サンプルタイトル\(visibleIndexPath.row)", cellIndex: visibleIndexPath.row)
+            titleView.setCurrentDisplayTitleInformation(info)
         }
-
-        /*
-        print(visibleIndexPathList)
-        let targetIndexPath = visibleIndexPathList[visibleIndexPathList.count - 1]
-        let info: MainNavigationTitleView.MainNavigationTitleInformation = (title: "サンプルタイトル\(targetIndexPath)", cellIndex: targetIndexPath.row)
-        titleView.setCurrentDisplayTitleInformation(info)
-        */
     }
 }
 
