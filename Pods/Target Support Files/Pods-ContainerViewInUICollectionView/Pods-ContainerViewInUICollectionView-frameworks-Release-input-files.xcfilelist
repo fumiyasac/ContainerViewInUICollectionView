@@ -2,6 +2,7 @@ ${PODS_ROOT}/Target Support Files/Pods-ContainerViewInUICollectionView/Pods-Cont
 ${BUILT_PRODUCTS_DIR}/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout.framework
 ${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework
 ${BUILT_PRODUCTS_DIR}/Blueprint/Blueprint.framework
+${BUILT_PRODUCTS_DIR}/ESTabBarController/ESTabBarController.framework
 ${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework
 ${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework
 ${BUILT_PRODUCTS_DIR}/SPStorkController/SPStorkController.framework

@@ -13,4 +13,5 @@ target 'ContainerViewInUICollectionView' do
   pod 'SwiftyAttributes'
   pod 'Blueprint'
   pod 'SPStorkController'
+  pod 'ESTabBarController'
 end
