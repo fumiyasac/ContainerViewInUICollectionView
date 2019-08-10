@@ -7,8 +7,9 @@ target 'ContainerViewInUICollectionView' do
   # Pods for ContainerViewInUICollectionView
  
   # 1. API通信処理や内部データ保存処理の基盤となるライブラリ
-  pod 'APIKit'
+  pod 'Moya'
   pod 'RealmSwift'
+  pod 'Nuke'
 
   # 2. アーキテクチャの基盤となるライブラリ
   pod 'ReSwift'
