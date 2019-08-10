@@ -19,6 +19,8 @@
 		DE6A057522FEAB3300085A9F /* FashionCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6A057422FEAB3300085A9F /* FashionCategoryViewController.swift */; };
 		DE6A057822FEAE5300085A9F /* Essay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6A057622FEAE5300085A9F /* Essay.storyboard */; };
 		DE6A057A22FEAE7200085A9F /* EssayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6A057922FEAE7200085A9F /* EssayViewController.swift */; };
+		DE6A057D22FEB20200085A9F /* Stock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6A057B22FEB20200085A9F /* Stock.storyboard */; };
+		DE6A058022FEB21E00085A9F /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6A057F22FEB21E00085A9F /* StockViewController.swift */; };
 		DE958D5222F01BB900DB2C21 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE958D5022F01BB900DB2C21 /* Category.storyboard */; };
 		DE958D5422F01C1C00DB2C21 /* FoodCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE958D5322F01C1C00DB2C21 /* FoodCategoryViewController.swift */; };
 		DED26C9022D590FD00A36FB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED26C8F22D590FD00A36FB4 /* AppDelegate.swift */; };
@@ -70,6 +72,8 @@
 		DE6A057422FEAB3300085A9F /* FashionCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionCategoryViewController.swift; sourceTree = "<group>"; };
 		DE6A057722FEAE5300085A9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Essay.storyboard; sourceTree = "<group>"; };
 		DE6A057922FEAE7200085A9F /* EssayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssayViewController.swift; sourceTree = "<group>"; };
+		DE6A057C22FEB20200085A9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Stock.storyboard; sourceTree = "<group>"; };
+		DE6A057F22FEB21E00085A9F /* StockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewController.swift; sourceTree = "<group>"; };
 		DE958D5122F01BB900DB2C21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Category.storyboard; sourceTree = "<group>"; };
 		DE958D5322F01C1C00DB2C21 /* FoodCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategoryViewController.swift; sourceTree = "<group>"; };
 		DED26C8C22D590FD00A36FB4 /* ContainerViewInUICollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContainerViewInUICollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -225,6 +229,14 @@
 			path = Essay;
 			sourceTree = "<group>";
 		};
+		DE6A057E22FEB20D00085A9F /* Stock */ = {
+			isa = PBXGroup;
+			children = (
+				DE6A057F22FEB21E00085A9F /* StockViewController.swift */,
+			);
+			path = Stock;
+			sourceTree = "<group>";
+		};
 		DE958D4F22F01B3300DB2C21 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +313,7 @@
 				DE6A057622FEAE5300085A9F /* Essay.storyboard */,
 				DED26C9822D5910500A36FB4 /* LaunchScreen.storyboard */,
 				DE6A056122FE845400085A9F /* Main.storyboard */,
+				DE6A057B22FEB20200085A9F /* Stock.storyboard */,
 				DE6A056522FE90C500085A9F /* TabBar.storyboard */,
 			);
 			path = Storyboard;
@@ -309,10 +322,11 @@
 		DED26CBE22D5952700A36FB4 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				DE6A057322FEA52600085A9F /* Essay */,
-				DE6A055922FE6A3400085A9F /* Category */,
-				DE6A055F22FE842B00085A9F /* Main */,
 				DE6A056422FE848500085A9F /* Article */,
+				DE6A055922FE6A3400085A9F /* Category */,
+				DE6A057322FEA52600085A9F /* Essay */,
+				DE6A055F22FE842B00085A9F /* Main */,
+				DE6A057E22FEB20D00085A9F /* Stock */,
 				DE6A056822FE90F700085A9F /* TabBar */,
 			);
 			path = ViewController;
@@ -463,6 +477,7 @@
 				DED26C9722D5910500A36FB4 /* Assets.xcassets in Resources */,
 				DED26CCE22D5982500A36FB4 /* ContainerCollectionViewCell.xib in Resources */,
 				DED26C9522D590FD00A36FB4 /* Article.storyboard in Resources */,
+				DE6A057D22FEB20200085A9F /* Stock.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DED26C9222D590FD00A36FB4 /* ArticleViewController.swift in Sources */,
+				DE6A058022FEB21E00085A9F /* StockViewController.swift in Sources */,
 				DE6A056A22FE915A00085A9F /* TabBarController.swift in Sources */,
 				DED26CD022D654C600A36FB4 /* NSObjectProtocolExtension.swift in Sources */,
 				DE6A056C22FE938E00085A9F /* MainViewController.swift in Sources */,
@@ -603,6 +619,14 @@
 				DE6A057722FEAE5300085A9F /* Base */,
 			);
 			name = Essay.storyboard;
+			sourceTree = "<group>";
+		};
+		DE6A057B22FEB20200085A9F /* Stock.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE6A057C22FEB20200085A9F /* Base */,
+			);
+			name = Stock.storyboard;
 			sourceTree = "<group>";
 		};
 		DE958D5022F01BB900DB2C21 /* Category.storyboard */ = {
