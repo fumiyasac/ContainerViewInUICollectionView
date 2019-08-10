@@ -1,11 +1,17 @@
 ${PODS_ROOT}/Target Support Files/Pods-ContainerViewInUICollectionView/Pods-ContainerViewInUICollectionView-frameworks.sh
+${BUILT_PRODUCTS_DIR}/APIKit/APIKit.framework
 ${BUILT_PRODUCTS_DIR}/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout.framework
 ${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework
 ${BUILT_PRODUCTS_DIR}/Blueprint/Blueprint.framework
 ${BUILT_PRODUCTS_DIR}/ESTabBarController/ESTabBarController.framework
 ${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework
 ${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework
+${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework
+${BUILT_PRODUCTS_DIR}/Realm/Realm.framework
+${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework
+${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
 ${BUILT_PRODUCTS_DIR}/SPStorkController/SPStorkController.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyAttributes/SwiftyAttributes.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyMarkdown/SwiftyMarkdown.framework
+${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework
 ${BUILT_PRODUCTS_DIR}/Tabman/Tabman.framework

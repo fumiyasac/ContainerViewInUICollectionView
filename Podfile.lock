@@ -1,52 +1,78 @@
 PODS:
   - AnimatedCollectionViewLayout (0.6.0)
+  - APIKit (5.0.0)
   - AutoInsetter (1.7.1)
   - Blueprint (0.0.2)
   - ESTabBarController (0.2)
   - MXParallaxHeader (0.6.1)
   - Pageboy (3.2.3)
+  - Realm (3.17.0):
+    - Realm/Headers (= 3.17.0)
+  - Realm/Headers (3.17.0)
+  - RealmSwift (3.17.0):
+    - Realm (= 3.17.0)
+  - ReSwift (5.0.0)
+  - RxSwift (5.0.0)
   - SPStorkController (1.6.9)
   - SwiftyAttributes (5.1.1)
   - SwiftyMarkdown (0.6.0)
+  - SwipeCellKit (2.6.0)
   - Tabman (2.4.2):
     - AutoInsetter (~> 1.7)
     - Pageboy (~> 3.2)
 
 DEPENDENCIES:
   - AnimatedCollectionViewLayout
+  - APIKit
   - Blueprint
   - ESTabBarController
   - MXParallaxHeader
+  - RealmSwift
+  - ReSwift
+  - RxSwift
   - SPStorkController
   - SwiftyAttributes
   - SwiftyMarkdown
+  - SwipeCellKit
   - Tabman
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AnimatedCollectionViewLayout
+    - APIKit
     - AutoInsetter
     - Blueprint
     - ESTabBarController
     - MXParallaxHeader
     - Pageboy
+    - Realm
+    - RealmSwift
+    - ReSwift
+    - RxSwift
     - SPStorkController
     - SwiftyAttributes
     - SwiftyMarkdown
+    - SwipeCellKit
     - Tabman
 
 SPEC CHECKSUMS:
   AnimatedCollectionViewLayout: f2c4e8dda4e3f1678ad6c0b39273a31b19bc935d
+  APIKit: b27d79b022733b2f50e7a092e67c4cb9ea30f968
   AutoInsetter: 0c40f6505369c7b75cf7ac27e3cce2170293ac27
   Blueprint: f9d1c987adb3fa5213779088f6534101d2e8bc6b
   ESTabBarController: e82ac0b135bec16fb646ac1da4ac8953fcd927da
   MXParallaxHeader: 858c403532ed933b381556a81ce333d7065ad182
   Pageboy: 347c49b3a7f15aa78ddb6bf5c6c3b113e382fe52
+  Realm: b30db41ff34fc858ffc25ba8d44a82c164e7ccd0
+  RealmSwift: fe733e459d60dc7b6971d4cbee2eb4854097d12c
+  ReSwift: 628f1a9b3ee52e3b3ca2a644435472fd77afafe1
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   SPStorkController: 5648a8dd356ea26493001706d4150e46cb672d69
   SwiftyAttributes: e3e13891ddac3c62b3d7798d5c3969cea88e62bb
   SwiftyMarkdown: 698fe6b283dddac69747f4e08ed0d067c18e0356
+  SwipeCellKit: 935ca28c187ec6e1ffb2b578cf8ddca842bfdcbb
   Tabman: 6e0888c9b9227d9da03e51a90f1f91f53454bfa1
 
-PODFILE CHECKSUM: bb473012fb3bd44162d704813683533d9ca307b7
+PODFILE CHECKSUM: 207b321fb604dd89fe4582889d2e014b643a2964
 
 COCOAPODS: 1.7.2
