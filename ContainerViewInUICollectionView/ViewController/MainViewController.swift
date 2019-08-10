@@ -16,3 +16,18 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
     }
 }
+
+// MARK: - StoryboardInstantiatable
+
+extension MainViewController: StoryboardInstantiatable {
+
+    // このViewControllerに対応するStoryboard名
+    static var storyboardName: String {
+        return "Main"
+    }
+
+    // このViewControllerに対応するViewControllerのIdentifier名
+    static var viewControllerIdentifier: String? {
+        return nil
+    }
+}

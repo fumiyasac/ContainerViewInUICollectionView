@@ -1,14 +1,14 @@
 //
-//  Partial4ViewController.swift
+//  FashionCategoryViewController.swift
 //  ContainerViewInUICollectionView
 //
-//  Created by 酒井文也 on 2019/07/10.
+//  Created by 酒井文也 on 2019/08/10.
 //  Copyright © 2019 酒井文也. All rights reserved.
 //
 
 import UIKit
 
-class Partial4ViewController: UIViewController {
+final class FashionCategoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,15 +17,15 @@ class Partial4ViewController: UIViewController {
 
 // MARK: - StoryboardInstantiatable
 
-extension Partial4ViewController: StoryboardInstantiatable {
+extension FashionCategoryViewController: StoryboardInstantiatable {
 
     // このViewControllerに対応するStoryboard名
     static var storyboardName: String {
-        return "Article"
+        return "Category"
     }
 
     // このViewControllerに対応するViewControllerのIdentifier名
     static var viewControllerIdentifier: String? {
-        return Partial4ViewController.className
+        return FashionCategoryViewController.className
     }
 }

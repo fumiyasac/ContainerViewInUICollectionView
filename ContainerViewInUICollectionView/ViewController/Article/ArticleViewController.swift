@@ -40,11 +40,10 @@ final class ArticleViewController: UIViewController {
 
         // UICollectionViewCell内に表示するUIViewControllerの設定
         let viewControllers = [
-            //FoodCategoryViewController.instantiate(),
-            Partial1ViewController.instantiate(),
-            Partial2ViewController.instantiate(),
-            Partial3ViewController.instantiate(),
-            Partial4ViewController.instantiate()
+            FoodCategoryViewController.instantiate(),
+            LandscapeCategoryViewController.instantiate(),
+            TravelCategoryViewController.instantiate(),
+            FashionCategoryViewController.instantiate()
         ]
         let _ = viewControllers.map{ displayViewControllers.append($0) }
     }
@@ -159,5 +158,20 @@ extension ArticleViewController: UICollectionViewDelegateFlowLayout {
     // セル内のアイテム間の余白(margin)調整を行う
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return .zero
+    }
+}
+
+// MARK: - StoryboardInstantiatable
+
+extension ArticleViewController: StoryboardInstantiatable {
+
+    // このViewControllerに対応するStoryboard名
+    static var storyboardName: String {
+        return "Article"
+    }
+
+    // このViewControllerに対応するViewControllerのIdentifier名
+    static var viewControllerIdentifier: String? {
+        return nil
     }
 }

@@ -14,6 +14,11 @@
 		DE6A056722FE90C500085A9F /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6A056522FE90C500085A9F /* TabBar.storyboard */; };
 		DE6A056A22FE915A00085A9F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6A056922FE915A00085A9F /* TabBarController.swift */; };
 		DE6A056C22FE938E00085A9F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6A056B22FE938E00085A9F /* MainViewController.swift */; };
+		DE6A057022FE9F6200085A9F /* LandscapeCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6A056F22FE9F6200085A9F /* LandscapeCategoryViewController.swift */; };
+		DE6A057222FE9FFD00085A9F /* TravelCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6A057122FE9FFD00085A9F /* TravelCategoryViewController.swift */; };
+		DE6A057522FEAB3300085A9F /* FashionCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6A057422FEAB3300085A9F /* FashionCategoryViewController.swift */; };
+		DE6A057822FEAE5300085A9F /* Essay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6A057622FEAE5300085A9F /* Essay.storyboard */; };
+		DE6A057A22FEAE7200085A9F /* EssayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6A057922FEAE7200085A9F /* EssayViewController.swift */; };
 		DE958D5222F01BB900DB2C21 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE958D5022F01BB900DB2C21 /* Category.storyboard */; };
 		DE958D5422F01C1C00DB2C21 /* FoodCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE958D5322F01C1C00DB2C21 /* FoodCategoryViewController.swift */; };
 		DED26C9022D590FD00A36FB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED26C8F22D590FD00A36FB4 /* AppDelegate.swift */; };
@@ -23,10 +28,6 @@
 		DED26C9A22D5910500A36FB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED26C9822D5910500A36FB4 /* LaunchScreen.storyboard */; };
 		DED26CA522D5910500A36FB4 /* ContainerViewInUICollectionViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED26CA422D5910500A36FB4 /* ContainerViewInUICollectionViewTests.swift */; };
 		DED26CB022D5910500A36FB4 /* ContainerViewInUICollectionViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED26CAF22D5910500A36FB4 /* ContainerViewInUICollectionViewUITests.swift */; };
-		DED26CC122D5957D00A36FB4 /* Partial1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED26CC022D5957D00A36FB4 /* Partial1ViewController.swift */; };
-		DED26CC322D595B100A36FB4 /* Partial2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED26CC222D595B100A36FB4 /* Partial2ViewController.swift */; };
-		DED26CC522D595C200A36FB4 /* Partial3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED26CC422D595C200A36FB4 /* Partial3ViewController.swift */; };
-		DED26CC822D595D700A36FB4 /* Partial4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED26CC722D595D700A36FB4 /* Partial4ViewController.swift */; };
 		DED26CCD22D5982500A36FB4 /* ContainerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED26CCB22D5982500A36FB4 /* ContainerCollectionViewCell.swift */; };
 		DED26CCE22D5982500A36FB4 /* ContainerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED26CCC22D5982500A36FB4 /* ContainerCollectionViewCell.xib */; };
 		DED26CD022D654C600A36FB4 /* NSObjectProtocolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED26CCF22D654C600A36FB4 /* NSObjectProtocolExtension.swift */; };
@@ -64,6 +65,11 @@
 		DE6A056622FE90C500085A9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TabBar.storyboard; sourceTree = "<group>"; };
 		DE6A056922FE915A00085A9F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DE6A056B22FE938E00085A9F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		DE6A056F22FE9F6200085A9F /* LandscapeCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeCategoryViewController.swift; sourceTree = "<group>"; };
+		DE6A057122FE9FFD00085A9F /* TravelCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCategoryViewController.swift; sourceTree = "<group>"; };
+		DE6A057422FEAB3300085A9F /* FashionCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionCategoryViewController.swift; sourceTree = "<group>"; };
+		DE6A057722FEAE5300085A9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Essay.storyboard; sourceTree = "<group>"; };
+		DE6A057922FEAE7200085A9F /* EssayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssayViewController.swift; sourceTree = "<group>"; };
 		DE958D5122F01BB900DB2C21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Category.storyboard; sourceTree = "<group>"; };
 		DE958D5322F01C1C00DB2C21 /* FoodCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategoryViewController.swift; sourceTree = "<group>"; };
 		DED26C8C22D590FD00A36FB4 /* ContainerViewInUICollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContainerViewInUICollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,10 +85,6 @@
 		DED26CAB22D5910500A36FB4 /* ContainerViewInUICollectionViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContainerViewInUICollectionViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED26CAF22D5910500A36FB4 /* ContainerViewInUICollectionViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewInUICollectionViewUITests.swift; sourceTree = "<group>"; };
 		DED26CB122D5910500A36FB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DED26CC022D5957D00A36FB4 /* Partial1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Partial1ViewController.swift; sourceTree = "<group>"; };
-		DED26CC222D595B100A36FB4 /* Partial2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Partial2ViewController.swift; sourceTree = "<group>"; };
-		DED26CC422D595C200A36FB4 /* Partial3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Partial3ViewController.swift; sourceTree = "<group>"; };
-		DED26CC722D595D700A36FB4 /* Partial4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Partial4ViewController.swift; sourceTree = "<group>"; };
 		DED26CCB22D5982500A36FB4 /* ContainerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerCollectionViewCell.swift; sourceTree = "<group>"; };
 		DED26CCC22D5982500A36FB4 /* ContainerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContainerCollectionViewCell.xib; sourceTree = "<group>"; };
 		DED26CCF22D654C600A36FB4 /* NSObjectProtocolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectProtocolExtension.swift; sourceTree = "<group>"; };
@@ -149,6 +151,9 @@
 			isa = PBXGroup;
 			children = (
 				DE958D5322F01C1C00DB2C21 /* FoodCategoryViewController.swift */,
+				DE6A056F22FE9F6200085A9F /* LandscapeCategoryViewController.swift */,
+				DE6A057122FE9FFD00085A9F /* TravelCategoryViewController.swift */,
+				DE6A057422FEAB3300085A9F /* FashionCategoryViewController.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -198,6 +203,28 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		DE6A056D22FE9E5000085A9F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DE6A056E22FE9E5800085A9F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DE6A057322FEA52600085A9F /* Essay */ = {
+			isa = PBXGroup;
+			children = (
+				DE6A057922FEAE7200085A9F /* EssayViewController.swift */,
+			);
+			path = Essay;
+			sourceTree = "<group>";
+		};
 		DE958D4F22F01B3300DB2C21 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,10 +265,12 @@
 				DE958D4F22F01B3300DB2C21 /* Classes */,
 				DE6A055B22FE6B7600085A9F /* Enum */,
 				DED26CCA22D5980400A36FB4 /* Extension */,
+				DE6A056E22FE9E5800085A9F /* Model */,
 				DE6A055A22FE6B6F00085A9F /* Module */,
 				DED26CBD22D5951900A36FB4 /* Storyboard */,
 				DED26CBF22D5953F00A36FB4 /* View */,
 				DED26CBE22D5952700A36FB4 /* ViewController */,
+				DE6A056D22FE9E5000085A9F /* ViewModel */,
 			);
 			path = ContainerViewInUICollectionView;
 			sourceTree = "<group>";
@@ -269,6 +298,7 @@
 			children = (
 				DED26C9322D590FD00A36FB4 /* Article.storyboard */,
 				DE958D5022F01BB900DB2C21 /* Category.storyboard */,
+				DE6A057622FEAE5300085A9F /* Essay.storyboard */,
 				DED26C9822D5910500A36FB4 /* LaunchScreen.storyboard */,
 				DE6A056122FE845400085A9F /* Main.storyboard */,
 				DE6A056522FE90C500085A9F /* TabBar.storyboard */,
@@ -279,10 +309,10 @@
 		DED26CBE22D5952700A36FB4 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DE6A057322FEA52600085A9F /* Essay */,
 				DE6A055922FE6A3400085A9F /* Category */,
 				DE6A055F22FE842B00085A9F /* Main */,
 				DE6A056422FE848500085A9F /* Article */,
-				DED26CC622D595C600A36FB4 /* Partial */,
 				DE6A056822FE90F700085A9F /* TabBar */,
 			);
 			path = ViewController;
@@ -295,17 +325,6 @@
 				DE54C88D22F5059900F777BD /* ArticleNavigationTitleView */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		DED26CC622D595C600A36FB4 /* Partial */ = {
-			isa = PBXGroup;
-			children = (
-				DED26CC022D5957D00A36FB4 /* Partial1ViewController.swift */,
-				DED26CC222D595B100A36FB4 /* Partial2ViewController.swift */,
-				DED26CC422D595C200A36FB4 /* Partial3ViewController.swift */,
-				DED26CC722D595D700A36FB4 /* Partial4ViewController.swift */,
-			);
-			path = Partial;
 			sourceTree = "<group>";
 		};
 		DED26CC922D597EB00A36FB4 /* ContainerCollectionViewCell */ = {
@@ -435,6 +454,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE6A057822FEAE5300085A9F /* Essay.storyboard in Resources */,
 				DE6A056322FE845400085A9F /* Main.storyboard in Resources */,
 				DE54C89122F5073000F777BD /* ArticleNavigationTitleView.xib in Resources */,
 				DE958D5222F01BB900DB2C21 /* Category.storyboard in Resources */,
@@ -514,18 +534,18 @@
 				DED26CD022D654C600A36FB4 /* NSObjectProtocolExtension.swift in Sources */,
 				DE6A056C22FE938E00085A9F /* MainViewController.swift in Sources */,
 				DE958D5422F01C1C00DB2C21 /* FoodCategoryViewController.swift in Sources */,
-				DED26CC322D595B100A36FB4 /* Partial2ViewController.swift in Sources */,
-				DED26CC122D5957D00A36FB4 /* Partial1ViewController.swift in Sources */,
 				DED26CD422D6553100A36FB4 /* UICollectionViewExtension.swift in Sources */,
+				DE6A057222FE9FFD00085A9F /* TravelCategoryViewController.swift in Sources */,
+				DE6A057522FEAB3300085A9F /* FashionCategoryViewController.swift in Sources */,
 				DED26CD622D6555300A36FB4 /* UITableViewExtension.swift in Sources */,
 				DEF791F422F01A7800CC866B /* CustomViewBase.swift in Sources */,
+				DE6A057022FE9F6200085A9F /* LandscapeCategoryViewController.swift in Sources */,
 				DE54C88F22F5072000F777BD /* ArticleNavigationTitleView.swift in Sources */,
-				DED26CC822D595D700A36FB4 /* Partial4ViewController.swift in Sources */,
 				DED26CD222D654F600A36FB4 /* UIColorExtension.swift in Sources */,
-				DED26CC522D595C200A36FB4 /* Partial3ViewController.swift in Sources */,
 				DED26CD822D66D4000A36FB4 /* StoryboardInstantiatable.swift in Sources */,
 				DED26CCD22D5982500A36FB4 /* ContainerCollectionViewCell.swift in Sources */,
 				DED26C9022D590FD00A36FB4 /* AppDelegate.swift in Sources */,
+				DE6A057A22FEAE7200085A9F /* EssayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +595,14 @@
 				DE6A056622FE90C500085A9F /* Base */,
 			);
 			name = TabBar.storyboard;
+			sourceTree = "<group>";
+		};
+		DE6A057622FEAE5300085A9F /* Essay.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE6A057722FEAE5300085A9F /* Base */,
+			);
+			name = Essay.storyboard;
 			sourceTree = "<group>";
 		};
 		DE958D5022F01BB900DB2C21 /* Category.storyboard */ = {

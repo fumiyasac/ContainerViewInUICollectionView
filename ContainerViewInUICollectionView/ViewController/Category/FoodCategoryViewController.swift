@@ -1,5 +1,5 @@
 //
-//  CategoryViewController.swift
+//  FoodCategoryViewController.swift
 //  ContainerViewInUICollectionView
 //
 //  Created by 酒井文也 on 2019/07/30.

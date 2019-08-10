@@ -1,14 +1,14 @@
 //
-//  Partial3ViewController.swift
+//  TravelCategoryViewController.swift
 //  ContainerViewInUICollectionView
 //
-//  Created by 酒井文也 on 2019/07/10.
+//  Created by 酒井文也 on 2019/08/10.
 //  Copyright © 2019 酒井文也. All rights reserved.
 //
 
 import UIKit
 
-class Partial3ViewController: UIViewController {
+final class TravelCategoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,15 +17,15 @@ class Partial3ViewController: UIViewController {
 
 // MARK: - StoryboardInstantiatable
 
-extension Partial3ViewController: StoryboardInstantiatable {
+extension TravelCategoryViewController: StoryboardInstantiatable {
 
     // このViewControllerに対応するStoryboard名
     static var storyboardName: String {
-        return "Article"
+        return "Category"
     }
 
     // このViewControllerに対応するViewControllerのIdentifier名
     static var viewControllerIdentifier: String? {
-        return Partial3ViewController.className
+        return TravelCategoryViewController.className
     }
 }

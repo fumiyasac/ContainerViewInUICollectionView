@@ -1,14 +1,14 @@
 //
-//  Partial1ViewController.swift
+//  EssayViewController.swift
 //  ContainerViewInUICollectionView
 //
-//  Created by 酒井文也 on 2019/07/10.
+//  Created by 酒井文也 on 2019/08/10.
 //  Copyright © 2019 酒井文也. All rights reserved.
 //
 
 import UIKit
 
-class Partial1ViewController: UIViewController {
+final class EssayViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,15 +17,16 @@ class Partial1ViewController: UIViewController {
 
 // MARK: - StoryboardInstantiatable
 
-extension Partial1ViewController: StoryboardInstantiatable {
+extension EssayViewController: StoryboardInstantiatable {
 
     // このViewControllerに対応するStoryboard名
     static var storyboardName: String {
-        return "Article"
+        return "Essay"
     }
 
     // このViewControllerに対応するViewControllerのIdentifier名
     static var viewControllerIdentifier: String? {
-        return Partial1ViewController.className
+        return nil
     }
 }
+
