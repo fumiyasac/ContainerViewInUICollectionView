@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class CategoryViewController: UIViewController {
+final class FoodCategoryViewController: UIViewController {
 
     // MARK: - Override
 
@@ -19,7 +19,7 @@ final class CategoryViewController: UIViewController {
 
 // MARK: - StoryboardInstantiatable
 
-extension CategoryViewController: StoryboardInstantiatable {
+extension FoodCategoryViewController: StoryboardInstantiatable {
 
     // このViewControllerに対応するStoryboard名
     static var storyboardName: String {
@@ -28,6 +28,6 @@ extension CategoryViewController: StoryboardInstantiatable {
 
     // このViewControllerに対応するViewControllerのIdentifier名
     static var viewControllerIdentifier: String? {
-        return CategoryViewController.className
+        return FoodCategoryViewController.className
     }
 }

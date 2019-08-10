@@ -1,6 +1,6 @@
 
 //
-//  MainNavigationTitleView.swift
+//  ArticleNavigationTitleView.swift
 //  ContainerViewInUICollectionView
 //
 //  Created by 酒井文也 on 2019/08/03.
@@ -10,41 +10,41 @@
 import Foundation
 import UIKit
 
-final class MainNavigationTitleView: CustomViewBase {
+final class ArticleNavigationTitleView: CustomViewBase {
     
     private let maxPageCount: Int = 4
     private var currentPageCount: Int = 0
 
-    @IBOutlet weak private var mainNavigationTitleLabel: UILabel!
-    @IBOutlet weak private var mainNavigationPageControl: UIPageControl!
+    @IBOutlet weak private var articleNavigationTitleLabel: UILabel!
+    @IBOutlet weak private var articleNavigationPageControl: UIPageControl!
 
     // MARK: - Typealias
 
     // MEMO: 実際はタプルではあるが独自の型を与えて用途を明確にする
-    typealias MainNavigationTitleInformation = (title: String, cellIndex: Int)
+    typealias ArticleNavigationTitleInformation = (title: String, cellIndex: Int)
 
     // MARK: - Initializer
 
     required init(frame: CGRect) {
         super.init(frame: frame)
 
-        setupMainNavigationTitleView()
+        setupArticleNavigationTitleView()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
-        setupMainNavigationTitleView()
+        setupArticleNavigationTitleView()
     }
 
     // MARK: - Function
 
     // 配置されているViewControllerから引き渡された情報を反映する
-    func setCurrentDisplayTitleInformation(_ info: MainNavigationTitleInformation) {
+    func setCurrentDisplayTitleInformation(_ info: ArticleNavigationTitleInformation) {
 
         // MainViewControllerから渡された値を反映する
-        mainNavigationTitleLabel.text = info.title
-        mainNavigationPageControl.currentPage = info.cellIndex
+        articleNavigationTitleLabel.text = info.title
+        articleNavigationPageControl.currentPage = info.cellIndex
 
         // MEMO: 現在選択されているインデックス値と引数から渡されたインデックス値の差分を計算してアニメーションの方向を決める
         if currentPageCount == info.cellIndex {
@@ -63,7 +63,7 @@ final class MainNavigationTitleView: CustomViewBase {
     private func executeSlideAnimation(shouldMoveFromTop: Bool) {
 
         // MEMO: アニメーション対象のViewの親にあたるViewをマスクにする
-        mainNavigationTitleLabel.superview?.layer.masksToBounds = true
+        articleNavigationTitleLabel.superview?.layer.masksToBounds = true
 
         // MEMO: ラベル表示要素に対して上下にスライドするCoreAnimationの設定を行う
         let transition = CATransition()
@@ -79,15 +79,15 @@ final class MainNavigationTitleView: CustomViewBase {
             transition.subtype = CATransitionSubtype.fromBottom
             key = "previous"
         }
-        mainNavigationTitleLabel.layer.removeAllAnimations()
-        mainNavigationTitleLabel.layer.add(transition, forKey: key)
+        articleNavigationTitleLabel.layer.removeAllAnimations()
+        articleNavigationTitleLabel.layer.add(transition, forKey: key)
     }
 
     // NavigationTitleにはめ込むView要素の初期設定を行う
-    private func setupMainNavigationTitleView() {
+    private func setupArticleNavigationTitleView() {
 
         // MEMO: UIPageControl及びUILabelのデザイン調整はInterfaceBuilderで行う
-        mainNavigationPageControl.numberOfPages = maxPageCount
-        mainNavigationPageControl.isEnabled = false
+        articleNavigationPageControl.numberOfPages = maxPageCount
+        articleNavigationPageControl.isEnabled = false
     }
 }

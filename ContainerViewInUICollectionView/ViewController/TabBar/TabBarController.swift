@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  TabBarController.swift
 //  ContainerViewInUICollectionView
 //
 //  Created by 酒井文也 on 2019/08/10.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MainViewController: UIViewController {
+final class TabBarController: UITabBarController {
 
     // MARK: - Override
 

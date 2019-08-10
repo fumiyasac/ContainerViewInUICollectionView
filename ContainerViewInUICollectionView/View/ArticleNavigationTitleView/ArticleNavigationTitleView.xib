@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainNavigationTitleView" customModule="ContainerViewInUICollectionView" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArticleNavigationTitleView" customModule="ContainerViewInUICollectionView" customModuleProvider="target">
             <connections>
-                <outlet property="mainNavigationPageControl" destination="iMS-z7-9Ma" id="SCC-OE-iYv"/>
-                <outlet property="mainNavigationTitleLabel" destination="ftf-gX-son" id="FaD-7i-bUV"/>
+                <outlet property="articleNavigationPageControl" destination="iMS-z7-9Ma" id="Mrh-gG-Lgv"/>
+                <outlet property="articleNavigationTitleLabel" destination="ftf-gX-son" id="n0T-ib-Orj"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -26,7 +26,7 @@
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトルテキストが入ります" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftf-gX-son">
                             <rect key="frame" x="0.0" y="0.0" width="240" height="20"/>
-                            <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="13"/>
+                            <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>

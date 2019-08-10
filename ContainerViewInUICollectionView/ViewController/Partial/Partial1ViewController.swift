@@ -21,7 +21,7 @@ extension Partial1ViewController: StoryboardInstantiatable {
 
     // このViewControllerに対応するStoryboard名
     static var storyboardName: String {
-        return "Main"
+        return "Article"
     }
 
     // このViewControllerに対応するViewControllerのIdentifier名
