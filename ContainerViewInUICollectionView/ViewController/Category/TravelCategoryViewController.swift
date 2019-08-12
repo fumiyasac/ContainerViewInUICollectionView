@@ -10,6 +10,21 @@ import UIKit
 
 final class TravelCategoryViewController: UIViewController {
 
+    static let titleName: String = "旅行・レジャー"
+
+    // MARK: - Static Function
+
+    static func make() -> ArticleViewController.DisplayViewControllerSet {
+
+        // MEMO: ArticleViewControllerに定義したTypealiasに適合した形にする
+        return (
+            title: TravelCategoryViewController.titleName,
+            viewController: TravelCategoryViewController.instantiate()
+        )
+    }
+
+    // MARK: - Override
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }

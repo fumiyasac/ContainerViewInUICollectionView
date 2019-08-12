@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContainerCollectionViewCell: UICollectionViewCell {
+final class ContainerCollectionViewCell: UICollectionViewCell {
 
     // MEMO: このセルはリサイクルして利用する前提なので弱参照にしています。
     private weak var storedTargetViewController: UIViewController!

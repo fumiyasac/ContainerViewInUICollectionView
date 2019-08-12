@@ -10,6 +10,19 @@ import UIKit
 
 final class FoodCategoryViewController: UIViewController {
 
+    static let titleName: String = "お食事・グルメ"
+
+    // MARK: - Static Function
+
+    static func make() -> ArticleViewController.DisplayViewControllerSet {
+        
+        // MEMO: ArticleViewControllerに定義したTypealiasに適合した形にする
+        return (
+            title: FoodCategoryViewController.titleName,
+            viewController: FoodCategoryViewController.instantiate()
+        )
+    }
+
     // MARK: - Override
 
     override func viewDidLoad() {

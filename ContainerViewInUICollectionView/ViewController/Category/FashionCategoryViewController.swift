@@ -10,6 +10,22 @@ import UIKit
 
 final class FashionCategoryViewController: UIViewController {
 
+    static let titleName: String = "美容・ファッション"
+
+    // MARK: - Static Function
+
+    static func make() -> ArticleViewController.DisplayViewControllerSet {
+
+        // MEMO: ArticleViewControllerに定義したTypealiasに適合した形にする
+        return (
+            title: FashionCategoryViewController.titleName,
+            viewController: FashionCategoryViewController.instantiate()
+        )
+    }
+
+
+    // MARK: - Override
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }

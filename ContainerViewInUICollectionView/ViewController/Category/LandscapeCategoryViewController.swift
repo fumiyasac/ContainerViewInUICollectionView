@@ -10,6 +10,21 @@ import UIKit
 
 final class LandscapeCategoryViewController: UIViewController {
 
+    static let titleName: String = "風景・見どころ"
+
+    // MARK: - Static Function
+
+    static func make() -> ArticleViewController.DisplayViewControllerSet {
+
+        // MEMO: ArticleViewControllerに定義したTypealiasに適合した形にする
+        return (
+            title: LandscapeCategoryViewController.titleName,
+            viewController: LandscapeCategoryViewController.instantiate()
+        )
+    }
+
+    // MARK: - Override
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }

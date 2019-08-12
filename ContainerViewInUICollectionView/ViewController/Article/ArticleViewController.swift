@@ -15,37 +15,44 @@ final class ArticleViewController: UIViewController {
     private let titleView = ArticleNavigationTitleView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44))
 
     // MEMO: UICollectionViewCell内に表示させる要素を格納するための変数
-    private var displayViewControllers: [UIViewController] = []
+    private var displayViewControllerSet: [DisplayViewControllerSet] = []
 
     // MEMO: UICollectionViewCell内にContainerViewとして他のViewControllerを配置する
     @IBOutlet weak private var collectionView: UICollectionView!
+
+    // MARK: - Typealias
+
+    typealias DisplayViewControllerSet = (title: String, viewController: UIViewController)
 
     // MARK: - Override
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupMainNavigationTitleView()
-        setupDisplayViewControllers()
+        setupDisplayViewControllerSet()
         setupGalleryCollectionView()
     }
     
     // MARK: - Private Function
 
-    private func setupMainNavigationTitleView() {
-        self.navigationController?.navigationBar.addSubview(titleView)
-    }
-
-    private func setupDisplayViewControllers() {
+    private func setupDisplayViewControllerSet() {
 
         // UICollectionViewCell内に表示するUIViewControllerの設定
-        let viewControllers = [
-            FoodCategoryViewController.instantiate(),
-            LandscapeCategoryViewController.instantiate(),
-            TravelCategoryViewController.instantiate(),
-            FashionCategoryViewController.instantiate()
+        displayViewControllerSet = [
+           FoodCategoryViewController.make(),
+           LandscapeCategoryViewController.make(),
+           TravelCategoryViewController.make(),
+           FashionCategoryViewController.make()
         ]
-        let _ = viewControllers.map{ displayViewControllers.append($0) }
+
+        // タイトル表示部分の初期設定と初期表示を行う
+        self.navigationController?.navigationBar.addSubview(titleView)
+        let initialTitleInfo: ArticleNavigationTitleView.ArticleNavigationTitleInformation = (
+            title: displayViewControllerSet[0].title,
+            cellIndex: 0
+        )
+        titleView.setCurrentDisplayTitleInformation(initialTitleInfo)
+
     }
 
     private func setupGalleryCollectionView() {
@@ -81,11 +88,13 @@ extension ArticleViewController: UIScrollViewDelegate {
         let visibleRect = CGRect(origin: collectionView.contentOffset, size: collectionView.bounds.size)
         let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
         if let visibleIndexPath = collectionView.indexPathForItem(at: visiblePoint) {
-            let info: ArticleNavigationTitleView.ArticleNavigationTitleInformation = (
-                title: "サンプルタイトル\(visibleIndexPath.row)",
+
+            // タイトル表示部分の切り替えと反映を行う
+            let titleInfo: ArticleNavigationTitleView.ArticleNavigationTitleInformation = (
+                title: displayViewControllerSet[visibleIndexPath.row].title,
                 cellIndex: visibleIndexPath.row
             )
-            titleView.setCurrentDisplayTitleInformation(info)
+            titleView.setCurrentDisplayTitleInformation(titleInfo)
         }
     }
 }
@@ -110,18 +119,18 @@ extension ArticleViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return displayViewControllers.count
+        return displayViewControllerSet.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         // MEMO: Containerとして表示したいViewControllerと親要素のViewControllerを渡す
         let cell = collectionView.dequeueReusableCustomCell(with: ContainerCollectionViewCell.self, indexPath: indexPath)
-        let selectedViewController = displayViewControllers[indexPath.row]
-        cell.setCell(targetViewController: selectedViewController, parentViewController: self)
+        let selectedSet = displayViewControllerSet[indexPath.row]
+        cell.setCell(targetViewController: selectedSet.viewController, parentViewController: self)
 
         // MEMO: セルへ適用した後に再び詰め直しを図る
-        displayViewControllers[indexPath.row] = selectedViewController
+        displayViewControllerSet[indexPath.row] = selectedSet
 
         return cell
     }
