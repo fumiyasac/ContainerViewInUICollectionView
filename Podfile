@@ -21,8 +21,9 @@ target 'ContainerViewInUICollectionView' do
   pod 'MXParallaxHeader'
   pod 'Blueprint'
   pod 'SPStorkController'
-  pod 'ESTabBarController'
+  pod 'ESTabBarController-swift'
   pod 'SwipeCellKit'
+  pod 'FontAwesome.swift'
 
   # 4. テキスト処理の取り扱いに関するライブラリ
   pod 'SwiftyMarkdown'

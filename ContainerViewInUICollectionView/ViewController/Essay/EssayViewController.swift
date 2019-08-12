@@ -14,19 +14,3 @@ final class EssayViewController: UIViewController {
         super.viewDidLoad()
     }
 }
-
-// MARK: - StoryboardInstantiatable
-
-extension EssayViewController: StoryboardInstantiatable {
-
-    // このViewControllerに対応するStoryboard名
-    static var storyboardName: String {
-        return "Essay"
-    }
-
-    // このViewControllerに対応するViewControllerのIdentifier名
-    static var viewControllerIdentifier: String? {
-        return nil
-    }
-}
-

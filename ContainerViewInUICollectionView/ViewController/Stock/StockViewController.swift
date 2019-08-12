@@ -15,17 +15,3 @@ class StockViewController: UIViewController {
     }
 }
 
-// MARK: - StoryboardInstantiatable
-
-extension StockViewController: StoryboardInstantiatable {
-
-    // このViewControllerに対応するStoryboard名
-    static var storyboardName: String {
-        return "Stock"
-    }
-    
-    // このViewControllerに対応するViewControllerのIdentifier名
-    static var viewControllerIdentifier: String? {
-        return nil
-    }
-}

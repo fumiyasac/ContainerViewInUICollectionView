@@ -12,7 +12,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="CYC-XZ-kce">
             <objects>
-                <tabBarController id="JZF-gb-ibc" sceneMemberID="viewController">
+                <tabBarController id="JZF-gb-ibc" customClass="TabBarController" customModule="ContainerViewInUICollectionView" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="92P-I2-ARm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

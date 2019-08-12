@@ -21,6 +21,8 @@
 		DE6A057A22FEAE7200085A9F /* EssayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6A057922FEAE7200085A9F /* EssayViewController.swift */; };
 		DE6A057D22FEB20200085A9F /* Stock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6A057B22FEB20200085A9F /* Stock.storyboard */; };
 		DE6A058022FEB21E00085A9F /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6A057F22FEB21E00085A9F /* StockViewController.swift */; };
+		DE6A05822301147000085A9F /* TabBarItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6A05812301147000085A9F /* TabBarItemType.swift */; };
+		DE6A058523012F9600085A9F /* BouncesTabContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6A058423012F9600085A9F /* BouncesTabContentView.swift */; };
 		DE958D5222F01BB900DB2C21 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE958D5022F01BB900DB2C21 /* Category.storyboard */; };
 		DE958D5422F01C1C00DB2C21 /* FoodCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE958D5322F01C1C00DB2C21 /* FoodCategoryViewController.swift */; };
 		DED26C9022D590FD00A36FB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED26C8F22D590FD00A36FB4 /* AppDelegate.swift */; };
@@ -74,6 +76,8 @@
 		DE6A057922FEAE7200085A9F /* EssayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssayViewController.swift; sourceTree = "<group>"; };
 		DE6A057C22FEB20200085A9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Stock.storyboard; sourceTree = "<group>"; };
 		DE6A057F22FEB21E00085A9F /* StockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewController.swift; sourceTree = "<group>"; };
+		DE6A05812301147000085A9F /* TabBarItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemType.swift; sourceTree = "<group>"; };
+		DE6A058423012F9600085A9F /* BouncesTabContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncesTabContentView.swift; sourceTree = "<group>"; };
 		DE958D5122F01BB900DB2C21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Category.storyboard; sourceTree = "<group>"; };
 		DE958D5322F01C1C00DB2C21 /* FoodCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategoryViewController.swift; sourceTree = "<group>"; };
 		DED26C8C22D590FD00A36FB4 /* ContainerViewInUICollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContainerViewInUICollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +176,7 @@
 		DE6A055B22FE6B7600085A9F /* Enum */ = {
 			isa = PBXGroup;
 			children = (
+				DE6A05812301147000085A9F /* TabBarItemType.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -237,10 +242,19 @@
 			path = Stock;
 			sourceTree = "<group>";
 		};
+		DE6A058323012E9A00085A9F /* TabBarIcon */ = {
+			isa = PBXGroup;
+			children = (
+				DE6A058423012F9600085A9F /* BouncesTabContentView.swift */,
+			);
+			path = TabBarIcon;
+			sourceTree = "<group>";
+		};
 		DE958D4F22F01B3300DB2C21 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				DEF791F322F01A7800CC866B /* CustomViewBase.swift */,
+				DE6A058323012E9A00085A9F /* TabBarIcon */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -562,6 +576,8 @@
 				DED26CCD22D5982500A36FB4 /* ContainerCollectionViewCell.swift in Sources */,
 				DED26C9022D590FD00A36FB4 /* AppDelegate.swift in Sources */,
 				DE6A057A22FEAE7200085A9F /* EssayViewController.swift in Sources */,
+				DE6A058523012F9600085A9F /* BouncesTabContentView.swift in Sources */,
+				DE6A05822301147000085A9F /* TabBarItemType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

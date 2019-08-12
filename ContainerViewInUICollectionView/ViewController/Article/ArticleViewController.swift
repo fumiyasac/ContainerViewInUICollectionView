@@ -149,7 +149,8 @@ extension ArticleViewController: UICollectionViewDelegateFlowLayout {
         // MEMO: コンテンツを表示するためのセル高さ = 画面の高さ - ステータスバーの高さ
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
         let navigationBarHeight = self.navigationController?.navigationBar.frame.height ?? 0
-        let cellHeight = UIScreen.main.bounds.height - statusBarHeight - navigationBarHeight
+        let tabBarHeight = self.tabBarController?.tabBar.frame.size.height ?? 0
+        let cellHeight = UIScreen.main.bounds.height - statusBarHeight - navigationBarHeight - tabBarHeight
 
         return CGSize(width: cellWidth, height: cellHeight)
     }
@@ -167,20 +168,5 @@ extension ArticleViewController: UICollectionViewDelegateFlowLayout {
     // セル内のアイテム間の余白(margin)調整を行う
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return .zero
-    }
-}
-
-// MARK: - StoryboardInstantiatable
-
-extension ArticleViewController: StoryboardInstantiatable {
-
-    // このViewControllerに対応するStoryboard名
-    static var storyboardName: String {
-        return "Article"
-    }
-
-    // このViewControllerに対応するViewControllerのIdentifier名
-    static var viewControllerIdentifier: String? {
-        return nil
     }
 }

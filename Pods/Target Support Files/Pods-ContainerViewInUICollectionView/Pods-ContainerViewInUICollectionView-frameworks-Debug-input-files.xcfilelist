@@ -3,7 +3,8 @@ ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout.framework
 ${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework
 ${BUILT_PRODUCTS_DIR}/Blueprint/Blueprint.framework
-${BUILT_PRODUCTS_DIR}/ESTabBarController/ESTabBarController.framework
+${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework
+${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework
 ${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework
 ${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
 ${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework

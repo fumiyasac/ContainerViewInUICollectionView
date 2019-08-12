@@ -1,6 +1,0 @@
-framework module ESTabBarController {
-  umbrella header "ESTabBarController-umbrella.h"
-
-  export *
-  module * { export * }
-}

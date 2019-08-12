@@ -3,7 +3,8 @@ PODS:
   - AnimatedCollectionViewLayout (0.6.0)
   - AutoInsetter (1.7.1)
   - Blueprint (0.0.2)
-  - ESTabBarController (0.2)
+  - ESTabBarController-swift (2.7)
+  - FontAwesome.swift (1.7.1)
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
   - Moya/Core (13.0.1):
@@ -31,7 +32,8 @@ PODS:
 DEPENDENCIES:
   - AnimatedCollectionViewLayout
   - Blueprint
-  - ESTabBarController
+  - ESTabBarController-swift
+  - FontAwesome.swift
   - Moya
   - MXParallaxHeader
   - Nuke
@@ -50,7 +52,8 @@ SPEC REPOS:
     - AnimatedCollectionViewLayout
     - AutoInsetter
     - Blueprint
-    - ESTabBarController
+    - ESTabBarController-swift
+    - FontAwesome.swift
     - Moya
     - MXParallaxHeader
     - Nuke
@@ -71,7 +74,8 @@ SPEC CHECKSUMS:
   AnimatedCollectionViewLayout: f2c4e8dda4e3f1678ad6c0b39273a31b19bc935d
   AutoInsetter: 0c40f6505369c7b75cf7ac27e3cce2170293ac27
   Blueprint: f9d1c987adb3fa5213779088f6534101d2e8bc6b
-  ESTabBarController: e82ac0b135bec16fb646ac1da4ac8953fcd927da
+  ESTabBarController-swift: 4fb52ad03d94d0717ef97bc9eb09a5abfdded0a2
+  FontAwesome.swift: 8d9792fa2d2347055da35bd97752b3960bd75952
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   MXParallaxHeader: 858c403532ed933b381556a81ce333d7065ad182
   Nuke: 44130e95e09463f8773ae4b96b90de1eba6b3350
@@ -87,6 +91,6 @@ SPEC CHECKSUMS:
   SwipeCellKit: 935ca28c187ec6e1ffb2b578cf8ddca842bfdcbb
   Tabman: 6e0888c9b9227d9da03e51a90f1f91f53454bfa1
 
-PODFILE CHECKSUM: 5a6de8d41e51640f5c82dd3c9cbe6f1633a2a9dc
+PODFILE CHECKSUM: 8b79a582d95c9283b0225f9d28a5212618c506be
 
 COCOAPODS: 1.7.2
