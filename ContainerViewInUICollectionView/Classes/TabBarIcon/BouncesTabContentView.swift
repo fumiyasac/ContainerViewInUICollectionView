@@ -12,12 +12,37 @@ import ESTabBarController_swift
 
 final class BouncesTabContentView: ESTabBarItemContentView {
 
-    public var duration = 0.3
+    public var duration = 0.36
 
     // MARK: - Initializer
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+
+        setupBounceTabContentView()
+    }
+
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+
+        setupBounceTabContentView()
+    }
+
+    // MARK: - Override
+
+    override func selectAnimation(animated: Bool, completion: (() -> ())?) {
+        executeTabBounceAnimation()
+        completion?()
+    }
+
+    override func reselectAnimation(animated: Bool, completion: (() -> ())?) {
+        executeTabBounceAnimation()
+        completion?()
+    }
+    
+    // MARK: - Private Function
+
+    private func setupBounceTabContentView() {
 
         // MEMO: 選択時・非選択時の配色を設定する
         textColor = UIColor.init(code: "#cccccc")
@@ -26,28 +51,10 @@ final class BouncesTabContentView: ESTabBarItemContentView {
         highlightIconColor = UIColor.init(code: "#ffae00")
     }
 
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    // MARK: - Override
-
-    override func selectAnimation(animated: Bool, completion: (() -> ())?) {
-        bounceTabContentAnimation()
-        completion?()
-    }
-
-    override func reselectAnimation(animated: Bool, completion: (() -> ())?) {
-        bounceTabContentAnimation()
-        completion?()
-    }
-    
-    // MARK: - Function
-
     // CoreAnimationを利用してアイコン表示部分のバウンドを利用する
-    func bounceTabContentAnimation() {
+    private func executeTabBounceAnimation() {
         let impliesAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
-        impliesAnimation.values = [1.00 ,1.37, 0.92, 1.15, 0.96, 1.03, 1.00]
+        impliesAnimation.values = [1.00 ,1.42, 0.87, 1.19, 0.96, 1.06, 1.00]
         impliesAnimation.duration = duration * 2
         impliesAnimation.calculationMode = CAAnimationCalculationMode.cubic
         imageView.layer.add(impliesAnimation, forKey: nil)
