@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 import ESTabBarController_swift
 
+// MEMO: ライブラリ'ESTabBarController_swift'で利用可能な'ESTabBarItemContentView'を継承したクラス
+// → バウンドするTabBarボタンを作成するために利用する。
+
 final class BouncesTabContentView: ESTabBarItemContentView {
 
     public var duration = 0.36
@@ -39,7 +42,7 @@ final class BouncesTabContentView: ESTabBarItemContentView {
         executeTabBounceAnimation()
         completion?()
     }
-    
+
     // MARK: - Private Function
 
     private func setupBounceTabContentView() {

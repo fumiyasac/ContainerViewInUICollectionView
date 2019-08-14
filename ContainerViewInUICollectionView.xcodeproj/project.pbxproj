@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3E937583FAE6BA5CBF0C410B /* Pods_ContainerViewInUICollectionView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92957B7841B5368C74441FC5 /* Pods_ContainerViewInUICollectionView.framework */; };
+		DE0662152302CB1E0044BEFF /* ReadMoreTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0662142302CB1E0044BEFF /* ReadMoreTextView.swift */; };
+		DE0662172302CFC80044BEFF /* NSLayoutManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0662162302CFC80044BEFF /* NSLayoutManagerExtension.swift */; };
+		DE0662192302EF760044BEFF /* UITextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0662182302EF760044BEFF /* UITextViewExtension.swift */; };
+		DE06621B23039EC30044BEFF /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE06621A23039EC20044BEFF /* StringExtension.swift */; };
 		DE54C88F22F5072000F777BD /* ArticleNavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54C88E22F5072000F777BD /* ArticleNavigationTitleView.swift */; };
 		DE54C89122F5073000F777BD /* ArticleNavigationTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE54C89022F5073000F777BD /* ArticleNavigationTitleView.xib */; };
 		DE6A056322FE845400085A9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6A056122FE845400085A9F /* Main.storyboard */; };
@@ -63,6 +67,10 @@
 		451E04959B98FB5133B40B39 /* Pods-ContainerViewInUICollectionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContainerViewInUICollectionView.debug.xcconfig"; path = "Target Support Files/Pods-ContainerViewInUICollectionView/Pods-ContainerViewInUICollectionView.debug.xcconfig"; sourceTree = "<group>"; };
 		8E10E8EB59913BD96948EFE6 /* Pods-ContainerViewInUICollectionView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContainerViewInUICollectionView.release.xcconfig"; path = "Target Support Files/Pods-ContainerViewInUICollectionView/Pods-ContainerViewInUICollectionView.release.xcconfig"; sourceTree = "<group>"; };
 		92957B7841B5368C74441FC5 /* Pods_ContainerViewInUICollectionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContainerViewInUICollectionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE0662142302CB1E0044BEFF /* ReadMoreTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMoreTextView.swift; sourceTree = "<group>"; };
+		DE0662162302CFC80044BEFF /* NSLayoutManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutManagerExtension.swift; sourceTree = "<group>"; };
+		DE0662182302EF760044BEFF /* UITextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExtension.swift; sourceTree = "<group>"; };
+		DE06621A23039EC20044BEFF /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		DE54C88E22F5072000F777BD /* ArticleNavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleNavigationTitleView.swift; sourceTree = "<group>"; };
 		DE54C89022F5073000F777BD /* ArticleNavigationTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleNavigationTitleView.xib; sourceTree = "<group>"; };
 		DE6A056222FE845400085A9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -144,6 +152,14 @@
 				8E10E8EB59913BD96948EFE6 /* Pods-ContainerViewInUICollectionView.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		DE0662132302CA210044BEFF /* ReadMoreTextView */ = {
+			isa = PBXGroup;
+			children = (
+				DE0662142302CB1E0044BEFF /* ReadMoreTextView.swift */,
+			);
+			path = ReadMoreTextView;
 			sourceTree = "<group>";
 		};
 		DE54C88D22F5059900F777BD /* ArticleNavigationTitleView */ = {
@@ -254,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				DEF791F322F01A7800CC866B /* CustomViewBase.swift */,
+				DE0662132302CA210044BEFF /* ReadMoreTextView */,
 				DE6A058323012E9A00085A9F /* TabBarIcon */,
 			);
 			path = Classes;
@@ -367,11 +384,14 @@
 		DED26CCA22D5980400A36FB4 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				DE0662162302CFC80044BEFF /* NSLayoutManagerExtension.swift */,
 				DED26CCF22D654C600A36FB4 /* NSObjectProtocolExtension.swift */,
-				DED26CD122D654F600A36FB4 /* UIColorExtension.swift */,
-				DED26CD322D6553100A36FB4 /* UICollectionViewExtension.swift */,
-				DED26CD522D6555300A36FB4 /* UITableViewExtension.swift */,
 				DED26CD722D66D4000A36FB4 /* StoryboardInstantiatable.swift */,
+				DED26CD322D6553100A36FB4 /* UICollectionViewExtension.swift */,
+				DED26CD122D654F600A36FB4 /* UIColorExtension.swift */,
+				DED26CD522D6555300A36FB4 /* UITableViewExtension.swift */,
+				DE0662182302EF760044BEFF /* UITextViewExtension.swift */,
+				DE06621A23039EC20044BEFF /* StringExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -563,9 +583,11 @@
 				DE6A056A22FE915A00085A9F /* TabBarController.swift in Sources */,
 				DED26CD022D654C600A36FB4 /* NSObjectProtocolExtension.swift in Sources */,
 				DE6A056C22FE938E00085A9F /* MainViewController.swift in Sources */,
+				DE0662192302EF760044BEFF /* UITextViewExtension.swift in Sources */,
 				DE958D5422F01C1C00DB2C21 /* FoodCategoryViewController.swift in Sources */,
 				DED26CD422D6553100A36FB4 /* UICollectionViewExtension.swift in Sources */,
 				DE6A057222FE9FFD00085A9F /* TravelCategoryViewController.swift in Sources */,
+				DE0662152302CB1E0044BEFF /* ReadMoreTextView.swift in Sources */,
 				DE6A057522FEAB3300085A9F /* FashionCategoryViewController.swift in Sources */,
 				DED26CD622D6555300A36FB4 /* UITableViewExtension.swift in Sources */,
 				DEF791F422F01A7800CC866B /* CustomViewBase.swift in Sources */,
@@ -576,7 +598,9 @@
 				DED26CCD22D5982500A36FB4 /* ContainerCollectionViewCell.swift in Sources */,
 				DED26C9022D590FD00A36FB4 /* AppDelegate.swift in Sources */,
 				DE6A057A22FEAE7200085A9F /* EssayViewController.swift in Sources */,
+				DE06621B23039EC30044BEFF /* StringExtension.swift in Sources */,
 				DE6A058523012F9600085A9F /* BouncesTabContentView.swift in Sources */,
+				DE0662172302CFC80044BEFF /* NSLayoutManagerExtension.swift in Sources */,
 				DE6A05822301147000085A9F /* TabBarItemType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
