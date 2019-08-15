@@ -13,85 +13,6 @@ import UIKit
 // 参考記事: http://ilya.puchka.me/custom-uitextview-in-swift/
 // 参考リポジトリ: https://github.com/ilyapuchka/ReadMoreTextView
 
-/*
-class ReadMoreTextView: UITextView {
-
-    // テキストの最大表示行数
-    var maximumNumberOfLines: Int = 0 {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-
-    // 続きを読む場合にクリックする部分のテキスト内容
-    var trimText: NSString? {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-
-    // 続きを読む表現（トリム表現）の適用可否
-    var shouldTrim: Bool = false {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-
-    // MEMO: 受け取った文字列を格納するための変数
-    private var originalText: String!
-    private var originalAttributedText: NSAttributedString!
-
-    // MARK: - Override Property
-
-    override var text: String! {
-        didSet {
-            originalText = text
-            originalAttributedText = nil
-            if needsTrim() {
-                updateText()
-            }
-        }
-    }
-
-    override var attributedText: NSAttributedString! {
-        didSet {
-            originalAttributedText = attributedText
-            originalText = nil
-            if needsTrim() {
-                updateText()
-            }
-        }
-    }
-    
-    // MARK: - Override Function
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-        needsTrim() ? updateText() : resetText()
-    }
-
-    // MARK: - Function
-
-    // トリム表現を実行するか否か
-    func needsTrim() -> Bool {
-
-        // MEMO: トリム表現の実行をYesにしてトリム表現のテキスト文字が存在する場合に適用される
-        return shouldTrim && trimText != nil
-    }
-
-    func updateText() {
-        //
-    }
-
-    func resetText() {
-        //
-    }
-
-    // MARK: - Private Function
-}
-*/
-
 /**
  UITextView subclass that adds "read more"/"read less" capabilities.
  Disables scrolling and editing, so do not set these properties to true.
@@ -295,7 +216,6 @@ public class ReadMoreTextView: UITextView {
     private var cachedIntrinsicContentHeight: CGFloat?
     
     public override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        
         return hitTest(pointInGliphRange: point, event: event) { _ in
             guard pointIsInReadMoreOrReadLessTextRange(point: point) != nil else { return nil }
             return self
