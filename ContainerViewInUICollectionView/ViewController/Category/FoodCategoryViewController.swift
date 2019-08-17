@@ -38,7 +38,6 @@ final class FoodCategoryViewController: UIViewController {
 
     private func setupCollectionView() {
         // UICollectionViewDelegate & UICollectionViewDataSourceに関する初期設定
-        collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.registerCustomCell(CategoryPatternCollectionViewCell.self)
 
@@ -62,21 +61,10 @@ final class FoodCategoryViewController: UIViewController {
                 MosaicPattern(alignment: .left, direction: .vertical, amount: 1, multiplier: 0.5),
                 MosaicPattern(alignment: .left, direction: .horizontal, amount: 2, multiplier: 0.34),
                 MosaicPattern(alignment: .right, direction: .vertical, amount: 2, multiplier: 0.66),
-                MosaicPattern(alignment: .left, direction: .vertical, amount: 1, multiplier: 0.5),
+                MosaicPattern(alignment: .left, direction: .vertical, amount: 1, multiplier: 0.5)
             ])
         collectionView.collectionViewLayout = mosaicLayout
     }
-}
-
-// MARK: - UICollectionViewDataSource
-
-extension FoodCategoryViewController: UICollectionViewDelegate {
-    
-    // MEMO: 利用しないかもしれませんが一応準備をしておく
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {}
-    
-    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {}
 }
 
 // MARK: - UICollectionViewDataSource
