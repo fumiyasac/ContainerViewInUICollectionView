@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CategoryPatternCollectionViewCell" customModule="ContainerViewInUICollectionView" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="160" height="240"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="160" height="240"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJt-un-F46">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="240"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D0a-ja-zgo">
+                                <rect key="frame" x="0.0" y="0.0" width="160" height="240"/>
+                                <color key="backgroundColor" red="0.80784313730000001" green="0.80784313730000001" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019/01/01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2A-gl-mUK">
+                                <rect key="frame" x="8" y="219" width="144" height="9"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="9"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトルが入ります。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GV4-Xg-y32">
+                                <rect key="frame" x="8" y="199" width="144" height="12"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXe-hB-WXu">
+                                <rect key="frame" x="8" y="182" width="41.5" height="9"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="9"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GV4-Xg-y32" firstAttribute="top" secondItem="wXe-hB-WXu" secondAttribute="bottom" constant="8" id="7xO-Y8-kS1"/>
+                            <constraint firstItem="K2A-gl-mUK" firstAttribute="top" secondItem="GV4-Xg-y32" secondAttribute="bottom" constant="8" id="abl-SC-0pv"/>
+                            <constraint firstAttribute="trailing" secondItem="GV4-Xg-y32" secondAttribute="trailing" constant="8" id="dL7-RX-EKo"/>
+                            <constraint firstItem="wXe-hB-WXu" firstAttribute="leading" secondItem="UJt-un-F46" secondAttribute="leading" constant="8" id="eja-Aw-kuM"/>
+                            <constraint firstItem="D0a-ja-zgo" firstAttribute="leading" secondItem="UJt-un-F46" secondAttribute="leading" id="gkT-2J-OBc"/>
+                            <constraint firstAttribute="bottom" secondItem="D0a-ja-zgo" secondAttribute="bottom" id="hku-Iq-7et"/>
+                            <constraint firstItem="GV4-Xg-y32" firstAttribute="leading" secondItem="UJt-un-F46" secondAttribute="leading" constant="8" id="iOT-4d-2iH"/>
+                            <constraint firstAttribute="trailing" secondItem="D0a-ja-zgo" secondAttribute="trailing" id="jL3-mV-Rnz"/>
+                            <constraint firstItem="K2A-gl-mUK" firstAttribute="leading" secondItem="UJt-un-F46" secondAttribute="leading" constant="8" id="nIv-hh-ASQ"/>
+                            <constraint firstItem="D0a-ja-zgo" firstAttribute="top" secondItem="UJt-un-F46" secondAttribute="top" id="sA4-Jf-p90"/>
+                            <constraint firstAttribute="bottom" secondItem="K2A-gl-mUK" secondAttribute="bottom" constant="12" id="xE6-xX-bvi"/>
+                            <constraint firstAttribute="trailing" secondItem="K2A-gl-mUK" secondAttribute="trailing" constant="8" id="xG8-x9-mD6"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="UJt-un-F46" secondAttribute="trailing" id="9Ur-z4-lGu"/>
+                <constraint firstItem="UJt-un-F46" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="IGU-cl-diK"/>
+                <constraint firstAttribute="bottom" secondItem="UJt-un-F46" secondAttribute="bottom" id="NvK-Rh-pzM"/>
+                <constraint firstItem="UJt-un-F46" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qAj-cR-rtE"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <point key="canvasLocation" x="137.68115942028987" y="91.741071428571431"/>
+        </collectionViewCell>
+    </objects>
+</document>

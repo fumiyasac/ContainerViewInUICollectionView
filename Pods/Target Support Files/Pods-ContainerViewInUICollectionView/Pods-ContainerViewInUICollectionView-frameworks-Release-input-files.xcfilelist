@@ -2,7 +2,7 @@ ${PODS_ROOT}/Target Support Files/Pods-ContainerViewInUICollectionView/Pods-Cont
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout.framework
 ${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework
-${BUILT_PRODUCTS_DIR}/Blueprint/Blueprint.framework
+${BUILT_PRODUCTS_DIR}/Blueprints/Blueprints.framework
 ${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework
 ${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework
 ${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework

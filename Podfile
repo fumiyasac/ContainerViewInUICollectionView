@@ -19,7 +19,7 @@ target 'ContainerViewInUICollectionView' do
   pod 'AnimatedCollectionViewLayout'
   pod 'Tabman'
   pod 'MXParallaxHeader'
-  pod 'Blueprint'
+  pod 'Blueprints'
   pod 'SPStorkController'
   pod 'ESTabBarController-swift'
   pod 'SwipeCellKit'

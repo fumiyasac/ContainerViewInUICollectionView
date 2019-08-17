@@ -18,20 +18,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="グルメ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5j-UY-F4S">
-                                <rect key="frame" x="164.5" y="324.5" width="46" height="18"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ghA-sD-QQF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gXI-UV-DvF">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.83921568629999999" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Z5j-UY-F4S" firstAttribute="centerX" secondItem="OPG-RS-wFS" secondAttribute="centerX" id="eC3-W1-akg"/>
-                            <constraint firstItem="Z5j-UY-F4S" firstAttribute="centerY" secondItem="OPG-RS-wFS" secondAttribute="centerY" id="ymn-48-vaH"/>
+                            <constraint firstItem="ghA-sD-QQF" firstAttribute="leading" secondItem="2C4-Ko-kN1" secondAttribute="leading" id="0Ef-6r-JQ2"/>
+                            <constraint firstItem="ghA-sD-QQF" firstAttribute="bottom" secondItem="2C4-Ko-kN1" secondAttribute="bottom" id="Jui-OX-dZG"/>
+                            <constraint firstItem="ghA-sD-QQF" firstAttribute="top" secondItem="OPG-RS-wFS" secondAttribute="top" id="aBw-Oc-8cT"/>
+                            <constraint firstItem="ghA-sD-QQF" firstAttribute="trailing" secondItem="2C4-Ko-kN1" secondAttribute="trailing" id="m3D-Sa-yW0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2C4-Ko-kN1"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="ghA-sD-QQF" id="yrd-yt-oeK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E4x-4y-qJo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

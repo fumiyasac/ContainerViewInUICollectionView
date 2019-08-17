@@ -29,6 +29,8 @@
 		DE6A058523012F9600085A9F /* BouncesTabContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6A058423012F9600085A9F /* BouncesTabContentView.swift */; };
 		DE958D5222F01BB900DB2C21 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE958D5022F01BB900DB2C21 /* Category.storyboard */; };
 		DE958D5422F01C1C00DB2C21 /* FoodCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE958D5322F01C1C00DB2C21 /* FoodCategoryViewController.swift */; };
+		DECBB5832307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBB5812307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.swift */; };
+		DECBB5842307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DECBB5822307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.xib */; };
 		DED26C9022D590FD00A36FB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED26C8F22D590FD00A36FB4 /* AppDelegate.swift */; };
 		DED26C9222D590FD00A36FB4 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED26C9122D590FD00A36FB4 /* ArticleViewController.swift */; };
 		DED26C9522D590FD00A36FB4 /* Article.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED26C9322D590FD00A36FB4 /* Article.storyboard */; };
@@ -88,6 +90,8 @@
 		DE6A058423012F9600085A9F /* BouncesTabContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncesTabContentView.swift; sourceTree = "<group>"; };
 		DE958D5122F01BB900DB2C21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Category.storyboard; sourceTree = "<group>"; };
 		DE958D5322F01C1C00DB2C21 /* FoodCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategoryViewController.swift; sourceTree = "<group>"; };
+		DECBB5812307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPatternCollectionViewCell.swift; sourceTree = "<group>"; };
+		DECBB5822307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryPatternCollectionViewCell.xib; sourceTree = "<group>"; };
 		DED26C8C22D590FD00A36FB4 /* ContainerViewInUICollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContainerViewInUICollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED26C8F22D590FD00A36FB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DED26C9122D590FD00A36FB4 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
@@ -276,6 +280,29 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		DECBB5802307CD8100F7D2CC /* CategoryPatternCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DECBB5812307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.swift */,
+				DECBB5822307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.xib */,
+			);
+			path = CategoryPatternCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		DECBB5852307CE0D00F7D2CC /* CategoryPatternCollectionViewHeader */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CategoryPatternCollectionViewHeader;
+			sourceTree = "<group>";
+		};
+		DECBB5862307CE1900F7D2CC /* CategoryPatternCollectionViewFooter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CategoryPatternCollectionViewFooter;
+			sourceTree = "<group>";
+		};
 		DED26C8322D590FC00A36FB4 = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +393,9 @@
 		DED26CBF22D5953F00A36FB4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DECBB5862307CE1900F7D2CC /* CategoryPatternCollectionViewFooter */,
+				DECBB5852307CE0D00F7D2CC /* CategoryPatternCollectionViewHeader */,
+				DECBB5802307CD8100F7D2CC /* CategoryPatternCollectionViewCell */,
 				DED26CC922D597EB00A36FB4 /* ContainerCollectionViewCell */,
 				DE54C88D22F5059900F777BD /* ArticleNavigationTitleView */,
 			);
@@ -506,6 +536,7 @@
 				DE6A056322FE845400085A9F /* Main.storyboard in Resources */,
 				DE54C89122F5073000F777BD /* ArticleNavigationTitleView.xib in Resources */,
 				DE958D5222F01BB900DB2C21 /* Category.storyboard in Resources */,
+				DECBB5842307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.xib in Resources */,
 				DE6A056722FE90C500085A9F /* TabBar.storyboard in Resources */,
 				DED26C9A22D5910500A36FB4 /* LaunchScreen.storyboard in Resources */,
 				DED26C9722D5910500A36FB4 /* Assets.xcassets in Resources */,
@@ -588,6 +619,7 @@
 				DED26CD422D6553100A36FB4 /* UICollectionViewExtension.swift in Sources */,
 				DE6A057222FE9FFD00085A9F /* TravelCategoryViewController.swift in Sources */,
 				DE0662152302CB1E0044BEFF /* ReadMoreTextView.swift in Sources */,
+				DECBB5832307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.swift in Sources */,
 				DE6A057522FEAB3300085A9F /* FashionCategoryViewController.swift in Sources */,
 				DED26CD622D6555300A36FB4 /* UITableViewExtension.swift in Sources */,
 				DEF791F422F01A7800CC866B /* CustomViewBase.swift in Sources */,

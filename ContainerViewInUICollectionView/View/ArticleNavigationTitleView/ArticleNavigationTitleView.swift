@@ -20,7 +20,6 @@ final class ArticleNavigationTitleView: CustomViewBase {
 
     // MARK: - Typealias
 
-    // MEMO: 実際はタプルではあるが独自の型を与えて用途を明確にする
     typealias ArticleNavigationTitleInformation = (title: String, cellIndex: Int)
 
     // MARK: - Initializer

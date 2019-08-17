@@ -101,17 +101,6 @@ extension ArticleViewController: UIScrollViewDelegate {
 
 // MARK: - UICollectionViewDataSource
 
-extension ArticleViewController: UICollectionViewDelegate {
-
-    // MEMO: 利用しないかもしれませんが一応準備をしておく
-
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {}
-
-    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {}
-}
-
-// MARK: - UICollectionViewDataSource
-
 extension ArticleViewController: UICollectionViewDataSource {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -126,8 +115,13 @@ extension ArticleViewController: UICollectionViewDataSource {
 
         // MEMO: Containerとして表示したいViewControllerと親要素のViewControllerを渡す
         let cell = collectionView.dequeueReusableCustomCell(with: ContainerCollectionViewCell.self, indexPath: indexPath)
+
         let selectedSet = displayViewControllerSet[indexPath.row]
-        cell.setCell(targetViewController: selectedSet.viewController, parentViewController: self)
+        let viewControllerInfo = ContainerCollectionViewCell.DisplayViewControllerInContainerViewInformation(
+            targetViewController: selectedSet.viewController,
+            parentViewController: self
+        )
+        cell.setCell(viewControllerInfo)
 
         // MEMO: セルへ適用した後に再び詰め直しを図る
         displayViewControllerSet[indexPath.row] = selectedSet

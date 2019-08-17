@@ -13,6 +13,10 @@ final class ContainerCollectionViewCell: UICollectionViewCell {
     // MEMO: このセルはリサイクルして利用する前提なので弱参照にしています。
     private weak var storedTargetViewController: UIViewController!
 
+    // MARK: - Typealias
+
+    typealias DisplayViewControllerInContainerViewInformation = (targetViewController: UIViewController, parentViewController: UIViewController)
+
     // MARK: - Override
 
     override func awakeFromNib() {
@@ -29,16 +33,16 @@ final class ContainerCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Function
 
-    func setCell(targetViewController: UIViewController, parentViewController: UIViewController) {
+    func setCell(_ info: DisplayViewControllerInContainerViewInformation) {
 
-        storedTargetViewController = targetViewController
+        storedTargetViewController = info.targetViewController
 
         // 表示対象のViewControllerを.contentViewへ追加する
         storedTargetViewController.view.frame = contentView.frame
         self.contentView.addSubview(storedTargetViewController.view)
 
         // 表示対象のViewControllerをparentViewControllerの子として登録する
-        parentViewController.addChild(storedTargetViewController)
-        storedTargetViewController.didMove(toParent: parentViewController)
+        info.parentViewController.addChild(storedTargetViewController)
+        storedTargetViewController.didMove(toParent: info.parentViewController)
     }
 }
