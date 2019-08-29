@@ -24,6 +24,8 @@ target 'ContainerViewInUICollectionView' do
   pod 'ESTabBarController-swift'
   pod 'SwipeCellKit'
   pod 'FontAwesome.swift'
+  pod 'Pastel'
+  pod 'TransitionableTab'
 
   # 4. テキスト処理の取り扱いに関するライブラリ
   pod 'SwiftyMarkdown'

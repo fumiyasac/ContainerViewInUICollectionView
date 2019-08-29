@@ -8,6 +8,7 @@
 
 import UIKit
 import ESTabBarController_swift
+import TransitionableTab
 
 final class TabBarController: ESTabBarController {
 
@@ -50,6 +51,36 @@ final class TabBarController: ESTabBarController {
     }
 }
 
-// MARK: - UITabBarControllerDelegate
 
-extension TabBarController: UITabBarControllerDelegate {}
+// MARK: - TransitionableTab
+
+// MEMO: UITabBarControllerDelegateの処理がすでにTransitionableTabプロトコルで考慮している
+extension TabBarController: TransitionableTab {
+
+    // アニメーションの実行秒数
+    func transitionDuration() -> CFTimeInterval {
+        return 0.24
+    }
+
+    // アニメーションの実行オプション
+    func transitionTimingFunction() -> CAMediaTimingFunction {
+        return .easeInOut
+    }
+
+    // コンテンツ切り替え時(インデックス減少)にタブのインデックス値が増加する場合に実行するアニメーションの設定
+    func fromTransitionAnimation(layer: CALayer?, direction: Direction) -> CAAnimation {
+        // MEMO: TransitionableTabで提供しているものをそのまま利用する
+        return DefineAnimation.fade(.from)
+    }
+
+    // コンテンツ切り替え時(インデックス増加)にタブのインデックス値が減少する場合に実行するアニメーションの設定
+    func toTransitionAnimation(layer: CALayer?, direction: Direction) -> CAAnimation {
+        // MEMO: TransitionableTabで提供しているものをそのまま利用する
+        return DefineAnimation.fade(.to)
+    }
+
+    // コンテンツ切り替え時に実行される処理
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        return animateTransition(tabBarController, shouldSelect: viewController)
+    }
+}
