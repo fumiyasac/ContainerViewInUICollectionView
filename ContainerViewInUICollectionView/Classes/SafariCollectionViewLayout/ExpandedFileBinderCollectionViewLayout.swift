@@ -1,15 +1,15 @@
 //
-//  SelectedCollectionViewLayout.swift
+//  ExpandedFileBinderCollectionViewLayout.swift
 //  ContainerViewInUICollectionView
 //
-//  Created by 酒井文也 on 2019/08/25.
+//  Created by 酒井文也 on 2019/08/19.
 //  Copyright © 2019 酒井文也. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class AZExploreCollectionViewLayout: UICollectionViewLayout {
+class ExpandedFileBinderCollectionViewLayout: UICollectionViewLayout {
     
     var attributes  = Array<UICollectionViewLayoutAttributes>()
     var contentSize: CGSize = CGSize(width: 0, height: 0)
@@ -72,7 +72,7 @@ class AZExploreCollectionViewLayout: UICollectionViewLayout {
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        
+        super.layoutAttributesForElements(in: rect)
         var visibleLayoutAttributes = [UICollectionViewLayoutAttributes]()
         
         for attributes in self.attributes {
@@ -95,5 +95,4 @@ class AZExploreCollectionViewLayout: UICollectionViewLayout {
     override func initialLayoutAttributesForAppearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         return self.attributes[itemIndexPath.item]
     }
-    
 }

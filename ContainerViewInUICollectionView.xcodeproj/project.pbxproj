@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3E937583FAE6BA5CBF0C410B /* Pods_ContainerViewInUICollectionView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92957B7841B5368C74441FC5 /* Pods_ContainerViewInUICollectionView.framework */; };
 		DE0662172302CFC80044BEFF /* NSLayoutManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0662162302CFC80044BEFF /* NSLayoutManagerExtension.swift */; };
+		DE50A068231CD8B400A5B9D0 /* EssayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50A066231CD8B400A5B9D0 /* EssayCollectionViewCell.swift */; };
+		DE50A069231CD8B400A5B9D0 /* EssayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE50A067231CD8B400A5B9D0 /* EssayCollectionViewCell.xib */; };
 		DE54C88F22F5072000F777BD /* ArticleNavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54C88E22F5072000F777BD /* ArticleNavigationTitleView.swift */; };
 		DE54C89122F5073000F777BD /* ArticleNavigationTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE54C89022F5073000F777BD /* ArticleNavigationTitleView.xib */; };
 		DE6A056322FE845400085A9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6A056122FE845400085A9F /* Main.storyboard */; };
@@ -24,10 +26,10 @@
 		DE6A058022FEB21E00085A9F /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6A057F22FEB21E00085A9F /* StockViewController.swift */; };
 		DE6A05822301147000085A9F /* TabBarItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6A05812301147000085A9F /* TabBarItemType.swift */; };
 		DE6A058523012F9600085A9F /* BouncesTabContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6A058423012F9600085A9F /* BouncesTabContentView.swift */; };
-		DE7CFCA9230AE950003E2617 /* SafariCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7CFCA8230AE950003E2617 /* SafariCollectionViewLayout.swift */; };
+		DE7CFCA9230AE950003E2617 /* ExpandedFileBinderCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7CFCA8230AE950003E2617 /* ExpandedFileBinderCollectionViewLayout.swift */; };
 		DE958D5222F01BB900DB2C21 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE958D5022F01BB900DB2C21 /* Category.storyboard */; };
 		DE958D5422F01C1C00DB2C21 /* FoodCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE958D5322F01C1C00DB2C21 /* FoodCategoryViewController.swift */; };
-		DE95A8792312588E00546BD4 /* SelectedCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE95A8782312588E00546BD4 /* SelectedCollectionViewLayout.swift */; };
+		DE95A8792312588E00546BD4 /* IndexFileBinderCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE95A8782312588E00546BD4 /* IndexFileBinderCollectionViewLayout.swift */; };
 		DECBB5832307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBB5812307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.swift */; };
 		DECBB5842307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DECBB5822307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.xib */; };
 		DED26C9022D590FD00A36FB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED26C8F22D590FD00A36FB4 /* AppDelegate.swift */; };
@@ -70,6 +72,8 @@
 		8E10E8EB59913BD96948EFE6 /* Pods-ContainerViewInUICollectionView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContainerViewInUICollectionView.release.xcconfig"; path = "Target Support Files/Pods-ContainerViewInUICollectionView/Pods-ContainerViewInUICollectionView.release.xcconfig"; sourceTree = "<group>"; };
 		92957B7841B5368C74441FC5 /* Pods_ContainerViewInUICollectionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContainerViewInUICollectionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE0662162302CFC80044BEFF /* NSLayoutManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutManagerExtension.swift; sourceTree = "<group>"; };
+		DE50A066231CD8B400A5B9D0 /* EssayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssayCollectionViewCell.swift; sourceTree = "<group>"; };
+		DE50A067231CD8B400A5B9D0 /* EssayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EssayCollectionViewCell.xib; sourceTree = "<group>"; };
 		DE54C88E22F5072000F777BD /* ArticleNavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleNavigationTitleView.swift; sourceTree = "<group>"; };
 		DE54C89022F5073000F777BD /* ArticleNavigationTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleNavigationTitleView.xib; sourceTree = "<group>"; };
 		DE6A056222FE845400085A9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,10 +89,10 @@
 		DE6A057F22FEB21E00085A9F /* StockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewController.swift; sourceTree = "<group>"; };
 		DE6A05812301147000085A9F /* TabBarItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemType.swift; sourceTree = "<group>"; };
 		DE6A058423012F9600085A9F /* BouncesTabContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncesTabContentView.swift; sourceTree = "<group>"; };
-		DE7CFCA8230AE950003E2617 /* SafariCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariCollectionViewLayout.swift; sourceTree = "<group>"; };
+		DE7CFCA8230AE950003E2617 /* ExpandedFileBinderCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedFileBinderCollectionViewLayout.swift; sourceTree = "<group>"; };
 		DE958D5122F01BB900DB2C21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Category.storyboard; sourceTree = "<group>"; };
 		DE958D5322F01C1C00DB2C21 /* FoodCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategoryViewController.swift; sourceTree = "<group>"; };
-		DE95A8782312588E00546BD4 /* SelectedCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCollectionViewLayout.swift; sourceTree = "<group>"; };
+		DE95A8782312588E00546BD4 /* IndexFileBinderCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexFileBinderCollectionViewLayout.swift; sourceTree = "<group>"; };
 		DECBB5812307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPatternCollectionViewCell.swift; sourceTree = "<group>"; };
 		DECBB5822307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryPatternCollectionViewCell.xib; sourceTree = "<group>"; };
 		DED26C8C22D590FD00A36FB4 /* ContainerViewInUICollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContainerViewInUICollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +162,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DE50A065231CD89800A5B9D0 /* EssayCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DE50A066231CD8B400A5B9D0 /* EssayCollectionViewCell.swift */,
+				DE50A067231CD8B400A5B9D0 /* EssayCollectionViewCell.xib */,
+			);
+			path = EssayCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		DE54C88D22F5059900F777BD /* ArticleNavigationTitleView */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,11 +237,11 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		DE6A056D22FE9E5000085A9F /* ViewModel */ = {
+		DE6A056D22FE9E5000085A9F /* Redux */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = ViewModel;
+			path = Redux;
 			sourceTree = "<group>";
 		};
 		DE6A056E22FE9E5800085A9F /* Model */ = {
@@ -265,8 +278,8 @@
 		DE7CFCA7230AE93D003E2617 /* SafariCollectionViewLayout */ = {
 			isa = PBXGroup;
 			children = (
-				DE7CFCA8230AE950003E2617 /* SafariCollectionViewLayout.swift */,
-				DE95A8782312588E00546BD4 /* SelectedCollectionViewLayout.swift */,
+				DE7CFCA8230AE950003E2617 /* ExpandedFileBinderCollectionViewLayout.swift */,
+				DE95A8782312588E00546BD4 /* IndexFileBinderCollectionViewLayout.swift */,
 			);
 			path = SafariCollectionViewLayout;
 			sourceTree = "<group>";
@@ -341,7 +354,7 @@
 				DED26CBD22D5951900A36FB4 /* Storyboard */,
 				DED26CBF22D5953F00A36FB4 /* View */,
 				DED26CBE22D5952700A36FB4 /* ViewController */,
-				DE6A056D22FE9E5000085A9F /* ViewModel */,
+				DE6A056D22FE9E5000085A9F /* Redux */,
 			);
 			path = ContainerViewInUICollectionView;
 			sourceTree = "<group>";
@@ -394,6 +407,7 @@
 		DED26CBF22D5953F00A36FB4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DE50A065231CD89800A5B9D0 /* EssayCollectionViewCell */,
 				DECBB5862307CE1900F7D2CC /* CategoryPatternCollectionViewFooter */,
 				DECBB5852307CE0D00F7D2CC /* CategoryPatternCollectionViewHeader */,
 				DECBB5802307CD8100F7D2CC /* CategoryPatternCollectionViewCell */,
@@ -536,6 +550,7 @@
 				DE6A056322FE845400085A9F /* Main.storyboard in Resources */,
 				DE54C89122F5073000F777BD /* ArticleNavigationTitleView.xib in Resources */,
 				DE958D5222F01BB900DB2C21 /* Category.storyboard in Resources */,
+				DE50A069231CD8B400A5B9D0 /* EssayCollectionViewCell.xib in Resources */,
 				DECBB5842307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.xib in Resources */,
 				DE6A056722FE90C500085A9F /* TabBar.storyboard in Resources */,
 				DED26C9A22D5910500A36FB4 /* LaunchScreen.storyboard in Resources */,
@@ -617,14 +632,15 @@
 				DE958D5422F01C1C00DB2C21 /* FoodCategoryViewController.swift in Sources */,
 				DED26CD422D6553100A36FB4 /* UICollectionViewExtension.swift in Sources */,
 				DE6A057222FE9FFD00085A9F /* TravelCategoryViewController.swift in Sources */,
-				DE7CFCA9230AE950003E2617 /* SafariCollectionViewLayout.swift in Sources */,
+				DE7CFCA9230AE950003E2617 /* ExpandedFileBinderCollectionViewLayout.swift in Sources */,
 				DECBB5832307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.swift in Sources */,
 				DEDC0D232317E261009289C8 /* UIViewControllerExtension.swift in Sources */,
-				DE95A8792312588E00546BD4 /* SelectedCollectionViewLayout.swift in Sources */,
+				DE95A8792312588E00546BD4 /* IndexFileBinderCollectionViewLayout.swift in Sources */,
 				DE6A057522FEAB3300085A9F /* FashionCategoryViewController.swift in Sources */,
 				DED26CD622D6555300A36FB4 /* UITableViewExtension.swift in Sources */,
 				DEF791F422F01A7800CC866B /* CustomViewBase.swift in Sources */,
 				DE6A057022FE9F6200085A9F /* LandscapeCategoryViewController.swift in Sources */,
+				DE50A068231CD8B400A5B9D0 /* EssayCollectionViewCell.swift in Sources */,
 				DE54C88F22F5072000F777BD /* ArticleNavigationTitleView.swift in Sources */,
 				DED26CD222D654F600A36FB4 /* UIColorExtension.swift in Sources */,
 				DED26CD822D66D4000A36FB4 /* StoryboardInstantiatable.swift in Sources */,
