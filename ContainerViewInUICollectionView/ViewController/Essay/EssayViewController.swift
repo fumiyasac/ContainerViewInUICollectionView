@@ -10,35 +10,36 @@ import UIKit
 import WebKit
 
 final class EssayViewController: UIViewController {
-
-    @IBOutlet weak var collectionView: UICollectionView!
     
-    let exploreLayout = ExpandedFileBinderCollectionViewLayout()
-    let browsingLayout = IndexFileBinderCollectionViewLayout()
+    //
+    private let expandedFileBinderLayout = ExpandedFileBinderCollectionViewLayout()
+    private let indexFileBinderLayout = IndexFileBinderCollectionViewLayout()
+
+    //
+    private var shouldExpandCell = false
+
+    @IBOutlet weak private var collectionView: UICollectionView!
+
     let sitesData = ["https://www.google.com","https://www.apple.com","https://www.yahoo.com","https://www.bing.com","https://www.msn.com","https://www.cocoacontrols.com","https://www.github.com/AfrozZaheer","https://www.google.com" ]
 
-    var isSelected = false
-    
+    // MARK: - Override
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         collectionView.registerCustomCell(EssayCollectionViewCell.self)
-        collectionView.setCollectionViewLayout(browsingLayout, animated: true)
-        browsingLayout.height = (collectionView?.frame.size.height)!
-        browsingLayout.itemGap = 150
-        
-        
+        collectionView.setCollectionViewLayout(indexFileBinderLayout, animated: true)
+
+        indexFileBinderLayout.height = (collectionView?.frame.size.height)! * 1.0
+        indexFileBinderLayout.itemGap = 150
+
         collectionView.delegate = self
         collectionView.dataSource = self
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //collectionView.scrollToItem(at: IndexPath(item: sitesData.count - 1, section: 0), at: .bottom, animated: true)
+        //collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .bottom, animated: true)
     }
     
 }
@@ -48,6 +49,7 @@ extension EssayViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return sitesData.count
     }
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCustomCell(with: EssayCollectionViewCell.self, indexPath: indexPath)
 
@@ -74,13 +76,12 @@ extension EssayViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         DispatchQueue.main.async {
-            if self.isSelected == false {
-                collectionView.setCollectionViewLayout(self.exploreLayout, animated: true)
-                self.isSelected = true
-            }
-            else {
-                collectionView.setCollectionViewLayout(self.browsingLayout, animated: true)
-                self.isSelected = false
+            if self.shouldExpandCell == false {
+                collectionView.setCollectionViewLayout(self.expandedFileBinderLayout, animated: true)
+                self.shouldExpandCell = true
+            } else {
+                collectionView.setCollectionViewLayout(self.indexFileBinderLayout, animated: true)
+                self.shouldExpandCell = false
             }
         }
     }
@@ -89,23 +90,29 @@ extension EssayViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
 public extension DispatchQueue {
     
-    private static var _onceTracker = [String]()
-    
-    /**
-     Executes a block of code, associated with a unique token, only once.  The code is thread safe and will
-     only execute the code once even in the presence of multithreaded calls.
-     
-     - parameter token: A unique reverse DNS style name such as com.vectorform.<name> or a GUID
-     - parameter block: Block to execute once
-     */
-    class func once(token: String, block:()->Void) {
-        objc_sync_enter(self); defer { objc_sync_exit(self) }
-        
+    private static var _onceTracker: [String] = []
+
+    // 任意の処理を一度だけ実行するためのクラスメソッド
+    class func once(token: String, block: () -> Void) {
+
+        // 排他処理用ロックの開始
+        objc_sync_enter(self)
+
+        // deferで途中で処理が中断
+        defer {
+            // 排他処理用ロックの解除
+            objc_sync_exit(self)
+        }
+
+        // 第1引数で指定したトークンが存在したら以降の処理を実行しない
         if _onceTracker.contains(token) {
             return
         }
-        
+
+        // 第1引数で指定したトークンを内部変数へセットする
         _onceTracker.append(token)
+
+        // 第2引数で排他処理用ロックをかけて実行する処理を書く
         block()
     }
 }

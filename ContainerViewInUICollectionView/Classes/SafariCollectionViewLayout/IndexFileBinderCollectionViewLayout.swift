@@ -24,7 +24,7 @@ class IndexFileBinderCollectionViewLayout: UICollectionViewLayout {
         if collectionView?.numberOfSections != 1 {
             return
         }
-        //itemGap = CGFloat(roundf(Float(self.collectionView!.frame.size.height*0.1)))
+        //itemGap = CGFloat(roundf(Float(self.collectionView!.frame.size.height * 0.06)))
         
         var top = CGFloat(0.0)
         let left = CGFloat(0.0)
@@ -42,23 +42,23 @@ class IndexFileBinderCollectionViewLayout: UICollectionViewLayout {
             attribute.frame = frame
             attribute.zIndex = item
             
-            angleOfRotation = CGFloat(-30.0)
+            angleOfRotation = CGFloat(-45.0)
             
             var frameOffset = Float((self.collectionView?.contentOffset.y)! - frame.origin.y) - floorf(Float(self.collectionView!.frame.size.height/10.0))
             
             if frameOffset > 0 {
                 frameOffset = frameOffset/5.0
-                frameOffset = min(frameOffset, 30.0)
+                frameOffset = min(frameOffset, 45.0)
                 angleOfRotation += CGFloat(frameOffset)
             }
             
             let rotation = CATransform3DMakeRotation((CGFloat.pi*angleOfRotation/180.0), 1.0, 0.0, 0.0)
             
-            let depth = CGFloat(250.0)
+            let depth = CGFloat(360.0)
             let translateDown = CATransform3DMakeTranslation(0.0, 0.0, -depth)
             let translateUp = CATransform3DMakeTranslation(0.0, 0.0, depth)
             var scale = CATransform3DIdentity
-            scale.m34 = -1.0/1500.0
+            scale.m34 = -1.0/900.0
             let perspective =  CATransform3DConcat(CATransform3DConcat(translateDown, scale), translateUp)
             let  transform = CATransform3DConcat(rotation, perspective)
             
