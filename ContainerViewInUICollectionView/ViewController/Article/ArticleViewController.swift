@@ -124,7 +124,7 @@ extension ArticleViewController: UICollectionViewDataSource {
         cell.setCell(viewControllerInfo)
 
         // MEMO: セルへ適用した後に再び詰め直しを図る
-        displayViewControllerSet[indexPath.row] = selectedSet
+        //displayViewControllerSet[indexPath.row] = selectedSet
 
         return cell
     }

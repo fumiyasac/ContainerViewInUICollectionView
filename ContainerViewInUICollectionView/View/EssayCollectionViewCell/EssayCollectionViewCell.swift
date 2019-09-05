@@ -7,17 +7,35 @@
 //
 
 import UIKit
-import WebKit
 
-class EssayCollectionViewCell: UICollectionViewCell {
-
-    @IBOutlet weak var webView: UIWebView!
-    @IBOutlet weak var bgView: UIView!
+final class EssayCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        webView.isUserInteractionEnabled = false
+
+        setupEssayCollectionViewCell()
     }
 
+    // MARK: - Function
+    
+    func setDecoration(shouldDisplayBorder: Bool = true) {
+
+        // UICollectionViewのcontentViewプロパティには罫線と角丸に関する設定を行う
+        if shouldDisplayBorder {
+            self.contentView.layer.borderColor = UIColor(code: "#cccccc").cgColor
+        } else {
+            self.contentView.layer.borderColor = UIColor.white.cgColor
+        }
+    }
+
+    // MARK: - Private Function
+
+    // NavigationTitleにはめ込むView要素の初期設定を行う
+    private func setupEssayCollectionViewCell() {
+
+        // UICollectionViewのcontentViewプロパティには罫線と角丸に関する設定を行う
+        self.contentView.layer.masksToBounds = true
+        self.contentView.layer.borderWidth = 1.0
+        self.contentView.layer.borderColor = UIColor(code: "#cccccc").cgColor
+    }
 }

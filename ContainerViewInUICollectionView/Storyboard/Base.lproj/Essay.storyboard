@@ -36,7 +36,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgN-f5-dl0">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="obe-RF-hqW">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -51,7 +51,7 @@
                             <constraint firstItem="dgN-f5-dl0" firstAttribute="top" secondItem="GJy-Le-mLo" secondAttribute="top" id="3RP-RK-K1E"/>
                             <constraint firstItem="dgN-f5-dl0" firstAttribute="leading" secondItem="GJy-Le-mLo" secondAttribute="leading" id="5gy-x0-cPF"/>
                             <constraint firstAttribute="trailing" secondItem="dgN-f5-dl0" secondAttribute="trailing" id="NmL-OK-V7o"/>
-                            <constraint firstAttribute="bottom" secondItem="dgN-f5-dl0" secondAttribute="bottom" id="gph-HF-pMi"/>
+                            <constraint firstItem="GJy-Le-mLo" firstAttribute="bottom" secondItem="dgN-f5-dl0" secondAttribute="bottom" id="gph-HF-pMi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GJy-Le-mLo"/>
                     </view>

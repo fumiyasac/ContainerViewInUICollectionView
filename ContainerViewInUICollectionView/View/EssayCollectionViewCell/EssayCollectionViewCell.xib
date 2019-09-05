@@ -19,35 +19,19 @@
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sDt-gY-fwU">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3IV-51-df1">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a7A-MF-xWR">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="a7A-MF-xWR" firstAttribute="top" secondItem="sDt-gY-fwU" secondAttribute="top" id="6gL-gV-qBa"/>
-                            <constraint firstItem="a7A-MF-xWR" firstAttribute="leading" secondItem="sDt-gY-fwU" secondAttribute="leading" id="G3e-oQ-ihX"/>
-                            <constraint firstAttribute="trailing" secondItem="a7A-MF-xWR" secondAttribute="trailing" id="bid-hS-EEG"/>
-                            <constraint firstAttribute="bottom" secondItem="a7A-MF-xWR" secondAttribute="bottom" id="dXT-PG-cla"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="sDt-gY-fwU" secondAttribute="trailing" id="WoI-4v-fDw"/>
-                <constraint firstAttribute="bottom" secondItem="sDt-gY-fwU" secondAttribute="bottom" id="d6a-EU-vht"/>
-                <constraint firstItem="sDt-gY-fwU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="jF1-kb-UAx"/>
-                <constraint firstItem="sDt-gY-fwU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="tjp-d2-05Q"/>
+                <constraint firstItem="3IV-51-df1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="DPI-6k-MUy"/>
+                <constraint firstItem="3IV-51-df1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="IE3-Ym-Z6z"/>
+                <constraint firstAttribute="bottom" secondItem="3IV-51-df1" secondAttribute="bottom" id="jKZ-ay-nIi"/>
+                <constraint firstAttribute="trailing" secondItem="3IV-51-df1" secondAttribute="trailing" id="kQt-jb-Apx"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <connections>
-                <outlet property="bgView" destination="sDt-gY-fwU" id="A6B-dU-hW2"/>
-                <outlet property="webView" destination="a7A-MF-xWR" id="T54-Ta-df9"/>
-            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="95.758928571428569"/>
         </collectionViewCell>
     </objects>

@@ -46,7 +46,7 @@
                         <constraint firstAttribute="height" constant="24" id="SZ7-2d-8cU"/>
                     </constraints>
                     <color key="pageIndicatorTintColor" red="0.80784313730000001" green="0.80784313730000001" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <color key="currentPageIndicatorTintColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                    <color key="currentPageIndicatorTintColor" red="1" green="0.66666666666666663" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </pageControl>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -13,6 +13,7 @@
 		DE50A069231CD8B400A5B9D0 /* EssayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE50A067231CD8B400A5B9D0 /* EssayCollectionViewCell.xib */; };
 		DE54C88F22F5072000F777BD /* ArticleNavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54C88E22F5072000F777BD /* ArticleNavigationTitleView.swift */; };
 		DE54C89122F5073000F777BD /* ArticleNavigationTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE54C89022F5073000F777BD /* ArticleNavigationTitleView.xib */; };
+		DE5C5891231EB8210007D2CA /* DispatchQueueExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C5890231EB8210007D2CA /* DispatchQueueExtension.swift */; };
 		DE6A056322FE845400085A9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6A056122FE845400085A9F /* Main.storyboard */; };
 		DE6A056722FE90C500085A9F /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6A056522FE90C500085A9F /* TabBar.storyboard */; };
 		DE6A056A22FE915A00085A9F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6A056922FE915A00085A9F /* TabBarController.swift */; };
@@ -76,6 +77,7 @@
 		DE50A067231CD8B400A5B9D0 /* EssayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EssayCollectionViewCell.xib; sourceTree = "<group>"; };
 		DE54C88E22F5072000F777BD /* ArticleNavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleNavigationTitleView.swift; sourceTree = "<group>"; };
 		DE54C89022F5073000F777BD /* ArticleNavigationTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleNavigationTitleView.xib; sourceTree = "<group>"; };
+		DE5C5890231EB8210007D2CA /* DispatchQueueExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueExtension.swift; sourceTree = "<group>"; };
 		DE6A056222FE845400085A9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE6A056622FE90C500085A9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TabBar.storyboard; sourceTree = "<group>"; };
 		DE6A056922FE915A00085A9F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -436,6 +438,7 @@
 				DED26CD122D654F600A36FB4 /* UIColorExtension.swift */,
 				DED26CD522D6555300A36FB4 /* UITableViewExtension.swift */,
 				DEDC0D222317E261009289C8 /* UIViewControllerExtension.swift */,
+				DE5C5890231EB8210007D2CA /* DispatchQueueExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 				DEF791F422F01A7800CC866B /* CustomViewBase.swift in Sources */,
 				DE6A057022FE9F6200085A9F /* LandscapeCategoryViewController.swift in Sources */,
 				DE50A068231CD8B400A5B9D0 /* EssayCollectionViewCell.swift in Sources */,
+				DE5C5891231EB8210007D2CA /* DispatchQueueExtension.swift in Sources */,
 				DE54C88F22F5072000F777BD /* ArticleNavigationTitleView.swift in Sources */,
 				DED26CD222D654F600A36FB4 /* UIColorExtension.swift in Sources */,
 				DED26CD822D66D4000A36FB4 /* StoryboardInstantiatable.swift in Sources */,
