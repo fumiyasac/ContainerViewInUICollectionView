@@ -17,8 +17,7 @@ target 'ContainerViewInUICollectionView' do
 
   # 3. UI表現の際に利用するライブラリ
   pod 'AnimatedCollectionViewLayout'
-  pod 'Tabman'
-  pod 'MXParallaxHeader'
+  pod 'Parchment'
   pod 'Blueprints'
   pod 'SPStorkController'
   pod 'ESTabBarController-swift'
