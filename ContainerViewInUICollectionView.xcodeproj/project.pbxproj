@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3E937583FAE6BA5CBF0C410B /* Pods_ContainerViewInUICollectionView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92957B7841B5368C74441FC5 /* Pods_ContainerViewInUICollectionView.framework */; };
-		DE0662172302CFC80044BEFF /* NSLayoutManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0662162302CFC80044BEFF /* NSLayoutManagerExtension.swift */; };
 		DE50A068231CD8B400A5B9D0 /* EssayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50A066231CD8B400A5B9D0 /* EssayCollectionViewCell.swift */; };
 		DE50A069231CD8B400A5B9D0 /* EssayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE50A067231CD8B400A5B9D0 /* EssayCollectionViewCell.xib */; };
 		DE54C88F22F5072000F777BD /* ArticleNavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54C88E22F5072000F777BD /* ArticleNavigationTitleView.swift */; };
@@ -72,7 +71,6 @@
 		451E04959B98FB5133B40B39 /* Pods-ContainerViewInUICollectionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContainerViewInUICollectionView.debug.xcconfig"; path = "Target Support Files/Pods-ContainerViewInUICollectionView/Pods-ContainerViewInUICollectionView.debug.xcconfig"; sourceTree = "<group>"; };
 		8E10E8EB59913BD96948EFE6 /* Pods-ContainerViewInUICollectionView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContainerViewInUICollectionView.release.xcconfig"; path = "Target Support Files/Pods-ContainerViewInUICollectionView/Pods-ContainerViewInUICollectionView.release.xcconfig"; sourceTree = "<group>"; };
 		92957B7841B5368C74441FC5 /* Pods_ContainerViewInUICollectionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContainerViewInUICollectionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE0662162302CFC80044BEFF /* NSLayoutManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutManagerExtension.swift; sourceTree = "<group>"; };
 		DE50A066231CD8B400A5B9D0 /* EssayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssayCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE50A067231CD8B400A5B9D0 /* EssayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EssayCollectionViewCell.xib; sourceTree = "<group>"; };
 		DE54C88E22F5072000F777BD /* ArticleNavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleNavigationTitleView.swift; sourceTree = "<group>"; };
@@ -431,7 +429,6 @@
 		DED26CCA22D5980400A36FB4 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				DE0662162302CFC80044BEFF /* NSLayoutManagerExtension.swift */,
 				DED26CCF22D654C600A36FB4 /* NSObjectProtocolExtension.swift */,
 				DED26CD722D66D4000A36FB4 /* StoryboardInstantiatable.swift */,
 				DED26CD322D6553100A36FB4 /* UICollectionViewExtension.swift */,
@@ -652,7 +649,6 @@
 				DED26C9022D590FD00A36FB4 /* AppDelegate.swift in Sources */,
 				DE6A057A22FEAE7200085A9F /* EssayViewController.swift in Sources */,
 				DE6A058523012F9600085A9F /* BouncesTabContentView.swift in Sources */,
-				DE0662172302CFC80044BEFF /* NSLayoutManagerExtension.swift in Sources */,
 				DE6A05822301147000085A9F /* TabBarItemType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

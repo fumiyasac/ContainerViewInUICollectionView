@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+// Safari風な表示において一覧表示状態時におけるUICollectionViewLayoutを継承したクラス
+// MEMO: 下記リポジトリで紹介されているコードを参考に再実装をしてみました。
+// https://github.com/AfrozZaheer/AZSafariCollectionViewLayout
+
 final class IndexFileBinderCollectionViewLayout: UICollectionViewLayout {
 
     private let angleOfLotationLimit: Float = 45.0

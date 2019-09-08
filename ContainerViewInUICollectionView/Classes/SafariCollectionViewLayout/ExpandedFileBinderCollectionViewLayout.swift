@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+// Safari風な表示において展開状態時におけるUICollectionViewLayoutを継承したクラス
+// MEMO: 下記リポジトリで紹介されているコードを参考に再実装をしてみました。
+// https://github.com/AfrozZaheer/AZSafariCollectionViewLayout
+
 final class ExpandedFileBinderCollectionViewLayout: UICollectionViewLayout {
 
     private let initialAngleOfLotationLimit: Float = 0.0
