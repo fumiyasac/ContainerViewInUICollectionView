@@ -19,7 +19,6 @@ enum TabBarItemType: CaseIterable {
     case main
     case article
     case essay
-    case stock
 
     // MARK: - Function
 
@@ -33,8 +32,6 @@ enum TabBarItemType: CaseIterable {
             storyboardName = "Article"
         case .essay:
             storyboardName = "Essay"
-        case .stock:
-            storyboardName = "Stock"
         }
         return UIStoryboard(name: storyboardName, bundle: nil).instantiateInitialViewController()
     }
@@ -48,8 +45,6 @@ enum TabBarItemType: CaseIterable {
             return 1
         case .essay:
             return 2
-        case .stock:
-            return 3
         }
     }
 
@@ -62,8 +57,6 @@ enum TabBarItemType: CaseIterable {
             return "記事サンプル一覧"
         case .essay:
             return "エッセイサンプル一覧"
-        case .stock:
-            return "お気に入り一覧"
         }
     }
 
@@ -83,9 +76,6 @@ enum TabBarItemType: CaseIterable {
         case .essay:
             let icon = UIImage.fontAwesomeIcon(name: .bookOpen, style: .solid, textColor: normalColor, size: itemSize)
             return ESTabBarItem.init(BouncesTabContentView(), title: "ESSAY", image: icon, selectedImage: icon)
-        case .stock:
-            let icon = UIImage.fontAwesomeIcon(name: .boxOpen, style: .solid, textColor: normalColor, size: itemSize)
-            return ESTabBarItem.init(BouncesTabContentView(), title: "STOCK", image: icon, selectedImage: icon)
         }
     }
 }

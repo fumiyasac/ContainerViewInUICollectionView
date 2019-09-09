@@ -30,7 +30,7 @@ final class TabBarController: ESTabBarController {
         self.delegate = self
 
         // 初期設定として空のUIViewControllerのインスタンスを追加する
-        self.viewControllers = [UIViewController(), UIViewController(), UIViewController(), UIViewController()]
+        self.viewControllers = [UIViewController(), UIViewController(), UIViewController()]
     }
 
     // TabBarControllerで表示したい画面に関する設定処理
