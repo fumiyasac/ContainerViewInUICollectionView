@@ -1,29 +1,11 @@
 PODS:
-  - Alamofire (4.8.2)
   - AnimatedCollectionViewLayout (0.6.0)
   - Blueprints (0.11.3)
   - ESTabBarController-swift (2.7)
   - FontAwesome.swift (1.7.1)
-  - Moya (13.0.1):
-    - Moya/Core (= 13.0.1)
-  - Moya/Core (13.0.1):
-    - Alamofire (~> 4.1)
-    - Result (~> 4.1)
   - Nuke (7.6.3)
   - Parchment (1.6.0)
-  - Pastel (0.6.0)
-  - Realm (3.17.0):
-    - Realm/Headers (= 3.17.0)
-  - Realm/Headers (3.17.0)
-  - RealmSwift (3.17.0):
-    - Realm (= 3.17.0)
-  - Result (4.1.0)
-  - ReSwift (5.0.0)
-  - RxSwift (5.0.0)
-  - SPStorkController (1.6.9)
   - SwiftyAttributes (5.1.1)
-  - SwiftyMarkdown (0.6.0)
-  - SwipeCellKit (2.6.0)
   - TransitionableTab (0.2.0)
 
 DEPENDENCIES:
@@ -31,62 +13,32 @@ DEPENDENCIES:
   - Blueprints
   - ESTabBarController-swift
   - FontAwesome.swift
-  - Moya
   - Nuke
   - Parchment
-  - Pastel
-  - RealmSwift
-  - ReSwift
-  - RxSwift
-  - SPStorkController
   - SwiftyAttributes
-  - SwiftyMarkdown
-  - SwipeCellKit
   - TransitionableTab
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Alamofire
     - AnimatedCollectionViewLayout
     - Blueprints
     - ESTabBarController-swift
     - FontAwesome.swift
-    - Moya
     - Nuke
     - Parchment
-    - Pastel
-    - Realm
-    - RealmSwift
-    - Result
-    - ReSwift
-    - RxSwift
-    - SPStorkController
     - SwiftyAttributes
-    - SwiftyMarkdown
-    - SwipeCellKit
     - TransitionableTab
 
 SPEC CHECKSUMS:
-  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AnimatedCollectionViewLayout: f2c4e8dda4e3f1678ad6c0b39273a31b19bc935d
   Blueprints: 65eb7d69c2c60721a28fade0b7e10b0588e4e96d
   ESTabBarController-swift: 4fb52ad03d94d0717ef97bc9eb09a5abfdded0a2
   FontAwesome.swift: 8d9792fa2d2347055da35bd97752b3960bd75952
-  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Nuke: 44130e95e09463f8773ae4b96b90de1eba6b3350
   Parchment: d3a7b367c529fa6ef51aa43f5717a7ff36d4b1f5
-  Pastel: 814f081efbe2859c37e65ee44f396e6e5be88619
-  Realm: b30db41ff34fc858ffc25ba8d44a82c164e7ccd0
-  RealmSwift: fe733e459d60dc7b6971d4cbee2eb4854097d12c
-  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  ReSwift: 628f1a9b3ee52e3b3ca2a644435472fd77afafe1
-  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
-  SPStorkController: 5648a8dd356ea26493001706d4150e46cb672d69
   SwiftyAttributes: e3e13891ddac3c62b3d7798d5c3969cea88e62bb
-  SwiftyMarkdown: 698fe6b283dddac69747f4e08ed0d067c18e0356
-  SwipeCellKit: 935ca28c187ec6e1ffb2b578cf8ddca842bfdcbb
   TransitionableTab: 54a5d0af475033bdb83959fde4e5d6201af7e2ab
 
-PODFILE CHECKSUM: c01dc8b5f9bb605e15707580c846d78bdef89260
+PODFILE CHECKSUM: 93f718c751ed413efe2bc36618a7f683c5e04d91
 
 COCOAPODS: 1.7.5
