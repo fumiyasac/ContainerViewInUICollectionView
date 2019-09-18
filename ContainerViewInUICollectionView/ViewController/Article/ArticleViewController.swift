@@ -124,7 +124,7 @@ extension ArticleViewController: UICollectionViewDataSource {
         cell.setCell(viewControllerInfo)
 
         // MEMO: セルへ適用した後に再び詰め直しを図る
-        //displayViewControllerSet[indexPath.row] = selectedSet
+        displayViewControllerSet[indexPath.row] = selectedSet
 
         return cell
     }
@@ -143,8 +143,7 @@ extension ArticleViewController: UICollectionViewDelegateFlowLayout {
         // MEMO: コンテンツを表示するためのセル高さ = 画面の高さ - ステータスバーの高さ
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
         let navigationBarHeight = self.navigationController?.navigationBar.frame.height ?? 0
-        let tabBarHeight = self.tabBarController?.tabBar.frame.size.height ?? 0
-        let cellHeight = UIScreen.main.bounds.height - statusBarHeight - navigationBarHeight - tabBarHeight
+        let cellHeight = UIScreen.main.bounds.height - statusBarHeight - navigationBarHeight
 
         return CGSize(width: cellWidth, height: cellHeight)
     }

@@ -15,9 +15,6 @@ target 'ContainerViewInUICollectionView' do
   pod 'AnimatedCollectionViewLayout'
   pod 'Parchment'
   pod 'Blueprints'
-  pod 'ESTabBarController-swift'
-  pod 'FontAwesome.swift'
-  pod 'TransitionableTab'
 
   # 4. テキスト処理の取り扱いに関するライブラリ
   pod 'SwiftyAttributes'
