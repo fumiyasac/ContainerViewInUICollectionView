@@ -32,7 +32,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="ghA-sD-QQF" firstAttribute="leading" secondItem="2C4-Ko-kN1" secondAttribute="leading" id="0Ef-6r-JQ2"/>
-                            <constraint firstItem="ghA-sD-QQF" firstAttribute="bottom" secondItem="2C4-Ko-kN1" secondAttribute="bottom" id="Jui-OX-dZG"/>
+                            <constraint firstItem="ghA-sD-QQF" firstAttribute="bottom" secondItem="OPG-RS-wFS" secondAttribute="bottom" id="Jui-OX-dZG"/>
                             <constraint firstItem="ghA-sD-QQF" firstAttribute="top" secondItem="OPG-RS-wFS" secondAttribute="top" id="aBw-Oc-8cT"/>
                             <constraint firstItem="ghA-sD-QQF" firstAttribute="trailing" secondItem="2C4-Ko-kN1" secondAttribute="trailing" id="m3D-Sa-yW0"/>
                         </constraints>
@@ -70,7 +70,7 @@
                             <constraint firstItem="ZTS-LY-eHS" firstAttribute="top" secondItem="pwg-mW-R8O" secondAttribute="top" id="Xnf-77-gPd"/>
                             <constraint firstAttribute="trailing" secondItem="ZTS-LY-eHS" secondAttribute="trailing" id="jBf-ur-uoO"/>
                             <constraint firstItem="ZTS-LY-eHS" firstAttribute="leading" secondItem="aX5-fz-Mnh" secondAttribute="leading" id="mDz-j2-gbT"/>
-                            <constraint firstAttribute="bottom" secondItem="ZTS-LY-eHS" secondAttribute="bottom" id="x0t-a4-qUH"/>
+                            <constraint firstItem="ZTS-LY-eHS" firstAttribute="bottom" secondItem="pwg-mW-R8O" secondAttribute="bottom" id="x0t-a4-qUH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aX5-fz-Mnh"/>
                     </view>
@@ -106,7 +106,7 @@
                             <constraint firstItem="hsy-Bb-P1d" firstAttribute="trailing" secondItem="Ag8-gd-Rpx" secondAttribute="trailing" id="0Ww-A9-0kl"/>
                             <constraint firstItem="Ag8-gd-Rpx" firstAttribute="leading" secondItem="we6-6j-a0n" secondAttribute="leading" id="BBC-VN-KF5"/>
                             <constraint firstItem="Ag8-gd-Rpx" firstAttribute="top" secondItem="we6-6j-a0n" secondAttribute="top" id="Huk-ta-Vqb"/>
-                            <constraint firstItem="hsy-Bb-P1d" firstAttribute="bottom" secondItem="Ag8-gd-Rpx" secondAttribute="bottom" id="Ie1-ma-m1o"/>
+                            <constraint firstItem="Ag8-gd-Rpx" firstAttribute="bottom" secondItem="we6-6j-a0n" secondAttribute="bottom" id="Ie1-ma-m1o"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hsy-Bb-P1d"/>
                     </view>
@@ -116,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EBQ-Up-s11" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1343" y="83"/>
+            <point key="canvasLocation" x="1341.5999999999999" y="82.3088455772114"/>
         </scene>
         <!--Fashion Category View Controller-->
         <scene sceneID="MGC-O9-fEf">
@@ -140,7 +140,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="z1y-SL-ekg" firstAttribute="leading" secondItem="3ZU-uG-bDJ" secondAttribute="leading" id="Af3-t0-Fym"/>
-                            <constraint firstItem="3ZU-uG-bDJ" firstAttribute="bottom" secondItem="z1y-SL-ekg" secondAttribute="bottom" id="DJW-T8-WMO"/>
+                            <constraint firstItem="z1y-SL-ekg" firstAttribute="bottom" secondItem="bHv-bX-t9Y" secondAttribute="bottom" id="DJW-T8-WMO"/>
                             <constraint firstItem="z1y-SL-ekg" firstAttribute="top" secondItem="bHv-bX-t9Y" secondAttribute="top" id="W5A-4X-TW0"/>
                             <constraint firstAttribute="trailing" secondItem="z1y-SL-ekg" secondAttribute="trailing" id="bel-n4-p3x"/>
                         </constraints>
