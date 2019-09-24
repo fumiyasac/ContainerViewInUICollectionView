@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8FP-J4-Vcb">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Detail View Controller-->
+        <scene sceneID="j1e-da-KQu">
+            <objects>
+                <viewController id="szs-c6-HUg" customClass="DetailViewController" customModule="ContainerViewInUICollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9ZG-1C-0ht">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJC-38-ohU">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wJC-38-ohU" firstAttribute="leading" secondItem="8kA-vR-Wzj" secondAttribute="leading" id="Eqr-7Z-6qD"/>
+                            <constraint firstItem="wJC-38-ohU" firstAttribute="trailing" secondItem="8kA-vR-Wzj" secondAttribute="trailing" id="IFF-c6-8ES"/>
+                            <constraint firstItem="wJC-38-ohU" firstAttribute="bottom" secondItem="8kA-vR-Wzj" secondAttribute="bottom" id="qrE-cg-gdV"/>
+                            <constraint firstItem="wJC-38-ohU" firstAttribute="top" secondItem="8kA-vR-Wzj" secondAttribute="top" id="xt3-PT-xuk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8kA-vR-Wzj"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LKo-sW-KjF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2bG-VU-hfM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-247.19999999999999" y="-98.50074962518741"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JEf-M6-giN">
+            <objects>
+                <navigationController id="8FP-J4-Vcb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WlO-KN-zWh">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="szs-c6-HUg" kind="relationship" relationship="rootViewController" id="Smh-0O-9bD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hMt-j7-ikB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-977" y="-97"/>
+        </scene>
+    </scenes>
+</document>

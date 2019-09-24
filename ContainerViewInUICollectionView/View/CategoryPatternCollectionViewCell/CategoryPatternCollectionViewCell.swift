@@ -10,6 +10,8 @@ import UIKit
 
 final class CategoryPatternCollectionViewCell: UICollectionViewCell {
 
+    // MARK: - Override
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
