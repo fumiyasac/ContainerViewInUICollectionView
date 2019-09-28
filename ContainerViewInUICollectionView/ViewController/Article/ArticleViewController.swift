@@ -22,7 +22,7 @@ final class ArticleViewController: UIViewController {
 
     // MARK: - Typealias
 
-    typealias DisplayViewControllerSet = (title: String, viewController: UIViewController)
+    typealias DisplayViewControllerSet = (title: String, viewController: CategoryViewController)
 
     // MARK: - Override
 
@@ -39,10 +39,18 @@ final class ArticleViewController: UIViewController {
 
         // UICollectionViewCell内に表示するUIViewControllerの設定
         displayViewControllerSet = [
-           FoodCategoryViewController.make(),
-           LandscapeCategoryViewController.make(),
-           TravelCategoryViewController.make(),
-           FashionCategoryViewController.make()
+            CategoryViewController.make(with:
+                (title: "Contents Title of Meals (1)", layoutPattern: MosaicCollectionViewLayoutPattern.first.getLayoutPattern())
+            ),
+            CategoryViewController.make(with:
+                (title: "Contents Title of Meals (2)", layoutPattern: MosaicCollectionViewLayoutPattern.second.getLayoutPattern())
+            ),
+            CategoryViewController.make(with:
+                (title: "Contents Title of Meals (3)", layoutPattern: MosaicCollectionViewLayoutPattern.third.getLayoutPattern())
+            ),
+            CategoryViewController.make(with:
+                (title: "Contents Title of Meals (4)", layoutPattern: MosaicCollectionViewLayoutPattern.fourth.getLayoutPattern())
+            ),
         ]
 
         // タイトル表示部分の初期設定と初期表示を行う
@@ -52,7 +60,6 @@ final class ArticleViewController: UIViewController {
             cellIndex: 0
         )
         titleView.setCurrentDisplayTitleInformation(initialTitleInfo)
-
     }
 
     private func setupGalleryCollectionView() {

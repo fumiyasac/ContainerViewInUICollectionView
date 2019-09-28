@@ -44,11 +44,17 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7R-Fa-Wyi">
+                                <rect key="frame" x="0.0" y="0.0" width="160" height="240"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="f7R-Fa-Wyi" firstAttribute="leading" secondItem="UJt-un-F46" secondAttribute="leading" id="79A-Ph-c0h"/>
                             <constraint firstItem="GV4-Xg-y32" firstAttribute="top" secondItem="wXe-hB-WXu" secondAttribute="bottom" constant="8" id="7xO-Y8-kS1"/>
+                            <constraint firstAttribute="trailing" secondItem="f7R-Fa-Wyi" secondAttribute="trailing" id="Cvb-Mv-W5F"/>
                             <constraint firstItem="K2A-gl-mUK" firstAttribute="top" secondItem="GV4-Xg-y32" secondAttribute="bottom" constant="8" id="abl-SC-0pv"/>
+                            <constraint firstAttribute="bottom" secondItem="f7R-Fa-Wyi" secondAttribute="bottom" id="c2e-As-hXc"/>
                             <constraint firstAttribute="trailing" secondItem="GV4-Xg-y32" secondAttribute="trailing" constant="8" id="dL7-RX-EKo"/>
                             <constraint firstItem="wXe-hB-WXu" firstAttribute="leading" secondItem="UJt-un-F46" secondAttribute="leading" constant="8" id="eja-Aw-kuM"/>
                             <constraint firstItem="D0a-ja-zgo" firstAttribute="leading" secondItem="UJt-un-F46" secondAttribute="leading" id="gkT-2J-OBc"/>
@@ -56,6 +62,7 @@
                             <constraint firstItem="GV4-Xg-y32" firstAttribute="leading" secondItem="UJt-un-F46" secondAttribute="leading" constant="8" id="iOT-4d-2iH"/>
                             <constraint firstAttribute="trailing" secondItem="D0a-ja-zgo" secondAttribute="trailing" id="jL3-mV-Rnz"/>
                             <constraint firstItem="K2A-gl-mUK" firstAttribute="leading" secondItem="UJt-un-F46" secondAttribute="leading" constant="8" id="nIv-hh-ASQ"/>
+                            <constraint firstItem="f7R-Fa-Wyi" firstAttribute="top" secondItem="UJt-un-F46" secondAttribute="top" id="pAT-Wi-cLn"/>
                             <constraint firstItem="D0a-ja-zgo" firstAttribute="top" secondItem="UJt-un-F46" secondAttribute="top" id="sA4-Jf-p90"/>
                             <constraint firstAttribute="bottom" secondItem="K2A-gl-mUK" secondAttribute="bottom" constant="12" id="xE6-xX-bvi"/>
                             <constraint firstAttribute="trailing" secondItem="K2A-gl-mUK" secondAttribute="trailing" constant="8" id="xG8-x9-mD6"/>
@@ -70,6 +77,10 @@
                 <constraint firstItem="UJt-un-F46" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qAj-cR-rtE"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="cellButton" destination="f7R-Fa-Wyi" id="Fyh-91-Oik"/>
+                <outlet property="thumbnailImageView" destination="D0a-ja-zgo" id="xp2-vs-XLh"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="91.741071428571431"/>
         </collectionViewCell>
     </objects>

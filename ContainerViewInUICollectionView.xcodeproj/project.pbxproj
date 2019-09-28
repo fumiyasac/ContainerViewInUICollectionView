@@ -10,16 +10,15 @@
 		3E937583FAE6BA5CBF0C410B /* Pods_ContainerViewInUICollectionView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92957B7841B5368C74441FC5 /* Pods_ContainerViewInUICollectionView.framework */; };
 		DE54C88F22F5072000F777BD /* ArticleNavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54C88E22F5072000F777BD /* ArticleNavigationTitleView.swift */; };
 		DE54C89122F5073000F777BD /* ArticleNavigationTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE54C89022F5073000F777BD /* ArticleNavigationTitleView.xib */; };
-		DE6A057022FE9F6200085A9F /* LandscapeCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6A056F22FE9F6200085A9F /* LandscapeCategoryViewController.swift */; };
-		DE6A057222FE9FFD00085A9F /* TravelCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6A057122FE9FFD00085A9F /* TravelCategoryViewController.swift */; };
-		DE6A057522FEAB3300085A9F /* FashionCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6A057422FEAB3300085A9F /* FashionCategoryViewController.swift */; };
 		DE6FBB0F2331FD7C00C9E806 /* UILabelDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6FBB0E2331FD7C00C9E806 /* UILabelDecorator.swift */; };
 		DE958D5222F01BB900DB2C21 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE958D5022F01BB900DB2C21 /* Category.storyboard */; };
-		DE958D5422F01C1C00DB2C21 /* FoodCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE958D5322F01C1C00DB2C21 /* FoodCategoryViewController.swift */; };
+		DE958D5422F01C1C00DB2C21 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE958D5322F01C1C00DB2C21 /* CategoryViewController.swift */; };
 		DEB07BD02335EB630046005F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB07BCF2335EB630046005F /* DetailViewController.swift */; };
 		DEB07BD32335ECB10046005F /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB07BD12335ECB10046005F /* Detail.storyboard */; };
 		DECBB5832307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBB5812307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.swift */; };
 		DECBB5842307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DECBB5822307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.xib */; };
+		DECE4BE6233F231D00EADC5D /* MosaicCollectionViewLayoutPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECE4BE5233F231D00EADC5D /* MosaicCollectionViewLayoutPattern.swift */; };
+		DED01B6C233C946400900AED /* DetailTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED01B6B233C946400900AED /* DetailTransition.swift */; };
 		DED26C9022D590FD00A36FB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED26C8F22D590FD00A36FB4 /* AppDelegate.swift */; };
 		DED26C9222D590FD00A36FB4 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED26C9122D590FD00A36FB4 /* ArticleViewController.swift */; };
 		DED26C9522D590FD00A36FB4 /* Article.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED26C9322D590FD00A36FB4 /* Article.storyboard */; };
@@ -61,16 +60,15 @@
 		92957B7841B5368C74441FC5 /* Pods_ContainerViewInUICollectionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContainerViewInUICollectionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE54C88E22F5072000F777BD /* ArticleNavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleNavigationTitleView.swift; sourceTree = "<group>"; };
 		DE54C89022F5073000F777BD /* ArticleNavigationTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleNavigationTitleView.xib; sourceTree = "<group>"; };
-		DE6A056F22FE9F6200085A9F /* LandscapeCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeCategoryViewController.swift; sourceTree = "<group>"; };
-		DE6A057122FE9FFD00085A9F /* TravelCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCategoryViewController.swift; sourceTree = "<group>"; };
-		DE6A057422FEAB3300085A9F /* FashionCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionCategoryViewController.swift; sourceTree = "<group>"; };
 		DE6FBB0E2331FD7C00C9E806 /* UILabelDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelDecorator.swift; sourceTree = "<group>"; };
 		DE958D5122F01BB900DB2C21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Category.storyboard; sourceTree = "<group>"; };
-		DE958D5322F01C1C00DB2C21 /* FoodCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategoryViewController.swift; sourceTree = "<group>"; };
+		DE958D5322F01C1C00DB2C21 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		DEB07BCF2335EB630046005F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DEB07BD22335ECB10046005F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Detail.storyboard; sourceTree = "<group>"; };
 		DECBB5812307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPatternCollectionViewCell.swift; sourceTree = "<group>"; };
 		DECBB5822307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryPatternCollectionViewCell.xib; sourceTree = "<group>"; };
+		DECE4BE5233F231D00EADC5D /* MosaicCollectionViewLayoutPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicCollectionViewLayoutPattern.swift; sourceTree = "<group>"; };
+		DED01B6B233C946400900AED /* DetailTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTransition.swift; sourceTree = "<group>"; };
 		DED26C8C22D590FD00A36FB4 /* ContainerViewInUICollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContainerViewInUICollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED26C8F22D590FD00A36FB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DED26C9122D590FD00A36FB4 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
@@ -158,10 +156,7 @@
 		DE6A055922FE6A3400085A9F /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				DE958D5322F01C1C00DB2C21 /* FoodCategoryViewController.swift */,
-				DE6A056F22FE9F6200085A9F /* LandscapeCategoryViewController.swift */,
-				DE6A057122FE9FFD00085A9F /* TravelCategoryViewController.swift */,
-				DE6A057422FEAB3300085A9F /* FashionCategoryViewController.swift */,
+				DE958D5322F01C1C00DB2C21 /* CategoryViewController.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -193,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				DEF791F322F01A7800CC866B /* CustomViewBase.swift */,
+				DED01B6B233C946400900AED /* DetailTransition.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -204,6 +200,14 @@
 				DECBB5822307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.xib */,
 			);
 			path = CategoryPatternCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		DECE4BE3233F221000EADC5D /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				DECE4BE5233F231D00EADC5D /* MosaicCollectionViewLayoutPattern.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 		DED26C8322D590FC00A36FB4 = {
@@ -235,6 +239,7 @@
 				DED26C8F22D590FD00A36FB4 /* AppDelegate.swift */,
 				DED26C9622D5910500A36FB4 /* Assets.xcassets */,
 				DE958D4F22F01B3300DB2C21 /* Classes */,
+				DECE4BE3233F221000EADC5D /* Enum */,
 				DED26CCA22D5980400A36FB4 /* Extension */,
 				DE6A056E22FE9E5800085A9F /* Model */,
 				DE6A055A22FE6B6F00085A9F /* Module */,
@@ -498,16 +503,15 @@
 			files = (
 				DED26C9222D590FD00A36FB4 /* ArticleViewController.swift in Sources */,
 				DED26CD022D654C600A36FB4 /* NSObjectProtocolExtension.swift in Sources */,
-				DE958D5422F01C1C00DB2C21 /* FoodCategoryViewController.swift in Sources */,
+				DE958D5422F01C1C00DB2C21 /* CategoryViewController.swift in Sources */,
+				DED01B6C233C946400900AED /* DetailTransition.swift in Sources */,
 				DED26CD422D6553100A36FB4 /* UICollectionViewExtension.swift in Sources */,
-				DE6A057222FE9FFD00085A9F /* TravelCategoryViewController.swift in Sources */,
 				DECBB5832307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.swift in Sources */,
 				DEDC0D232317E261009289C8 /* UIViewControllerExtension.swift in Sources */,
-				DE6A057522FEAB3300085A9F /* FashionCategoryViewController.swift in Sources */,
+				DECE4BE6233F231D00EADC5D /* MosaicCollectionViewLayoutPattern.swift in Sources */,
 				DED26CD622D6555300A36FB4 /* UITableViewExtension.swift in Sources */,
 				DEB07BD02335EB630046005F /* DetailViewController.swift in Sources */,
 				DEF791F422F01A7800CC866B /* CustomViewBase.swift in Sources */,
-				DE6A057022FE9F6200085A9F /* LandscapeCategoryViewController.swift in Sources */,
 				DE54C88F22F5072000F777BD /* ArticleNavigationTitleView.swift in Sources */,
 				DED26CD222D654F600A36FB4 /* UIColorExtension.swift in Sources */,
 				DED26CD822D66D4000A36FB4 /* StoryboardInstantiatable.swift in Sources */,
