@@ -92,7 +92,7 @@ extension DetailTransition: UIViewControllerAnimatedTransitioning {
                 x: targetImageView.frame.origin.x,
                 y: targetImageView.frame.origin.y,
                 width: UIScreen.main.bounds.size.width,
-                height: UIScreen.main.bounds.size.width * 1.3
+                height: UIScreen.main.bounds.size.width * 1.2
             )
             afterTransitionViewAlpha = 1
             

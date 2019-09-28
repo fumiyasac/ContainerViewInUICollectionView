@@ -22,13 +22,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="vDG-I7-lo8">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="487.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r26-bT-MNn">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="487.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="99" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eis-1c-0XV">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="487.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
                                                         <color key="backgroundColor" red="0.80784313730000001" green="0.80784313730000001" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </imageView>
                                                 </subviews>
@@ -38,7 +38,7 @@
                                                     <constraint firstItem="eis-1c-0XV" firstAttribute="leading" secondItem="r26-bT-MNn" secondAttribute="leading" id="Qpj-tt-4dB"/>
                                                     <constraint firstAttribute="bottom" secondItem="eis-1c-0XV" secondAttribute="bottom" id="Vrw-oo-bAx"/>
                                                     <constraint firstAttribute="trailing" secondItem="eis-1c-0XV" secondAttribute="trailing" id="YhJ-g2-xOp"/>
-                                                    <constraint firstAttribute="width" secondItem="r26-bT-MNn" secondAttribute="height" multiplier="1:1.3" id="oKZ-V7-Fea"/>
+                                                    <constraint firstAttribute="width" secondItem="r26-bT-MNn" secondAttribute="height" multiplier="1:1.2" id="oKZ-V7-Fea"/>
                                                 </constraints>
                                             </view>
                                         </subviews>

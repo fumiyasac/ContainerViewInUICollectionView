@@ -27,7 +27,7 @@ enum MosaicCollectionViewLayoutPattern {
 
         // セルの行間とレイアウトパターンパターン分の高さを設定する
         let cellMargin: CGFloat = 6.0
-        let basePatternHeight = UIScreen.main.bounds.width * 1.3
+        let basePatternHeight = UIScreen.main.bounds.width * 1.2
 
         switch self {
         case .first:
