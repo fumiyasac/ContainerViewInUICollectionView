@@ -27,6 +27,7 @@
   public var allCachedAttributes = [LayoutAttributes]()
   var binarySearch = BinarySearch()
   var prepareAllowed = true
+  var previousContentOffset: CGFloat = 0
 
   /// The content size of the layout, should be set using the `prepare` method of any subclass.
   public var contentSize: CGSize = .zero
@@ -156,37 +157,88 @@
     }
   }
 
-  /// Create supplementary layout attributes.
+  /// Resolve the size of SupplementaryView at index path.
+  /// If the collection view's delegate conforms to `(UI/NS)CollectionViewDelegateFlowLayout`, it will
+  /// query the delegate for the size of the SupplementaryView.
+  /// It defaults to using the `headerReferenceSize` or `footerReferenceSize` property on collection view flow layout.
   ///
-  /// - Parameters:
-  ///   - kind: The supplementary kind, either header or footer.
-  ///   - indexPath: The section index path for the supplementary view.
-  ///   - x: The x coordinate of the header layout attributes.
-  ///   - y: The y coordinate of the header layout attributes.
-  /// - Returns: A `LayoutAttributes` object of supplementary kind.
-  func createSupplementaryLayoutAttribute(ofKind kind: BlueprintSupplementaryKind,
-                                          indexPath: IndexPath,
-                                          atX x: CGFloat = 0,
-                                          atY y: CGFloat = 0) -> SupplementaryLayoutAttributes {
-    let layoutAttribute = SupplementaryLayoutAttributes(
-      forSupplementaryViewOfKind: kind.collectionViewSupplementaryType,
-      with: indexPath
-    )
-
+  /// - Parameter indexPath: The index path of the supplementaryView.
+  /// - Returns: The desired size of the item at the index path.
+  func resolveSizeForSupplementaryView(ofKind kind: BlueprintSupplementaryKind, at indexPath: IndexPath) -> CGSize {
     switch kind {
     case .header:
-      layoutAttribute.size.width = collectionView?.documentRect.width ?? headerReferenceSize.width
-      layoutAttribute.size.height = headerReferenceSize.height
+      let height = resolveCollectionView({ collectionView -> CGSize? in
+        return (collectionView.delegate as? CollectionViewFlowLayoutDelegate)?.collectionView?(collectionView,
+                                                                                               layout: self,
+                                                                                               referenceSizeForHeaderInSection: indexPath.section)
+      }, defaultValue: headerReferenceSize).height
+
+      let width: CGFloat
+      if headerReferenceSize.width > 0 {
+        width = headerReferenceSize.width
+      } else {
+        width = collectionView?.documentRect.width ?? headerReferenceSize.width
+      }
+
+      let size = CGSize(
+        width: width,
+        height: height
+      )
+
+      return size
     case .footer:
-      layoutAttribute.size.width = collectionView?.documentRect.width ?? footerReferenceSize.width
-      layoutAttribute.size.height = footerReferenceSize.height
+      let height = resolveCollectionView({ collectionView -> CGSize? in
+        return (collectionView.delegate as? CollectionViewFlowLayoutDelegate)?.collectionView?(collectionView,
+                                                                                               layout: self,
+                                                                                               referenceSizeForFooterInSection: indexPath.section)
+      }, defaultValue: footerReferenceSize).height
+
+      let width: CGFloat
+      if footerReferenceSize.width > 0 {
+        width = footerReferenceSize.width
+      } else {
+        width = collectionView?.documentRect.width ?? footerReferenceSize.width
+      }
+
+      let size = CGSize(
+        width: width,
+        height: height
+      )
+
+      return size
     }
+  }
 
-    layoutAttribute.zIndex = indexPath.section
-    layoutAttribute.frame.origin.x = x
-    layoutAttribute.frame.origin.y = y
+  /// Resolve the minimumLineSpacingForSectionAt.
+  /// If the collection view's delegate conforms to `(UI/NS)CollectionViewDelegateFlowLayout`, it will
+  /// query the delegate for the minimumLineSpacing.
+  /// It defaults to using the `minimumLineSpacing` property on collection view flow layout.
+  ///
+  /// - Parameter section: The section of the collection view.
+  /// - Returns: The desired lineSpacing of the section.
+  func resolveMinimumLineSpacing(forSectionAt section: Int) -> CGFloat {
+    let computedMinimumLineSpacing = resolveCollectionView({ collectionView -> CGFloat? in
+      return (collectionView.delegate as? CollectionViewFlowLayoutDelegate)?.collectionView?(collectionView,
+                                                                                             layout: self,
+                                                                                             minimumLineSpacingForSectionAt: section)
+    }, defaultValue: minimumLineSpacing)
+    return computedMinimumLineSpacing
+  }
 
-    return layoutAttribute
+  /// Resolve the minimumInteritemSpacingForSectionAt.
+  /// If the collection view's delegate conforms to `(UI/NS)CollectionViewDelegateFlowLayout`, it will
+  /// query the delegate for the minimumInteritemSpacing.
+  /// It defaults to using the `minimumInteritemSpacing` property on collection view flow layout.
+  ///
+  /// - Parameter section: The section of the collection view.
+  /// - Returns: The desired minimumInteritemSpacing of the section.
+  func resolveMinimumInteritemSpacing(forSectionAt section: Int) -> CGFloat {
+    let computedMinimumInteritemSpacing = resolveCollectionView({ collectionView -> CGFloat? in
+      return (collectionView.delegate as? CollectionViewFlowLayoutDelegate)?.collectionView?(collectionView,
+                                                                                             layout: self,
+                                                                                             minimumInteritemSpacingForSectionAt: section)
+    }, defaultValue: minimumInteritemSpacing)
+    return computedMinimumInteritemSpacing
   }
 
   /// Resolve collection collection view from layout and return
@@ -211,8 +263,8 @@
     return !(indexPath.count > 0 && cache.count > 0 && indexPath.section < cache.count)
   }
 
-  func indexOffsetForSectionHeaders() -> CGFloat {
-    if headerReferenceSize.height > 0 {
+  func indexOffsetForSectionHeaders(at indexPath: IndexPath) -> CGFloat {
+    if resolveSizeForSupplementaryView(ofKind: .header, at: indexPath).height > 0 {
       return 1
     }
     return 0
@@ -250,7 +302,7 @@
     for value in attributes {
       #if os(macOS)
         let sorted = value.sorted(by: { $0.indexPath! < $1.indexPath! })
-        let items = sorted.filter({ $0.representedElementCategory == .item })
+        let items = sorted.filter({ $0.representedElementCategory == .cellItem })
         let supplementaryLayoutAttributes = sorted
           .filter({ $0.representedElementCategory == .supplementaryView })
           .compactMap({ $0 as? SupplementaryLayoutAttributes })
@@ -258,7 +310,7 @@
         self.cachedItemAttributesBySection.append(items)
       #else
         let sorted = value.sorted(by: { $0.indexPath < $1.indexPath })
-        let items = sorted.filter({ $0.representedElementCategory == .cell })
+        let items = sorted.filter({ $0.representedElementCategory == .cellItem })
         let supplementaryLayoutAttributes = sorted
           .filter({ $0.representedElementCategory == .supplementaryView })
           .compactMap({ $0 as? SupplementaryLayoutAttributes })
@@ -281,11 +333,7 @@
     cachedSupplementaryAttributes = Array(cachedSupplementaryAttributesBySection.joined())
 
     self.cachedItemAttributes = allCachedAttributes.filter({
-      #if os(macOS)
-      return $0.representedElementCategory == .item
-      #else
-      return $0.representedElementCategory == .cell
-      #endif
+      return $0.representedElementCategory == .cellItem
     })
   }
 
@@ -298,14 +346,22 @@
       return nil
     }
 
-    let compare: (LayoutAttributes) -> Bool
+    let lower: (LayoutAttributes) -> Bool
+    let upper: (LayoutAttributes) -> Bool
+    let less: (LayoutAttributes) -> Bool
     #if os(macOS)
-      compare = { indexPath > $0.indexPath! }
+    upper = { $0.indexPath! >= indexPath }
+    lower = { $0.indexPath! <= indexPath }
+    less =  { $0.indexPath! < indexPath }
     #else
-      compare = { indexPath > $0.indexPath }
+    upper = { $0.indexPath >= indexPath }
+    lower = { $0.indexPath <= indexPath }
+    less =  { $0.indexPath < indexPath }
     #endif
     let result = binarySearch.findElement(in: cachedItemAttributesBySection[indexPath.section],
-                                          less: compare,
+                                          upper: upper,
+                                          lower: lower,
+                                          less: less,
                                           match: { indexPath == $0.indexPath })
     return result
   }
@@ -316,20 +372,35 @@
   /// - Parameter rect: The rectangle (specified in the collection view’s coordinate system) containing the target views.
   /// - Returns: An array of layout attribute objects containing the layout information for the enclosed items and views.
   override open func layoutAttributesForElements(in rect: CGRect) -> LayoutAttributesForElements {
-    let closure: (LayoutAttributes) -> Bool = scrollDirection == .horizontal
-      ? { rect.maxX >= $0.frame.minX }
-      : { rect.maxY >= $0.frame.minY }
-    var items = binarySearch.findElements(in: cachedItemAttributes,
-                                          padding: Int(itemsPerRow ?? 0),
-                                          less: { closure($0) },
-                                          match: { $0.frame.intersects(rect) }) ?? []
-    let supplementary = binarySearch.findElements(in: cachedSupplementaryAttributes,
-                                                  padding: Int(itemsPerRow ?? 0),
-                                                  less: { closure($0) },
-                                                  match: { $0.frame.intersects(rect) }) ?? []
-    items.append(contentsOf: supplementary)
+    let upper: (LayoutAttributes) -> Bool
+    let lower: (LayoutAttributes) -> Bool
+    let less: (LayoutAttributes) -> Bool
 
-    return !items.isEmpty ? items : cachedItemAttributes.filter { $0.frame.intersects(rect) }
+    switch scrollDirection {
+    case .horizontal:
+      upper = { attributes in attributes.frame.maxX >= rect.minX }
+      lower = { attributes in attributes.frame.minX <= rect.maxX }
+      less =  { attributes in attributes.frame.maxX <= rect.minX }
+    case .vertical:
+      upper = { attributes in attributes.frame.maxY >= rect.minY }
+      lower = { attributes in attributes.frame.minY <= rect.maxY }
+      less =  { attributes in attributes.frame.maxY <= rect.minY }
+    @unknown default:
+      fatalError("Case not implemented in current implementation")
+    }
+
+    var items = binarySearch.findElements(in: cachedItemAttributes,
+                                          upper: upper,
+                                          lower: lower,
+                                          less: less,
+                                          match: { $0.frame.intersects(rect) })
+    let supplementary = binarySearch.findElements(in: cachedSupplementaryAttributes,
+                                                  upper: upper,
+                                                  lower: lower,
+                                                  less: less,
+                                                  match: { $0.frame.intersects(rect) })
+    items.append(contentsOf: supplementary)
+    return items
   }
 
   open override func invalidateLayout(with context: LayoutInvalidationContext) {
@@ -378,9 +449,13 @@
     let results = cachedSupplementaryAttributes.filter({
       switch scrollDirection {
       case .vertical:
-        return (visibleRect.origin.y >= $0.min && visibleRect.origin.y <= $0.max) || $0.frame.intersects(visibleRect)
+        return ((visibleRect.maxY >= $0.min && visibleRect.origin.y <= $0.max) || visibleRect.intersects($0.frame))
       case .horizontal:
-        return (visibleRect.origin.x >= $0.min && visibleRect.origin.x <= $0.max) || $0.frame.intersects(visibleRect)
+        if visibleRect.origin.x < 0 {
+          return $0.frame.intersects(visibleRect)
+        } else {
+          return (visibleRect.origin.x >= $0.min && visibleRect.origin.x <= $0.max)
+        }
       @unknown default:
         fatalError("Case not implemented in current implementation")
       }
@@ -394,7 +469,7 @@
           if collectionView.contentOffset.y < 0 {
             header.frame.origin.y = max(0, header.min)
           } else {
-            header.frame.origin.y = min(max(collectionView.contentOffset.y, header.min), header.max)
+            header.frame.origin.y = min(max(visibleRect.minY, header.min), header.max)
           }
         case .horizontal:
           header.frame.origin.x = min(max(collectionView.contentOffset.x, header.min), header.max - header.frame.size.width)
@@ -417,7 +492,7 @@
       for footer in footers {
         switch scrollDirection {
         case .vertical:
-          footer.frame.origin.y = min(visibleRect.maxY - footer.frame.height, footer.max + footer.frame.height)
+          footer.frame.origin.y = min(max(visibleRect.maxY - footer.frame.height, footer.min), footer.max)
         case .horizontal:
           footer.frame.origin.x = min(max(collectionView.contentOffset.x, footer.min), footer.max - footer.frame.size.width)
         @unknown default:

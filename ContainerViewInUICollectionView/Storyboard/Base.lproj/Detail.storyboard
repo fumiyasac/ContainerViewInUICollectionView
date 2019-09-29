@@ -15,14 +15,14 @@
             <objects>
                 <viewController id="szs-c6-HUg" customClass="DetailViewController" customModule="ContainerViewInUICollectionView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9ZG-1C-0ht">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJC-38-ohU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="vDG-I7-lo8">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1260"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1294"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r26-bT-MNn">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
@@ -135,6 +135,13 @@
                                                     <constraint firstItem="cKX-pq-ENZ" firstAttribute="leading" secondItem="jym-Mt-xUU" secondAttribute="leading" constant="16" id="sFt-TU-3bI"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wa1-6X-7ig">
+                                                <rect key="frame" x="0.0" y="1260" width="375" height="34"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="lj6-IU-cXl"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -158,7 +165,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="LKo-sW-KjF"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="1200"/>
+                    <size key="freeformSize" width="375" height="1300"/>
                     <connections>
                         <outlet property="detailImageView" destination="eis-1c-0XV" id="EBU-Yd-tXw"/>
                         <outlet property="detailScrollView" destination="wJC-38-ohU" id="IYG-jN-3Tw"/>

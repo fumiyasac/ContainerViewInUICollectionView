@@ -1,32 +1,20 @@
 PODS:
   - AnimatedCollectionViewLayout (0.6.0)
-  - Blueprints (0.11.3)
-  - Nuke (7.6.3)
-  - Parchment (1.6.0)
-  - SwiftyAttributes (5.1.1)
+  - Blueprints (0.12.1)
 
 DEPENDENCIES:
   - AnimatedCollectionViewLayout
   - Blueprints
-  - Nuke
-  - Parchment
-  - SwiftyAttributes
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AnimatedCollectionViewLayout
     - Blueprints
-    - Nuke
-    - Parchment
-    - SwiftyAttributes
 
 SPEC CHECKSUMS:
   AnimatedCollectionViewLayout: f2c4e8dda4e3f1678ad6c0b39273a31b19bc935d
-  Blueprints: 65eb7d69c2c60721a28fade0b7e10b0588e4e96d
-  Nuke: 44130e95e09463f8773ae4b96b90de1eba6b3350
-  Parchment: d3a7b367c529fa6ef51aa43f5717a7ff36d4b1f5
-  SwiftyAttributes: e3e13891ddac3c62b3d7798d5c3969cea88e62bb
+  Blueprints: a35723fafd8020c984e9d51817bd3c67f8d18ddc
 
-PODFILE CHECKSUM: 4044243e93a898216ee28537de138d9aa0270430
+PODFILE CHECKSUM: d43c7dd9cb1d4f947ad33c534d71f41a1f51eefe
 
 COCOAPODS: 1.7.5
