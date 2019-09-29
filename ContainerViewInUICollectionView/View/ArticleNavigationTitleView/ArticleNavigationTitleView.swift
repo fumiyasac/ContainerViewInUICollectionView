@@ -13,6 +13,14 @@ import UIKit
 final class ArticleNavigationTitleView: CustomViewBase {
     
     private let maxPageCount: Int = 4
+
+    // 表示画面切り替え時の軽微な振動(Haptic Feedback)を追加する
+    private let feedbackGenerator: UIImpactFeedbackGenerator = {
+        let generator: UIImpactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+        generator.prepare()
+        return generator
+    }()
+
     private var currentPageCount: Int = 0
 
     @IBOutlet weak private var articleNavigationTitleLabel: UILabel!
@@ -54,6 +62,9 @@ final class ArticleNavigationTitleView: CustomViewBase {
 
         // 現在選択されているインデックス時を変数に格納する
         currentPageCount = info.cellIndex
+
+        // HapticFeedbackを発火する
+        feedbackGenerator.impactOccurred()
     }
 
     // MARK: - Private Function

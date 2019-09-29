@@ -15,16 +15,19 @@ final class DetailTransition: NSObject {
     private let customAnimatorTag = 99
 
     // トランジションの秒数
-    private let duration: TimeInterval = 0.26
+    private let duration: TimeInterval = 0.18
 
     // トランジションの方向(present: true, dismiss: false)
     var presenting: Bool = true
 
-    // アニメーション対象なるViewControllerの位置やサイズ情報を格納するメンバ変数
-    var originFrame: CGRect = CGRect.zero
-
-    // アニメーション対象なるサムネイル画像情報を格納するメンバ変数
+    // アニメーション対象なるサムネイル画像情報を格納する変数
     var originImage: UIImage? = UIImage()
+
+    // アニメーション対象となるViewControllerの位置やサイズ情報を格納するメンバ変数
+    // 1. originFrame: 画面遷移元のアニメーション対象画像Frame値
+    // 2. destinationFrameは画面遷移先のアニメーション対象画像Frame値
+    var originFrame: CGRect = CGRect.zero
+    var destinationFrame: CGRect = CGRect.zero
 }
 
 // MARK: - UIViewControllerAnimatedTransitioning
@@ -41,7 +44,8 @@ extension DetailTransition: UIViewControllerAnimatedTransitioning {
     // → 遷移元や遷移先のViewControllerやそのほか関連する情報が格納されているもの
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
 
-        // コンテキストを元にViewのインスタンスを取得する（存在しない場合は処理を終了）
+        // MEMO: UICollectionView内にContainerViewで取得している関係上ContextからUIViewControllerを取得することが難しいので、ここではView遷移先及び遷移元のView要素を取得している
+        // 注意: この手法だと愚直ではあるんだけど汎用性には乏しいのが欠点...
         guard let fromView = transitionContext.view(forKey: UITransitionContextViewKey.from) else {
             return
         }
@@ -87,20 +91,14 @@ extension DetailTransition: UIViewControllerAnimatedTransitioning {
 
             toViewAlpha = 0
             beforeTransitionImageViewFrame = originFrame
-            // MEMO: 画面遷移時の「ガタンっ」となる感じを防止するための調整
-            afterTransitionImageViewFrame = CGRect(
-                x: targetImageView.frame.origin.x,
-                y: targetImageView.frame.origin.y,
-                width: UIScreen.main.bounds.size.width,
-                height: UIScreen.main.bounds.size.width * 1.2
-            )
+            afterTransitionImageViewFrame = destinationFrame
             afterTransitionViewAlpha = 1
             
         // Case2: 戻る場合
         } else {
 
             toViewAlpha = 1
-            beforeTransitionImageViewFrame = targetImageView.frame
+            beforeTransitionImageViewFrame = destinationFrame
             afterTransitionImageViewFrame = originFrame
             afterTransitionViewAlpha = 0
         }
@@ -117,7 +115,7 @@ extension DetailTransition: UIViewControllerAnimatedTransitioning {
         toView.alpha = toViewAlpha
         toView.layoutIfNeeded()
 
-        UIView.animate(withDuration: duration, delay: 0.00, options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: duration, delay: 0.00, options: [.curveEaseOut], animations: {
             transitionImageView.frame = afterTransitionImageViewFrame
             detailView.alpha = afterTransitionViewAlpha
         }, completion: { _ in

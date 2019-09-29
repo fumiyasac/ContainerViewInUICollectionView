@@ -103,9 +103,12 @@ extension CategoryViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
 
         // 現在の画面サイズを引き渡してサムネイル画像が浮き上がってくる形のトランジションにする
-        detailTransition.originFrame = selectedFrame
+        guard let toViewController = presented as? DetailViewController else {
+            return nil
+        }
         detailTransition.originImage = selectedImage
-
+        detailTransition.originFrame = selectedFrame
+        detailTransition.destinationFrame = toViewController.presentedImageFrame
         detailTransition.presenting = true
         return detailTransition
     }
@@ -114,6 +117,12 @@ extension CategoryViewController: UIViewControllerTransitioningDelegate {
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
 
         // 画面遷移元から画面遷移先への動きと反対方向となるトランジションにする
+        guard let fromViewController = dismissed as? DetailViewController else {
+            return nil
+        }
+        detailTransition.originImage = selectedImage
+        detailTransition.originFrame = selectedFrame
+        detailTransition.destinationFrame = fromViewController.dismissImageFrame
         detailTransition.presenting = false
         return detailTransition
     }

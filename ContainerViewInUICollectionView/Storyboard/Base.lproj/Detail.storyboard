@@ -15,14 +15,14 @@
             <objects>
                 <viewController id="szs-c6-HUg" customClass="DetailViewController" customModule="ContainerViewInUICollectionView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9ZG-1C-0ht">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJC-38-ohU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="vDG-I7-lo8">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1260"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r26-bT-MNn">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
@@ -41,6 +41,100 @@
                                                     <constraint firstAttribute="width" secondItem="r26-bT-MNn" secondAttribute="height" multiplier="1:1.2" id="oKZ-V7-Fea"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Se-Ka-kLg">
+                                                <rect key="frame" x="0.0" y="450" width="375" height="405"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1段落目タイトル:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cC1-TB-kOs">
+                                                        <rect key="frame" x="16" y="12" width="343" height="15"/>
+                                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMC-Mp-lYs">
+                                                        <rect key="frame" x="16" y="39" width="343" height="354"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" id="c0N-pg-Fh4"/>
+                                                        </constraints>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="1段落目のサンプルテキストが入ります。">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <font key="NSFont" size="12" name="HiraginoSans-W3"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="7" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment>
+                                                                <mutableString key="content">1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。</mutableString>
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.46666999999999997" green="0.46666999999999997" blue="0.46666999999999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                    <font key="NSFont" size="12" name="HiraginoSans-W3"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="7" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="GMC-Mp-lYs" secondAttribute="trailing" constant="16" id="2k3-oU-Uk9"/>
+                                                    <constraint firstItem="cC1-TB-kOs" firstAttribute="top" secondItem="8Se-Ka-kLg" secondAttribute="top" constant="12" id="BTx-HQ-AFk"/>
+                                                    <constraint firstItem="cC1-TB-kOs" firstAttribute="leading" secondItem="8Se-Ka-kLg" secondAttribute="leading" constant="16" id="Bfk-4j-rN6"/>
+                                                    <constraint firstItem="GMC-Mp-lYs" firstAttribute="leading" secondItem="8Se-Ka-kLg" secondAttribute="leading" constant="16" id="DKy-ud-mjP"/>
+                                                    <constraint firstItem="GMC-Mp-lYs" firstAttribute="top" secondItem="cC1-TB-kOs" secondAttribute="bottom" constant="12" id="Ofh-6g-t4p"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="VRY-bI-L7b"/>
+                                                    <constraint firstAttribute="height" priority="250" constant="200" id="duN-ta-Zqv"/>
+                                                    <constraint firstAttribute="bottom" secondItem="GMC-Mp-lYs" secondAttribute="bottom" constant="12" id="qVM-Qk-udh"/>
+                                                    <constraint firstAttribute="trailing" secondItem="cC1-TB-kOs" secondAttribute="trailing" constant="16" id="z84-7e-C9R"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jym-Mt-xUU">
+                                                <rect key="frame" x="0.0" y="855" width="375" height="405"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2段落目タイトル:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9K-3I-6Sx">
+                                                        <rect key="frame" x="16" y="12" width="343" height="15"/>
+                                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKX-pq-ENZ">
+                                                        <rect key="frame" x="16" y="39" width="343" height="354"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" id="ueA-NM-7Kl"/>
+                                                        </constraints>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="2段落目のサンプルテキストが入ります。">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <font key="NSFont" size="12" name="HiraginoSans-W3"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="7" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment>
+                                                                <mutableString key="content">2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。</mutableString>
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.46666999999999997" green="0.46666999999999997" blue="0.46666999999999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                    <font key="NSFont" size="12" name="HiraginoSans-W3"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="7" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="z9K-3I-6Sx" secondAttribute="trailing" constant="16" id="DT5-xb-ObU"/>
+                                                    <constraint firstItem="z9K-3I-6Sx" firstAttribute="leading" secondItem="jym-Mt-xUU" secondAttribute="leading" constant="16" id="Gqa-U4-RZu"/>
+                                                    <constraint firstAttribute="bottom" secondItem="cKX-pq-ENZ" secondAttribute="bottom" constant="12" id="O3E-R8-yBa"/>
+                                                    <constraint firstAttribute="trailing" secondItem="cKX-pq-ENZ" secondAttribute="trailing" constant="16" id="RqU-04-Y0x"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="Uei-mo-l5A"/>
+                                                    <constraint firstItem="cKX-pq-ENZ" firstAttribute="top" secondItem="z9K-3I-6Sx" secondAttribute="bottom" constant="12" id="X3Z-nm-0ga"/>
+                                                    <constraint firstAttribute="height" priority="250" constant="200" id="jMt-LB-DDC"/>
+                                                    <constraint firstItem="z9K-3I-6Sx" firstAttribute="top" secondItem="jym-Mt-xUU" secondAttribute="top" constant="12" id="p7p-OP-ABl"/>
+                                                    <constraint firstItem="cKX-pq-ENZ" firstAttribute="leading" secondItem="jym-Mt-xUU" secondAttribute="leading" constant="16" id="sFt-TU-3bI"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -52,32 +146,22 @@
                                     <constraint firstAttribute="bottom" secondItem="vDG-I7-lo8" secondAttribute="bottom" id="jgU-14-zC0"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1iQ-v8-Avq">
-                                <rect key="frame" x="16" y="605" width="46" height="46"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="9lf-a1-PfJ"/>
-                                    <constraint firstAttribute="width" constant="46" id="nao-ov-yYg"/>
-                                </constraints>
-                                <state key="normal" title="とじる"/>
-                                <connections>
-                                    <action selector="testAction:" destination="szs-c6-HUg" eventType="touchUpInside" id="1yF-3j-8Aw"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8kA-vR-Wzj" firstAttribute="bottom" secondItem="1iQ-v8-Avq" secondAttribute="bottom" constant="16" id="7B2-Rj-S45"/>
                             <constraint firstItem="wJC-38-ohU" firstAttribute="top" secondItem="9ZG-1C-0ht" secondAttribute="top" id="TNj-iH-ziI"/>
-                            <constraint firstItem="wJC-38-ohU" firstAttribute="bottom" secondItem="8kA-vR-Wzj" secondAttribute="bottom" id="f1s-v8-yOo"/>
+                            <constraint firstItem="wJC-38-ohU" firstAttribute="bottom" secondItem="9ZG-1C-0ht" secondAttribute="bottom" id="f1s-v8-yOo"/>
                             <constraint firstItem="wJC-38-ohU" firstAttribute="leading" secondItem="9ZG-1C-0ht" secondAttribute="leading" id="qlQ-Vu-m6Y"/>
-                            <constraint firstItem="1iQ-v8-Avq" firstAttribute="leading" secondItem="8kA-vR-Wzj" secondAttribute="leading" constant="16" id="uUO-E3-1ML"/>
                             <constraint firstItem="wJC-38-ohU" firstAttribute="trailing" secondItem="9ZG-1C-0ht" secondAttribute="trailing" id="vcj-Je-0wF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8kA-vR-Wzj"/>
                     </view>
                     <navigationItem key="navigationItem" id="LKo-sW-KjF"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="1200"/>
                     <connections>
-                        <outlet property="scrollView" destination="wJC-38-ohU" id="ggu-3b-F7y"/>
+                        <outlet property="detailImageView" destination="eis-1c-0XV" id="EBU-Yd-tXw"/>
+                        <outlet property="detailScrollView" destination="wJC-38-ohU" id="IYG-jN-3Tw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bG-VU-hfM" userLabel="First Responder" sceneMemberID="firstResponder"/>
