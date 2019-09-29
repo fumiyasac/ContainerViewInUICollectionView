@@ -15,7 +15,7 @@ final class DetailTransition: NSObject {
     private let customAnimatorTag = 99
 
     // トランジションの秒数
-    private let duration: TimeInterval = 0.18
+    private let duration: TimeInterval = 0.22
 
     // トランジションの方向(present: true, dismiss: false)
     var presenting: Bool = true
