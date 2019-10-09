@@ -10,8 +10,11 @@ import UIKit
 
 final class DetailViewController: UIViewController {
 
+    // サムネイル画像の高さ
+    private let originalImageHeight: CGFloat = UIScreen.main.bounds.size.width * 1.2
+
     // 下方向のスクロールを実施した際に画面を閉じる処理をするためのY軸方向のオフセット値のしきい値
-    private let yOffsetLimit: CGFloat = -100.0
+    private let dismissOffsetLimit: CGFloat = -100.0
 
     // カスタムトランジション時に利用する、スクロール位置を考慮した戻る遷移時の矩形サイズ
     private (set)var dismissImageFrame: CGRect = CGRect.zero
@@ -22,9 +25,13 @@ final class DetailViewController: UIViewController {
         width: UIScreen.main.bounds.size.width,
         height: UIScreen.main.bounds.size.width * 1.2
     )
-
+    
+    // スクロールで変化する上方向のサムネイル画像の制約最大値
+    private var stickyOffsetLimit: CGFloat = CGFloat.zero
+    
     @IBOutlet weak private var detailScrollView: UIScrollView!
     @IBOutlet weak private var detailImageView: UIImageView!
+    @IBOutlet weak private var detailImageViewTopConstraint: NSLayoutConstraint!
 
     // MARK: - Override
 
@@ -32,32 +39,42 @@ final class DetailViewController: UIViewController {
         super.viewDidLoad()
 
         setupScrollView()
+        setupDetailImageViewTopConstraint()
+        setupStickyOffsetLimit()
     }
 
     // MARK: - Private Function
 
     private func setupScrollView() {
-
-        // NavigationBar分のスクロール位置がずれてしまうのでその考慮を行う
+        // MEMO: NavigationBar分のスクロール位置がずれてしまうのでその考慮を行う
         if #available(iOS 11.0, *) {
             detailScrollView.contentInsetAdjustmentBehavior = .never
         }
         detailScrollView.delegate = self
     }
 
+    private func setupDetailImageViewTopConstraint() {
+        detailImageViewTopConstraint.constant = 0
+    }
+
+    private func setupStickyOffsetLimit() {
+        // MEMO: スクロールで変化する上方向のサムネイル画像の制約最大値を下記のように算出する
+        // → 画像最大値画像の高さ - StatusBarの高さ - NavigationBar相当の高さ
+        let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
+        let navigationBarHeight: CGFloat = 44.0
+        stickyOffsetLimit = originalImageHeight - statusBarHeight - navigationBarHeight
+    }
+
     // 配置したScrollViewのY軸方向のオフセット値のしきい値を超えた際に画面を閉じる
     private func dismissScreenDependOnVertialPosition(_ yOffset: CGFloat) {
-        if yOffset <= yOffsetLimit {
-
-            // MEMO: カスタムトランジションに必要なFrame値を更新する
-            dismissImageFrame = CGRect(
-                x: 0,
-                y: -detailScrollView.contentOffset.y,
-                width: UIScreen.main.bounds.size.width,
-                height: UIScreen.main.bounds.size.width * 1.2
-            )
-            self.dismiss(animated: true, completion: nil)
-        }
+        // MEMO: カスタムトランジションに必要なFrame値を更新する
+        dismissImageFrame = CGRect(
+            x: 0,
+            y: -detailScrollView.contentOffset.y,
+            width: UIScreen.main.bounds.size.width,
+            height: UIScreen.main.bounds.size.width * 1.2
+        )
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -67,7 +84,15 @@ extension DetailViewController: UIScrollViewDelegate {
 
     // スクロールが検知された時に実行される処理
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        dismissScreenDependOnVertialPosition(scrollView.contentOffset.y)
+        let yOffset = scrollView.contentOffset.y
+
+        // スクロールで変化する上方向のサムネイル画像の制約を更新する
+        detailImageViewTopConstraint.constant = -min(stickyOffsetLimit, yOffset)
+
+        // Y軸方向のオフセット値がしきい値を超えていれば画面を閉じる
+        if yOffset <= dismissOffsetLimit {
+            dismissScreenDependOnVertialPosition(yOffset)
+        }
     }
 }
 

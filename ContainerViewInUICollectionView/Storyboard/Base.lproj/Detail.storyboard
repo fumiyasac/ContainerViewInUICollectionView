@@ -15,30 +15,20 @@
             <objects>
                 <viewController id="szs-c6-HUg" customClass="DetailViewController" customModule="ContainerViewInUICollectionView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9ZG-1C-0ht">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJC-38-ohU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="vDG-I7-lo8">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1294"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1699"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r26-bT-MNn">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="99" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eis-1c-0XV">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
-                                                        <color key="backgroundColor" red="0.80784313730000001" green="0.80784313730000001" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </imageView>
-                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="eis-1c-0XV" firstAttribute="top" secondItem="r26-bT-MNn" secondAttribute="top" id="1SW-xd-JJD"/>
-                                                    <constraint firstItem="eis-1c-0XV" firstAttribute="leading" secondItem="r26-bT-MNn" secondAttribute="leading" id="Qpj-tt-4dB"/>
-                                                    <constraint firstAttribute="bottom" secondItem="eis-1c-0XV" secondAttribute="bottom" id="Vrw-oo-bAx"/>
-                                                    <constraint firstAttribute="trailing" secondItem="eis-1c-0XV" secondAttribute="trailing" id="YhJ-g2-xOp"/>
-                                                    <constraint firstAttribute="width" secondItem="r26-bT-MNn" secondAttribute="height" multiplier="1:1.2" id="oKZ-V7-Fea"/>
+                                                    <constraint firstAttribute="width" secondItem="r26-bT-MNn" secondAttribute="height" multiplier="5:6" id="Cb1-0O-1bK"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Se-Ka-kLg">
@@ -64,7 +54,7 @@
                                                                 </attributes>
                                                             </fragment>
                                                             <fragment>
-                                                                <mutableString key="content">1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。</mutableString>
+                                                                <string key="content">1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。</string>
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.46666999999999997" green="0.46666999999999997" blue="0.46666999999999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                     <font key="NSFont" size="12" name="HiraginoSans-W3"/>
@@ -111,7 +101,7 @@
                                                                 </attributes>
                                                             </fragment>
                                                             <fragment>
-                                                                <mutableString key="content">2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。</mutableString>
+                                                                <string key="content">2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。</string>
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.46666999999999997" green="0.46666999999999997" blue="0.46666999999999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                     <font key="NSFont" size="12" name="HiraginoSans-W3"/>
@@ -135,8 +125,55 @@
                                                     <constraint firstItem="cKX-pq-ENZ" firstAttribute="leading" secondItem="jym-Mt-xUU" secondAttribute="leading" constant="16" id="sFt-TU-3bI"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6zx-YJ-Kug">
+                                                <rect key="frame" x="0.0" y="1260" width="375" height="405"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2段落目タイトル:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lW2-nU-zuJ">
+                                                        <rect key="frame" x="16" y="12" width="343" height="15"/>
+                                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01T-jg-Emw">
+                                                        <rect key="frame" x="16" y="39" width="343" height="354"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" id="bc3-bx-tKI"/>
+                                                        </constraints>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="2段落目のサンプルテキストが入ります。">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <font key="NSFont" size="12" name="HiraginoSans-W3"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="7" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment>
+                                                                <string key="content">2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。1段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。2段落目のサンプルテキストが入ります。</string>
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.46666999999999997" green="0.46666999999999997" blue="0.46666999999999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                    <font key="NSFont" size="12" name="HiraginoSans-W3"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="7" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="01T-jg-Emw" secondAttribute="bottom" constant="12" id="04r-4A-Mhe"/>
+                                                    <constraint firstItem="01T-jg-Emw" firstAttribute="leading" secondItem="6zx-YJ-Kug" secondAttribute="leading" constant="16" id="8AM-aa-zfR"/>
+                                                    <constraint firstItem="lW2-nU-zuJ" firstAttribute="leading" secondItem="6zx-YJ-Kug" secondAttribute="leading" constant="16" id="9HD-Sy-XdT"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="L5n-Gc-FbU"/>
+                                                    <constraint firstAttribute="trailing" secondItem="lW2-nU-zuJ" secondAttribute="trailing" constant="16" id="PGW-jV-6Cf"/>
+                                                    <constraint firstAttribute="trailing" secondItem="01T-jg-Emw" secondAttribute="trailing" constant="16" id="RCa-t5-8G0"/>
+                                                    <constraint firstAttribute="height" priority="250" constant="200" id="XqK-56-erd"/>
+                                                    <constraint firstItem="lW2-nU-zuJ" firstAttribute="top" secondItem="6zx-YJ-Kug" secondAttribute="top" constant="12" id="gCg-Wa-0By"/>
+                                                    <constraint firstItem="01T-jg-Emw" firstAttribute="top" secondItem="lW2-nU-zuJ" secondAttribute="bottom" constant="12" id="sKh-v9-5nL"/>
+                                                </constraints>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wa1-6X-7ig">
-                                                <rect key="frame" x="0.0" y="1260" width="375" height="34"/>
+                                                <rect key="frame" x="0.0" y="1665" width="375" height="34"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="lj6-IU-cXl"/>
@@ -153,21 +190,32 @@
                                     <constraint firstAttribute="bottom" secondItem="vDG-I7-lo8" secondAttribute="bottom" id="jgU-14-zC0"/>
                                 </constraints>
                             </scrollView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="99" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eis-1c-0XV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
+                                <color key="backgroundColor" red="0.80784313730000001" green="0.80784313730000001" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eis-1c-0XV" secondAttribute="height" multiplier="5:6" id="yB0-iI-cbi"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="eis-1c-0XV" firstAttribute="leading" secondItem="8kA-vR-Wzj" secondAttribute="leading" id="4Mn-7g-H2q"/>
                             <constraint firstItem="wJC-38-ohU" firstAttribute="top" secondItem="9ZG-1C-0ht" secondAttribute="top" id="TNj-iH-ziI"/>
                             <constraint firstItem="wJC-38-ohU" firstAttribute="bottom" secondItem="9ZG-1C-0ht" secondAttribute="bottom" id="f1s-v8-yOo"/>
+                            <constraint firstItem="eis-1c-0XV" firstAttribute="trailing" secondItem="8kA-vR-Wzj" secondAttribute="trailing" id="hIu-KT-HbZ"/>
                             <constraint firstItem="wJC-38-ohU" firstAttribute="leading" secondItem="9ZG-1C-0ht" secondAttribute="leading" id="qlQ-Vu-m6Y"/>
+                            <constraint firstItem="eis-1c-0XV" firstAttribute="top" secondItem="9ZG-1C-0ht" secondAttribute="top" id="uSc-L0-UcC"/>
                             <constraint firstItem="wJC-38-ohU" firstAttribute="trailing" secondItem="9ZG-1C-0ht" secondAttribute="trailing" id="vcj-Je-0wF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8kA-vR-Wzj"/>
                     </view>
                     <navigationItem key="navigationItem" id="LKo-sW-KjF"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="1300"/>
+                    <size key="freeformSize" width="375" height="2000"/>
                     <connections>
                         <outlet property="detailImageView" destination="eis-1c-0XV" id="EBU-Yd-tXw"/>
+                        <outlet property="detailImageViewTopConstraint" destination="uSc-L0-UcC" id="ybC-MU-MhX"/>
                         <outlet property="detailScrollView" destination="wJC-38-ohU" id="IYG-jN-3Tw"/>
                     </connections>
                 </viewController>

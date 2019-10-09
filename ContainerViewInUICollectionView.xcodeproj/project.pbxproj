@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3E937583FAE6BA5CBF0C410B /* Pods_ContainerViewInUICollectionView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92957B7841B5368C74441FC5 /* Pods_ContainerViewInUICollectionView.framework */; };
+		DE475F36234D418D00D5B8B5 /* DetailEffectiveHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE475F35234D418D00D5B8B5 /* DetailEffectiveHeaderView.xib */; };
+		DE475F38234D41A400D5B8B5 /* DetailEffectiveHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE475F37234D41A400D5B8B5 /* DetailEffectiveHeaderView.swift */; };
 		DE54C88F22F5072000F777BD /* ArticleNavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54C88E22F5072000F777BD /* ArticleNavigationTitleView.swift */; };
 		DE54C89122F5073000F777BD /* ArticleNavigationTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE54C89022F5073000F777BD /* ArticleNavigationTitleView.xib */; };
 		DE6FBB0F2331FD7C00C9E806 /* UILabelDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6FBB0E2331FD7C00C9E806 /* UILabelDecorator.swift */; };
@@ -58,6 +60,8 @@
 		451E04959B98FB5133B40B39 /* Pods-ContainerViewInUICollectionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContainerViewInUICollectionView.debug.xcconfig"; path = "Target Support Files/Pods-ContainerViewInUICollectionView/Pods-ContainerViewInUICollectionView.debug.xcconfig"; sourceTree = "<group>"; };
 		8E10E8EB59913BD96948EFE6 /* Pods-ContainerViewInUICollectionView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContainerViewInUICollectionView.release.xcconfig"; path = "Target Support Files/Pods-ContainerViewInUICollectionView/Pods-ContainerViewInUICollectionView.release.xcconfig"; sourceTree = "<group>"; };
 		92957B7841B5368C74441FC5 /* Pods_ContainerViewInUICollectionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContainerViewInUICollectionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE475F35234D418D00D5B8B5 /* DetailEffectiveHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailEffectiveHeaderView.xib; sourceTree = "<group>"; };
+		DE475F37234D41A400D5B8B5 /* DetailEffectiveHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEffectiveHeaderView.swift; sourceTree = "<group>"; };
 		DE54C88E22F5072000F777BD /* ArticleNavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleNavigationTitleView.swift; sourceTree = "<group>"; };
 		DE54C89022F5073000F777BD /* ArticleNavigationTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleNavigationTitleView.xib; sourceTree = "<group>"; };
 		DE6FBB0E2331FD7C00C9E806 /* UILabelDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelDecorator.swift; sourceTree = "<group>"; };
@@ -134,6 +138,15 @@
 				8E10E8EB59913BD96948EFE6 /* Pods-ContainerViewInUICollectionView.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		DE475F34234D408D00D5B8B5 /* DetailEffectiveHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				DE475F35234D418D00D5B8B5 /* DetailEffectiveHeaderView.xib */,
+				DE475F37234D41A400D5B8B5 /* DetailEffectiveHeaderView.swift */,
+			);
+			path = DetailEffectiveHeaderView;
 			sourceTree = "<group>";
 		};
 		DE5145632335EB2C00081BD6 /* Detail */ = {
@@ -292,6 +305,7 @@
 		DED26CBF22D5953F00A36FB4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DE475F34234D408D00D5B8B5 /* DetailEffectiveHeaderView */,
 				DE54C88D22F5059900F777BD /* ArticleNavigationTitleView */,
 				DECBB5802307CD8100F7D2CC /* CategoryPatternCollectionViewCell */,
 				DED26CC922D597EB00A36FB4 /* ContainerCollectionViewCell */,
@@ -429,6 +443,7 @@
 			files = (
 				DE54C89122F5073000F777BD /* ArticleNavigationTitleView.xib in Resources */,
 				DE958D5222F01BB900DB2C21 /* Category.storyboard in Resources */,
+				DE475F36234D418D00D5B8B5 /* DetailEffectiveHeaderView.xib in Resources */,
 				DECBB5842307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.xib in Resources */,
 				DEB07BD32335ECB10046005F /* Detail.storyboard in Resources */,
 				DED26C9A22D5910500A36FB4 /* LaunchScreen.storyboard in Resources */,
@@ -509,6 +524,7 @@
 				DECBB5832307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.swift in Sources */,
 				DEDC0D232317E261009289C8 /* UIViewControllerExtension.swift in Sources */,
 				DECE4BE6233F231D00EADC5D /* MosaicCollectionViewLayoutPattern.swift in Sources */,
+				DE475F38234D41A400D5B8B5 /* DetailEffectiveHeaderView.swift in Sources */,
 				DED26CD622D6555300A36FB4 /* UITableViewExtension.swift in Sources */,
 				DEB07BD02335EB630046005F /* DetailViewController.swift in Sources */,
 				DEF791F422F01A7800CC866B /* CustomViewBase.swift in Sources */,
