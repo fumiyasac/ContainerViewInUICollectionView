@@ -197,15 +197,35 @@
                                     <constraint firstAttribute="width" secondItem="eis-1c-0XV" secondAttribute="height" multiplier="5:6" id="yB0-iI-cbi"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uTQ-7x-dtE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uTQ-7x-dtE" secondAttribute="height" multiplier="5:6" id="NY1-WF-VMP"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRq-rJ-VcR" customClass="DetailEffectiveHeaderView" customModule="ContainerViewInUICollectionView" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Byb-bp-eV8"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="8kA-vR-Wzj" firstAttribute="trailing" secondItem="fRq-rJ-VcR" secondAttribute="trailing" id="1ak-2w-zy9"/>
                             <constraint firstItem="eis-1c-0XV" firstAttribute="leading" secondItem="8kA-vR-Wzj" secondAttribute="leading" id="4Mn-7g-H2q"/>
+                            <constraint firstItem="fRq-rJ-VcR" firstAttribute="leading" secondItem="8kA-vR-Wzj" secondAttribute="leading" id="MBd-wE-92T"/>
+                            <constraint firstItem="uTQ-7x-dtE" firstAttribute="trailing" secondItem="8kA-vR-Wzj" secondAttribute="trailing" id="PWt-ak-wID"/>
                             <constraint firstItem="wJC-38-ohU" firstAttribute="top" secondItem="9ZG-1C-0ht" secondAttribute="top" id="TNj-iH-ziI"/>
+                            <constraint firstItem="uTQ-7x-dtE" firstAttribute="leading" secondItem="8kA-vR-Wzj" secondAttribute="leading" id="XNa-qA-8k3"/>
+                            <constraint firstItem="uTQ-7x-dtE" firstAttribute="top" secondItem="9ZG-1C-0ht" secondAttribute="top" id="etG-0q-arV"/>
                             <constraint firstItem="wJC-38-ohU" firstAttribute="bottom" secondItem="9ZG-1C-0ht" secondAttribute="bottom" id="f1s-v8-yOo"/>
                             <constraint firstItem="eis-1c-0XV" firstAttribute="trailing" secondItem="8kA-vR-Wzj" secondAttribute="trailing" id="hIu-KT-HbZ"/>
                             <constraint firstItem="wJC-38-ohU" firstAttribute="leading" secondItem="9ZG-1C-0ht" secondAttribute="leading" id="qlQ-Vu-m6Y"/>
                             <constraint firstItem="eis-1c-0XV" firstAttribute="top" secondItem="9ZG-1C-0ht" secondAttribute="top" id="uSc-L0-UcC"/>
+                            <constraint firstItem="fRq-rJ-VcR" firstAttribute="top" secondItem="9ZG-1C-0ht" secondAttribute="top" id="vZy-jm-Dbc"/>
                             <constraint firstItem="wJC-38-ohU" firstAttribute="trailing" secondItem="9ZG-1C-0ht" secondAttribute="trailing" id="vcj-Je-0wF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8kA-vR-Wzj"/>
@@ -214,6 +234,10 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="2000"/>
                     <connections>
+                        <outlet property="detailEffectiveHeaderHeightConstraint" destination="Byb-bp-eV8" id="Iej-Ar-PVg"/>
+                        <outlet property="detailEffectiveHeaderView" destination="fRq-rJ-VcR" id="18N-LX-5ae"/>
+                        <outlet property="detailImageMaskView" destination="uTQ-7x-dtE" id="srY-Xz-yI3"/>
+                        <outlet property="detailImageMaskViewTopConstraint" destination="etG-0q-arV" id="8If-oY-NFx"/>
                         <outlet property="detailImageView" destination="eis-1c-0XV" id="EBU-Yd-tXw"/>
                         <outlet property="detailImageViewTopConstraint" destination="uSc-L0-UcC" id="ybC-MU-MhX"/>
                         <outlet property="detailScrollView" destination="wJC-38-ohU" id="IYG-jN-3Tw"/>
@@ -221,7 +245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bG-VU-hfM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-247.19999999999999" y="-98.50074962518741"/>
+            <point key="canvasLocation" x="-247.19999999999999" y="-98.950524737631198"/>
         </scene>
     </scenes>
 </document>
