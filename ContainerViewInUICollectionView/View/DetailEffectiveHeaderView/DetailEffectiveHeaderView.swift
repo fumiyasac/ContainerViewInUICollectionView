@@ -14,7 +14,6 @@ class DetailEffectiveHeaderView: CustomViewBase {
     var headerBackButtonTappedHandler: (() -> ())?
 
     @IBOutlet weak private var headerBackButton: UIButton!
-    @IBOutlet weak private var headerWrappedView: UIView!
     @IBOutlet weak private var headerTitleLabel: UILabel!
 
     // MARK: - Initializer
@@ -39,11 +38,11 @@ class DetailEffectiveHeaderView: CustomViewBase {
 
     func changeAlpha(_ targetAlpha: CGFloat) {
         if targetAlpha > 1 {
-            headerWrappedView.alpha = 1
+            headerTitleLabel.alpha = 1
         } else if 0...1 ~= targetAlpha {
-            headerWrappedView.alpha = targetAlpha
+            headerTitleLabel.alpha = targetAlpha
         } else {
-            headerWrappedView.alpha = 0
+            headerTitleLabel.alpha = 0
         }
     }
 

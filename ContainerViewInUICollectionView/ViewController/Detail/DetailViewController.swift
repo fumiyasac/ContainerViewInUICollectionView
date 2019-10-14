@@ -22,9 +22,6 @@ final class DetailViewController: UIViewController {
     // カスタムトランジション時に利用する、遷移先の初期状態時の矩形サイズ
     private (set)var presentedImageFrame: CGRect = CGRect.zero
 
-    // 現在地点のUIScorllViewに置けるY軸方向のオフセット値
-    private var currentYOffsetForScrollView: CGFloat = 0.0
-
     // スクロールで変化する上方向のサムネイル画像の制約最大値
     private var stickyOffsetLimit: CGFloat = CGFloat.zero
     
@@ -35,6 +32,8 @@ final class DetailViewController: UIViewController {
     @IBOutlet weak private var detailImageMaskViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak private var detailEffectiveHeaderView: DetailEffectiveHeaderView!
     @IBOutlet weak private var detailEffectiveHeaderHeightConstraint: NSLayoutConstraint!
+
+    
     
     // MARK: - Override
 

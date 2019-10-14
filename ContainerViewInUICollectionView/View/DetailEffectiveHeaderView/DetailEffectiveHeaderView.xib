@@ -14,7 +14,6 @@
             <connections>
                 <outlet property="headerBackButton" destination="muH-ej-FoP" id="h5D-cG-C5k"/>
                 <outlet property="headerTitleLabel" destination="3kS-sG-CcA" id="iVb-ye-weT"/>
-                <outlet property="headerWrappedView" destination="cf1-5R-dqS" id="psV-bf-xsT"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
