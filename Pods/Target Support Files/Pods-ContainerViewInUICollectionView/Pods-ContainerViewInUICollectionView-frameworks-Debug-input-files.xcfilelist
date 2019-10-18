@@ -1,4 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-ContainerViewInUICollectionView/Pods-ContainerViewInUICollectionView-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout.framework
 ${BUILT_PRODUCTS_DIR}/Blueprints/Blueprints.framework
-${BUILT_PRODUCTS_DIR}/Parchment/Parchment.framework

@@ -9,5 +9,4 @@ target 'ContainerViewInUICollectionView' do
   # UI表現の際に利用するライブラリ
   pod 'AnimatedCollectionViewLayout'
   pod 'Blueprints'
-  pod 'Parchment'
 end
