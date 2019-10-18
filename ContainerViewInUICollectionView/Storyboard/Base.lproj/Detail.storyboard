@@ -34,7 +34,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jym-Mt-xUU">
                                                 <rect key="frame" x="0.0" y="450" width="375" height="405"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2段落目タイトル:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9K-3I-6Sx">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2段落目タイトル:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9K-3I-6Sx">
                                                         <rect key="frame" x="16" y="12" width="343" height="15"/>
                                                         <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="15"/>
                                                         <nil key="textColor"/>
@@ -204,21 +204,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJ4-oE-fRU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="548" y="-455.17241379310349"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="D3t-dc-p2m">
-            <objects>
-                <viewController id="t6O-lZ-25K" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WeL-Nf-9FN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="hRK-6d-Cdg"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="59j-PV-iX9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1319" y="-707"/>
         </scene>
     </scenes>
 </document>
