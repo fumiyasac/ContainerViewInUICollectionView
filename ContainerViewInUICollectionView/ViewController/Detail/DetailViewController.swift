@@ -10,6 +10,9 @@ import UIKit
 
 final class DetailViewController: UIViewController {
 
+    // NavigationBarもどきのヘッダー部分の高さ
+    private var fakeNavigationBarHeight: CGFloat = CGFloat.zero
+
     // サムネイル画像の幅と高さ
     private let originalImageWidth: CGFloat = UIScreen.main.bounds.size.width
     private let originalImageHeight: CGFloat = UIScreen.main.bounds.size.width * 1.2
@@ -24,30 +27,85 @@ final class DetailViewController: UIViewController {
 
     // スクロールで変化する上方向のサムネイル画像の制約最大値
     private var stickyOffsetLimit: CGFloat = CGFloat.zero
-    
+
+    // --- ↓ Storyboardで配置した部品類でDutlet接続を伴うもの(Start)
+
+    //
     @IBOutlet weak private var detailScrollView: UIScrollView!
+
+    //
     @IBOutlet weak private var detailImageView: UIImageView!
     @IBOutlet weak private var detailImageViewTopConstraint: NSLayoutConstraint!
+
+    //
     @IBOutlet weak private var detailImageMaskView: UIView!
     @IBOutlet weak private var detailImageMaskViewTopConstraint: NSLayoutConstraint!
+
+    //
     @IBOutlet weak private var detailEffectiveHeaderView: DetailEffectiveHeaderView!
     @IBOutlet weak private var detailEffectiveHeaderHeightConstraint: NSLayoutConstraint!
 
+    //
+    @IBOutlet weak private var detailTitleLabel: UILabel!
+    @IBOutlet weak private var detailDescriptionLabel: UILabel!
+    @IBOutlet weak private var detailParagraphView: UIView!
     
+    //
+    @IBOutlet weak private var detailSubContentsTabViewTopConstraint: NSLayoutConstraint!
+
+    //
+    @IBOutlet weak private var detailSubContentsViewHeightConstraint: NSLayoutConstraint!
+
+    // --- ↑ Storyboardで配置した部品類でDutlet接続を伴うもの(End)
+    
+    
+    
+    @IBOutlet weak var containerViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var testConstraint: NSLayoutConstraint!
+
+    
+    private var detailSubContentsTabViewInitialPositionY: CGFloat!
     
     // MARK: - Override
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
+
+        
+        let sample = """
+        なべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべなべ
+        """
+        
+        let attr: UILabelDecorator.KeysForDecoration = (lineSpacing: 7.0, font: UIFont(name: "HiraKakuProN-W3", size: 12.0)!, foregroundColor: UIColor.darkGray)
+        
+        
+        detailDescriptionLabel.attributedText = NSAttributedString(string: sample, attributes: UILabelDecorator.getLabelAttributesBy(keys: attr))
+        
+        detailParagraphView.layoutIfNeeded()
+        detailSubContentsTabViewInitialPositionY = detailParagraphView.frame.height + originalImageHeight
+        
+        detailSubContentsTabViewTopConstraint.constant = detailSubContentsTabViewInitialPositionY
+
+        //
+        setupFakeNavigationBarHeight()
         setupScrollView()
+        setupDetailSubContentsViewHeight()
         setupDetailImageViewAndMask()
         setupDetailEffectiveHeaderView()
         setupPresentedImageFrameForTransition()
         setupStickyOffsetLimit()
     }
 
-    // MARK: - Private Function
+    // MARK: - Private Function (for Initial Settings)
+
+    private func setupFakeNavigationBarHeight() {
+        let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
+        let navigationBarHeight: CGFloat = 44.0
+        fakeNavigationBarHeight = statusBarHeight + navigationBarHeight
+    }
 
     private func setupScrollView() {
         // MEMO: NavigationBar分のスクロール位置がずれてしまうのでその考慮を行う
@@ -55,6 +113,10 @@ final class DetailViewController: UIViewController {
             detailScrollView.contentInsetAdjustmentBehavior = .never
         }
         detailScrollView.delegate = self
+    }
+    
+    private func setupDetailSubContentsViewHeight() {
+        detailSubContentsViewHeightConstraint.constant = UIScreen.main.bounds.height - fakeNavigationBarHeight
     }
 
     private func setupDetailImageViewAndMask() {
@@ -65,10 +127,8 @@ final class DetailViewController: UIViewController {
 
     private func setupDetailEffectiveHeaderView() {
         // MEMO: ダミーのNavigationBarの相当となるエリアの高さを設定する
-        // → StatusBarの高さ + NavigationBar相当の高さ
-        let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
-        let navigationBarHeight: CGFloat = 44.0
-        detailEffectiveHeaderHeightConstraint.constant = statusBarHeight + navigationBarHeight
+        // → StatusBarの高さ + NavigationBar相当の高さ = fakeNavigationBarHeight
+        detailEffectiveHeaderHeightConstraint.constant = fakeNavigationBarHeight
 
         // MEMO: ダミーのNavigationBarの相当の初期設定
         detailEffectiveHeaderView.setTitle("Sample of Meal Detail")
@@ -89,11 +149,11 @@ final class DetailViewController: UIViewController {
 
     private func setupStickyOffsetLimit() {
         // MEMO: スクロールで変化する上方向のサムネイル画像の制約最大値を下記のように算出する
-        // → 画像最大値画像の高さ - StatusBarの高さ - NavigationBar相当の高さ
-        let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
-        let navigationBarHeight: CGFloat = 44.0
-        stickyOffsetLimit = originalImageHeight - statusBarHeight - navigationBarHeight
+        // → 画像最大値画像の高さ - (StatusBarの高さ + NavigationBar相当の高さ = fakeNavigationBarHeight)
+        stickyOffsetLimit = originalImageHeight - fakeNavigationBarHeight
     }
+
+    // MARK: - Private Function (for Adjust Layout)
 
     // 配置したScrollViewのY軸方向のオフセット値のしきい値を超えた際に画面を閉じる
     private func dismissScreenDependOnVertialPosition() {
@@ -141,6 +201,9 @@ extension DetailViewController: UIScrollViewDelegate {
         if yOffset <= dismissOffsetLimit {
             dismissScreenDependOnVertialPosition()
         }
+
+        //
+        detailSubContentsTabViewTopConstraint.constant = max(detailSubContentsTabViewInitialPositionY - yOffset, fakeNavigationBarHeight)
     }
 }
 
