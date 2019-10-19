@@ -10,6 +10,8 @@ import UIKit
 
 final class DetailViewController: UIViewController {
 
+    // MARK: - Property
+
     // NavigationBarもどきのヘッダー部分の高さ
     private var fakeNavigationBarHeight: CGFloat = CGFloat.zero
 
@@ -28,7 +30,10 @@ final class DetailViewController: UIViewController {
     // スクロールで変化する上方向のサムネイル画像の制約最大値
     private var stickyOffsetLimit: CGFloat = CGFloat.zero
 
-    // --- ↓ Storyboardで配置した部品類でDutlet接続を伴うもの(Start)
+    //
+    private var detailSubContentsTabViewInitialPositionY: CGFloat!
+
+    // MARK: - @IBOutlet
 
     //
     @IBOutlet weak private var detailScrollView: UIScrollView!
@@ -55,35 +60,11 @@ final class DetailViewController: UIViewController {
 
     //
     @IBOutlet weak private var detailSubContentsViewHeightConstraint: NSLayoutConstraint!
-
-    // --- ↑ Storyboardで配置した部品類でDutlet接続を伴うもの(End)
-    
-    
-    
-    @IBOutlet weak var containerViewHeight: NSLayoutConstraint!
-    
-    @IBOutlet weak var testConstraint: NSLayoutConstraint!
-
-    
-    private var detailSubContentsTabViewInitialPositionY: CGFloat!
     
     // MARK: - Override
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let sampleTitle = "僕の超絶大嫌いな天声人語です〜。新聞に掲載してあったら切り抜いて保存しないで速攻捨てましょう。"
-        let attrForTitle: UILabelDecorator.KeysForDecoration = (lineSpacing: 6.0, font: UIFont(name: "HiraKakuProN-W6", size: 15.0)!, foregroundColor: UIColor.black)
-        detailTitleLabel.attributedText = NSAttributedString(string: sampleTitle, attributes: UILabelDecorator.getLabelAttributesBy(keys: attrForTitle))
-        
-        let sampleDescription = "天声人語（てんせいじんご）は、朝日新聞の朝刊に長期連載中の1面コラムである。1904年1月5日付の『大阪朝日新聞』2面に初めて掲載され（初期は必ずしも1面に掲載されるとは限らなかった）、以後、別の題名となった時期を挟みながら1世紀以上にわたって継続して掲載されている。最近のニュース、話題を題材にして朝日新聞の論説委員が執筆し、社説とは異なる角度から分析を加えている。特定の論説委員が一定期間「天声人語子」として匿名で執筆している。朝日新聞本紙では見出しは付けられていないが、朝日新聞デジタルでは見出しが付けられている。また、書籍化される際には標題が付けられる。"
-        let attrForDescription: UILabelDecorator.KeysForDecoration = (lineSpacing: 7.0, font: UIFont(name: "HiraKakuProN-W3", size: 12.0)!, foregroundColor: UIColor.darkGray)
-        detailDescriptionLabel.attributedText = NSAttributedString(string: sampleDescription, attributes: UILabelDecorator.getLabelAttributesBy(keys: attrForDescription))
-        
-        detailParagraphView.layoutIfNeeded()
-        detailSubContentsTabViewInitialPositionY = detailParagraphView.frame.height + originalImageHeight
-
-        detailSubContentsTabViewTopConstraint.constant = detailSubContentsTabViewInitialPositionY
 
         // MEMO: プロパティを反映させる順番に注意しないとクラッシュしてしまう...
         setupFakeNavigationBarHeight()
@@ -93,6 +74,9 @@ final class DetailViewController: UIViewController {
         setupDetailEffectiveHeaderView()
         setupPresentedImageFrameForTransition()
         setupStickyOffsetLimit()
+
+        //
+        setDetailParagraphAndLayout() // FIXME: Refactoring
     }
 
     // MARK: - Private Function (for Initial Settings)
@@ -108,6 +92,7 @@ final class DetailViewController: UIViewController {
         if #available(iOS 11.0, *) {
             detailScrollView.contentInsetAdjustmentBehavior = .never
         }
+        detailScrollView.showsVerticalScrollIndicator = false
         detailScrollView.delegate = self
     }
     
@@ -174,6 +159,26 @@ final class DetailViewController: UIViewController {
             detailImageMaskView.alpha = 0
         }
     }
+
+    private func setDetailParagraphAndLayout() {
+
+        //
+        let sampleTitle = "僕の超絶大嫌いな天声人語です〜。新聞に掲載してあったら切り抜いて保存しないで速攻捨てましょう。"
+        let attrForTitle: UILabelDecorator.KeysForDecoration = (lineSpacing: 6.0, font: UIFont(name: "HiraKakuProN-W6", size: 15.0)!, foregroundColor: UIColor.black)
+        detailTitleLabel.attributedText = NSAttributedString(string: sampleTitle, attributes: UILabelDecorator.getLabelAttributesBy(keys: attrForTitle))
+
+        //
+        let sampleDescription = "天声人語（てんせいじんご）は、朝日新聞の朝刊に長期連載中の1面コラムである。1904年1月5日付の『大阪朝日新聞』2面に初めて掲載され（初期は必ずしも1面に掲載されるとは限らなかった）、以後、別の題名となった時期を挟みながら1世紀以上にわたって継続して掲載されている。最近のニュース、話題を題材にして朝日新聞の論説委員が執筆し、社説とは異なる角度から分析を加えている。特定の論説委員が一定期間「天声人語子」として匿名で執筆している。朝日新聞本紙では見出しは付けられていないが、朝日新聞デジタルでは見出しが付けられている。また、書籍化される際には標題が付けられる。"
+        let attrForDescription: UILabelDecorator.KeysForDecoration = (lineSpacing: 7.0, font: UIFont(name: "HiraKakuProN-W3", size: 12.0)!, foregroundColor: UIColor(code: "#777777"))
+        detailDescriptionLabel.attributedText = NSAttributedString(string: sampleDescription, attributes: UILabelDecorator.getLabelAttributesBy(keys: attrForDescription))
+
+        //
+        detailParagraphView.layoutIfNeeded()
+        detailSubContentsTabViewInitialPositionY = detailParagraphView.frame.height + originalImageHeight
+
+        //
+        detailSubContentsTabViewTopConstraint.constant = detailSubContentsTabViewInitialPositionY
+    }
 }
 
 // MARK: - UIScrollViewDelegate
@@ -203,7 +208,6 @@ extension DetailViewController: UIScrollViewDelegate {
         detailSubContentsTabViewTopConstraint.constant = max(detailSubContentsTabViewInitialPositionY - yOffset, fakeNavigationBarHeight)
     }
 }
-
 
 // MARK: - StoryboardInstantiatable
 
