@@ -272,26 +272,19 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCW-E6-skn">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gm9-gU-bWm">
-                                <rect key="frame" x="0.0" y="42" width="120" height="2"/>
-                                <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="2" id="PRn-fO-hbG"/>
-                                    <constraint firstAttribute="width" constant="120" id="gL2-dh-88t"/>
-                                </constraints>
-                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vCW-E6-skn" firstAttribute="leading" secondItem="aqW-qL-zJy" secondAttribute="leading" id="375-Uk-8Ex"/>
                             <constraint firstAttribute="bottom" secondItem="vCW-E6-skn" secondAttribute="bottom" id="AUi-QT-SxP"/>
                             <constraint firstItem="vCW-E6-skn" firstAttribute="top" secondItem="aqW-qL-zJy" secondAttribute="top" id="BU7-Sm-345"/>
-                            <constraint firstItem="aqW-qL-zJy" firstAttribute="bottom" secondItem="Gm9-gU-bWm" secondAttribute="bottom" id="c3N-bw-GF8"/>
                             <constraint firstItem="vCW-E6-skn" firstAttribute="trailing" secondItem="aqW-qL-zJy" secondAttribute="trailing" id="mWP-JM-c7p"/>
-                            <constraint firstItem="Gm9-gU-bWm" firstAttribute="leading" secondItem="OzH-hv-OaA" secondAttribute="leading" id="ndV-zy-NWN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aqW-qL-zJy"/>
                     </view>
+                    <connections>
+                        <outlet property="tabScrollView" destination="vCW-E6-skn" id="i0U-q2-BDE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOi-9f-Voa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

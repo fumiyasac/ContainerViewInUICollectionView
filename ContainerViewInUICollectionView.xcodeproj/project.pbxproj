@@ -14,8 +14,6 @@
 		DE4EAEC6235AD50F00D89BF0 /* DetailSubContentsBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4EAEC5235AD50F00D89BF0 /* DetailSubContentsBaseViewController.swift */; };
 		DE4EAEC8235AD52900D89BF0 /* DetailSubContentsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4EAEC7235AD52900D89BF0 /* DetailSubContentsListViewController.swift */; };
 		DE4EAECA235AE77300D89BF0 /* SynchronizeScreenNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4EAEC9235AE77300D89BF0 /* SynchronizeScreenNotification.swift */; };
-		DE4EAED2235AF59400D89BF0 /* SubContentsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4EAED1235AF59400D89BF0 /* SubContentsTabView.swift */; };
-		DE4EAED4235AF59F00D89BF0 /* SubContentsTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4EAED3235AF59F00D89BF0 /* SubContentsTabView.xib */; };
 		DE54C88F22F5072000F777BD /* ArticleNavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54C88E22F5072000F777BD /* ArticleNavigationTitleView.swift */; };
 		DE54C89122F5073000F777BD /* ArticleNavigationTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE54C89022F5073000F777BD /* ArticleNavigationTitleView.xib */; };
 		DE6FBB0F2331FD7C00C9E806 /* UILabelDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6FBB0E2331FD7C00C9E806 /* UILabelDecorator.swift */; };
@@ -72,8 +70,6 @@
 		DE4EAEC5235AD50F00D89BF0 /* DetailSubContentsBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSubContentsBaseViewController.swift; sourceTree = "<group>"; };
 		DE4EAEC7235AD52900D89BF0 /* DetailSubContentsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSubContentsListViewController.swift; sourceTree = "<group>"; };
 		DE4EAEC9235AE77300D89BF0 /* SynchronizeScreenNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizeScreenNotification.swift; sourceTree = "<group>"; };
-		DE4EAED1235AF59400D89BF0 /* SubContentsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubContentsTabView.swift; sourceTree = "<group>"; };
-		DE4EAED3235AF59F00D89BF0 /* SubContentsTabView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubContentsTabView.xib; sourceTree = "<group>"; };
 		DE54C88E22F5072000F777BD /* ArticleNavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleNavigationTitleView.swift; sourceTree = "<group>"; };
 		DE54C89022F5073000F777BD /* ArticleNavigationTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleNavigationTitleView.xib; sourceTree = "<group>"; };
 		DE6FBB0E2331FD7C00C9E806 /* UILabelDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelDecorator.swift; sourceTree = "<group>"; };
@@ -159,15 +155,6 @@
 				DE475F37234D41A400D5B8B5 /* DetailEffectiveHeaderView.swift */,
 			);
 			path = DetailEffectiveHeaderView;
-			sourceTree = "<group>";
-		};
-		DE4EAECF235AE87000D89BF0 /* SubContentsTabView */ = {
-			isa = PBXGroup;
-			children = (
-				DE4EAED1235AF59400D89BF0 /* SubContentsTabView.swift */,
-				DE4EAED3235AF59F00D89BF0 /* SubContentsTabView.xib */,
-			);
-			path = SubContentsTabView;
 			sourceTree = "<group>";
 		};
 		DE5145632335EB2C00081BD6 /* Detail */ = {
@@ -330,7 +317,6 @@
 		DED26CBF22D5953F00A36FB4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DE4EAECF235AE87000D89BF0 /* SubContentsTabView */,
 				DE475F34234D408D00D5B8B5 /* DetailEffectiveHeaderView */,
 				DE54C88D22F5059900F777BD /* ArticleNavigationTitleView */,
 				DECBB5802307CD8100F7D2CC /* CategoryPatternCollectionViewCell */,
@@ -476,7 +462,6 @@
 				DED26C9722D5910500A36FB4 /* Assets.xcassets in Resources */,
 				DED26CCE22D5982500A36FB4 /* ContainerCollectionViewCell.xib in Resources */,
 				DED26C9522D590FD00A36FB4 /* Article.storyboard in Resources */,
-				DE4EAED4235AF59F00D89BF0 /* SubContentsTabView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,7 +532,6 @@
 				DE4EAECA235AE77300D89BF0 /* SynchronizeScreenNotification.swift in Sources */,
 				DE4EAEC6235AD50F00D89BF0 /* DetailSubContentsBaseViewController.swift in Sources */,
 				DED26CD022D654C600A36FB4 /* NSObjectProtocolExtension.swift in Sources */,
-				DE4EAED2235AF59400D89BF0 /* SubContentsTabView.swift in Sources */,
 				DE4EAEC8235AD52900D89BF0 /* DetailSubContentsListViewController.swift in Sources */,
 				DE958D5422F01C1C00DB2C21 /* CategoryViewController.swift in Sources */,
 				DED01B6C233C946400900AED /* DetailTransition.swift in Sources */,
