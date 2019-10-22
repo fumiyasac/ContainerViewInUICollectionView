@@ -44,6 +44,13 @@ final class DetailSubContentsTabViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updatebottomLineViewPosition(_:)), name: Notification.Name(rawValue: SynchronizeScreenNotification.UpdateSliderNotification.rawValue), object: nil)
+    }
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
@@ -51,8 +58,23 @@ final class DetailSubContentsTabViewController: UIViewController {
         setContentsTabScrollView?()
     }
 
-    // MARK: -  Private Function
+    // MARK: - deinit
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 
+    // MARK: - Private Function (for NotificationCenter)
+
+    // 
+    @objc private func updatebottomLineViewPosition(_ notification: Notification) {
+        if let page = notification.userInfo?["page"] as? Int {
+            // UIScrollView内に配置したUIButtonの色とボタン下部でスライドするBar用Viewの位置調整
+            setButtonsColorBy(page: page)
+            setSliderPositionBy(page: page)
+        }
+    }
+    
     // 配置したUIScrollView内に配置したUIButton押下時のアクション設定
     @objc private func tabButtonTapped(button: UIButton) {
 
@@ -63,6 +85,8 @@ final class DetailSubContentsTabViewController: UIViewController {
         setButtonsColorBy(page: page)
         setSliderPositionBy(page: page)
     }
+
+    // MARK: -  Private Function
 
     // コンテンツ表示用のUIScrollViewの設定
     private func setupTabScrollView() {
@@ -148,6 +172,6 @@ extension DetailSubContentsTabViewController: StoryboardInstantiatable {
 
     // このViewControllerに対応するViewControllerのIdentifier名
     static var viewControllerIdentifier: String? {
-        return "DetailSubContentsTab"
+        return DetailSubContentsTabViewController.className
     }
 }

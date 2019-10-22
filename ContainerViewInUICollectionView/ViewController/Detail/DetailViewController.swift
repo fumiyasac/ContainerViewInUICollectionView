@@ -13,7 +13,15 @@ final class DetailViewController: UIViewController {
     // MARK: - Property
 
     // NavigationBarもどきのヘッダー部分の高さ
-    private var fakeNavigationBarHeight: CGFloat = CGFloat.zero
+    private let fakeNavigationBarHeight: CGFloat = {
+        let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
+        let navigationBarHeight: CGFloat = 44.0
+        return statusBarHeight + navigationBarHeight
+    }()
+
+    private let detailSubContentsTabViewHeight: CGFloat = {
+        return 44.0
+    }()
 
     // サムネイル画像の幅と高さ
     private let originalImageWidth: CGFloat = UIScreen.main.bounds.size.width
@@ -67,7 +75,6 @@ final class DetailViewController: UIViewController {
         super.viewDidLoad()
 
         // MEMO: プロパティを反映させる順番に注意しないとクラッシュしてしまう...
-        setupFakeNavigationBarHeight()
         setupScrollView()
         setupDetailSubContentsViewHeight()
         setupDetailImageViewAndMask()
@@ -78,14 +85,33 @@ final class DetailViewController: UIViewController {
         //
         setDetailParagraphAndLayout() // FIXME: Refactoring
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        //
+        NotificationCenter.default.addObserver(self, selector: #selector(self.enableDetailScroll), name: Notification.Name(rawValue: SynchronizeScreenNotification.ActivateMainContentsScrollNotification.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.disableDetailScroll), name: Notification.Name(rawValue: SynchronizeScreenNotification.ActivateSubContentsScrollNotification.rawValue), object: nil)
+
+    }
+
+    // MARK: - deinit
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    // MARK: - Private Function (for NotificationCenter)
+
+    @objc private func enableDetailScroll() {
+        detailScrollView.isScrollEnabled = true
+    }
+
+    @objc private func disableDetailScroll() {
+        detailScrollView.isScrollEnabled = false
+    }
 
     // MARK: - Private Function (for Initial Settings)
-
-    private func setupFakeNavigationBarHeight() {
-        let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
-        let navigationBarHeight: CGFloat = 44.0
-        fakeNavigationBarHeight = statusBarHeight + navigationBarHeight
-    }
 
     private func setupScrollView() {
         // MEMO: NavigationBar分のスクロール位置がずれてしまうのでその考慮を行う
@@ -98,7 +124,7 @@ final class DetailViewController: UIViewController {
     
     private func setupDetailSubContentsViewHeight() {
         // MEMO: NavigationBar相当分を差し引いたUITableViewで展開するコンテンツ表示部分の高さを確保する
-        detailSubContentsViewHeightConstraint.constant = UIScreen.main.bounds.height - fakeNavigationBarHeight
+        detailSubContentsViewHeightConstraint.constant = UIScreen.main.bounds.height - fakeNavigationBarHeight - detailSubContentsTabViewHeight
     }
 
     private func setupDetailImageViewAndMask() {
@@ -206,6 +232,11 @@ extension DetailViewController: UIScrollViewDelegate {
 
         //
         detailSubContentsTabViewTopConstraint.constant = max(detailSubContentsTabViewInitialPositionY - yOffset, fakeNavigationBarHeight)
+        
+        //
+        if detailSubContentsTabViewInitialPositionY - yOffset < fakeNavigationBarHeight {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: SynchronizeScreenNotification.ActivateSubContentsScrollNotification.rawValue), object: self, userInfo: nil)
+        }
     }
 }
 

@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="vDG-I7-lo8">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1455"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1499"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r26-bT-MNn">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
@@ -78,8 +78,15 @@
                                                     <constraint firstItem="cKX-pq-ENZ" firstAttribute="leading" secondItem="jym-Mt-xUU" secondAttribute="leading" constant="16" id="sFt-TU-3bI"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="58Z-Uf-bJc">
+                                                <rect key="frame" x="0.0" y="855" width="375" height="44"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="K3F-wa-kdE"/>
+                                                </constraints>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f12-rF-7sE">
-                                                <rect key="frame" x="0.0" y="855" width="375" height="600"/>
+                                                <rect key="frame" x="0.0" y="899" width="375" height="600"/>
                                                 <subviews>
                                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nf0-Zp-Zl4">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
@@ -101,7 +108,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wa1-6X-7ig">
-                                                <rect key="frame" x="0.0" y="1455" width="375" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="1499" width="375" height="0.0"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" id="lj6-IU-cXl"/>
@@ -210,15 +217,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7df-TY-2Zg">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7df-TY-2Zg">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="gv9-Xi-kDR" kind="embed" id="jah-1R-Hor"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.21176470589999999" green="0.74117647060000003" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7df-TY-2Zg" firstAttribute="top" secondItem="VIt-7f-oH0" secondAttribute="top" id="9Vr-AR-Nn6"/>
+                            <constraint firstItem="7df-TY-2Zg" firstAttribute="bottom" secondItem="HSl-Ib-CZG" secondAttribute="bottom" id="Aqy-5Q-r77"/>
+                            <constraint firstItem="7df-TY-2Zg" firstAttribute="leading" secondItem="VIt-7f-oH0" secondAttribute="leading" id="k9o-JB-MuV"/>
+                            <constraint firstItem="7df-TY-2Zg" firstAttribute="trailing" secondItem="VIt-7f-oH0" secondAttribute="trailing" id="pxu-Qf-p9M"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HSl-Ib-CZG"/>
                     </view>
                 </viewController>
@@ -229,7 +241,7 @@
         <!--Page View Controller-->
         <scene sceneID="2z9-4y-YcR">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="gv9-Xi-kDR" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="gv9-Xi-kDR" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BNk-Qg-mYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1330" y="-604"/>
@@ -237,7 +249,7 @@
         <!--Detail Sub Contents List View Controller-->
         <scene sceneID="GBV-oi-V8d">
             <objects>
-                <viewController id="DDu-OX-nRQ" customClass="DetailSubContentsListViewController" customModule="ContainerViewInUICollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailSubContentsListViewController" id="DDu-OX-nRQ" customClass="DetailSubContentsListViewController" customModule="ContainerViewInUICollectionView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GbV-UA-gPW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -256,6 +268,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qTs-dr-pjV"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="4yD-ZP-suc" id="mfv-6v-itU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pa9-vh-Vxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -264,7 +279,7 @@
         <!--Detail Sub Contents Tab View Controller-->
         <scene sceneID="vLN-5s-G86">
             <objects>
-                <viewController storyboardIdentifier="DetailSubContentsTab" id="QE3-TW-TSz" customClass="DetailSubContentsTabViewController" customModule="ContainerViewInUICollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailSubContentsTabViewController" id="QE3-TW-TSz" customClass="DetailSubContentsTabViewController" customModule="ContainerViewInUICollectionView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OzH-hv-OaA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

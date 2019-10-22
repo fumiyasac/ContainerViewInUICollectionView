@@ -14,6 +14,8 @@
 		DE4EAEC6235AD50F00D89BF0 /* DetailSubContentsBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4EAEC5235AD50F00D89BF0 /* DetailSubContentsBaseViewController.swift */; };
 		DE4EAEC8235AD52900D89BF0 /* DetailSubContentsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4EAEC7235AD52900D89BF0 /* DetailSubContentsListViewController.swift */; };
 		DE4EAECA235AE77300D89BF0 /* SynchronizeScreenNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4EAEC9235AE77300D89BF0 /* SynchronizeScreenNotification.swift */; };
+		DE4EAED7235DBA7300D89BF0 /* SubContentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4EAED5235DBA7300D89BF0 /* SubContentsTableViewCell.swift */; };
+		DE4EAED8235DBA7300D89BF0 /* SubContentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE4EAED6235DBA7300D89BF0 /* SubContentsTableViewCell.xib */; };
 		DE54C88F22F5072000F777BD /* ArticleNavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54C88E22F5072000F777BD /* ArticleNavigationTitleView.swift */; };
 		DE54C89122F5073000F777BD /* ArticleNavigationTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE54C89022F5073000F777BD /* ArticleNavigationTitleView.xib */; };
 		DE6FBB0F2331FD7C00C9E806 /* UILabelDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6FBB0E2331FD7C00C9E806 /* UILabelDecorator.swift */; };
@@ -70,6 +72,8 @@
 		DE4EAEC5235AD50F00D89BF0 /* DetailSubContentsBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSubContentsBaseViewController.swift; sourceTree = "<group>"; };
 		DE4EAEC7235AD52900D89BF0 /* DetailSubContentsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSubContentsListViewController.swift; sourceTree = "<group>"; };
 		DE4EAEC9235AE77300D89BF0 /* SynchronizeScreenNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizeScreenNotification.swift; sourceTree = "<group>"; };
+		DE4EAED5235DBA7300D89BF0 /* SubContentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubContentsTableViewCell.swift; sourceTree = "<group>"; };
+		DE4EAED6235DBA7300D89BF0 /* SubContentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubContentsTableViewCell.xib; sourceTree = "<group>"; };
 		DE54C88E22F5072000F777BD /* ArticleNavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleNavigationTitleView.swift; sourceTree = "<group>"; };
 		DE54C89022F5073000F777BD /* ArticleNavigationTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleNavigationTitleView.xib; sourceTree = "<group>"; };
 		DE6FBB0E2331FD7C00C9E806 /* UILabelDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelDecorator.swift; sourceTree = "<group>"; };
@@ -321,6 +325,8 @@
 				DE54C88D22F5059900F777BD /* ArticleNavigationTitleView */,
 				DECBB5802307CD8100F7D2CC /* CategoryPatternCollectionViewCell */,
 				DED26CC922D597EB00A36FB4 /* ContainerCollectionViewCell */,
+				DE4EAED5235DBA7300D89BF0 /* SubContentsTableViewCell.swift */,
+				DE4EAED6235DBA7300D89BF0 /* SubContentsTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -457,6 +463,7 @@
 				DE958D5222F01BB900DB2C21 /* Category.storyboard in Resources */,
 				DE475F36234D418D00D5B8B5 /* DetailEffectiveHeaderView.xib in Resources */,
 				DECBB5842307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.xib in Resources */,
+				DE4EAED8235DBA7300D89BF0 /* SubContentsTableViewCell.xib in Resources */,
 				DEB07BD32335ECB10046005F /* Detail.storyboard in Resources */,
 				DED26C9A22D5910500A36FB4 /* LaunchScreen.storyboard in Resources */,
 				DED26C9722D5910500A36FB4 /* Assets.xcassets in Resources */,
@@ -539,6 +546,7 @@
 				DECBB5832307CDDF00F7D2CC /* CategoryPatternCollectionViewCell.swift in Sources */,
 				DEDC0D232317E261009289C8 /* UIViewControllerExtension.swift in Sources */,
 				DECE4BE6233F231D00EADC5D /* MosaicCollectionViewLayoutPattern.swift in Sources */,
+				DE4EAED7235DBA7300D89BF0 /* SubContentsTableViewCell.swift in Sources */,
 				DE475F38234D41A400D5B8B5 /* DetailEffectiveHeaderView.swift in Sources */,
 				DED26CD622D6555300A36FB4 /* UITableViewExtension.swift in Sources */,
 				DEB07BD02335EB630046005F /* DetailViewController.swift in Sources */,
