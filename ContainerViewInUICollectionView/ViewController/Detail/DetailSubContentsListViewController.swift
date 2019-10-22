@@ -32,13 +32,18 @@ final class DetailSubContentsListViewController: UIViewController {
     // MARK: - Private Function (for NotificationCenter)
 
     // MEMO: Notification名「ActivateMainContentsScrollNotification」にて実行される処理
-    @objc private func resetTableViewPosition() {
+    @objc private func disableTableViewScroll() {
         tableView.isScrollEnabled = false
     }
 
     // MEMO: Notification名「ActivateSubContentsScrollNotification」にて実行される処理
-    @objc private func enableTableViewPosition() {
+    @objc private func enableTableViewScroll() {
         tableView.isScrollEnabled = true
+    }
+
+    // MEMO: Notification名「UpdateTableViewOffsetNotification」にて実行される処理
+    @objc private func resetTableViewPosition() {
+        tableView.contentOffset.y = 0
     }
 
     // MARK: - Private Function
@@ -47,8 +52,9 @@ final class DetailSubContentsListViewController: UIViewController {
     private func setupNotificationCenter() {
 
         // Notification名「ActivateMainContentsScrollNotification / ActivateSubContentsScrollNotification」を監視対象に登録する
-        NotificationCenter.default.addObserver(self, selector: #selector(self.resetTableViewPosition), name: Notification.Name(rawValue: SynchronizeScreenNotification.ActivateMainContentsScrollNotification.rawValue), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.enableTableViewPosition), name: Notification.Name(rawValue: SynchronizeScreenNotification.ActivateSubContentsScrollNotification.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.disableTableViewScroll), name: Notification.Name(rawValue: SynchronizeScreenNotification.ActivateMainContentsScrollNotification.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.enableTableViewScroll), name: Notification.Name(rawValue: SynchronizeScreenNotification.ActivateSubContentsScrollNotification.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.resetTableViewPosition), name: Notification.Name(rawValue: SynchronizeScreenNotification.UpdateTableViewOffsetNotification.rawValue), object: nil)
     }
 
     // UITableViewの設定
@@ -87,6 +93,10 @@ extension DetailSubContentsListViewController: UIScrollViewDelegate {
 
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         scrollBeginingPoint = scrollView.contentOffset
+        if scrollBeginingPoint.y == 0 {
+            // Notification名「ActivateMainContentsScrollNotification」を送信する
+            NotificationCenter.default.post(name: Notification.Name(rawValue: SynchronizeScreenNotification.ActivateSubContentsScrollNotification.rawValue), object: self, userInfo: nil)
+        }
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -94,6 +104,8 @@ extension DetailSubContentsListViewController: UIScrollViewDelegate {
         if scrollView.contentOffset.y < 0 && scrollBeginingPoint.y > currentPoint.y {
             // Notification名「ActivateMainContentsScrollNotification」を送信する
             NotificationCenter.default.post(name: Notification.Name(rawValue: SynchronizeScreenNotification.ActivateMainContentsScrollNotification.rawValue), object: self, userInfo: nil)
+            // Notification名「UpdateTableViewOffsetNotification」を送信する
+            NotificationCenter.default.post(name: Notification.Name(rawValue: SynchronizeScreenNotification.UpdateTableViewOffsetNotification.rawValue), object: self, userInfo: nil)
         }
     }
 }
