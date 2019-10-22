@@ -11,11 +11,15 @@ import AnimatedCollectionViewLayout
 
 final class ArticleViewController: UIViewController {
 
+    // MARK: - Property
+
     // タイトル表示用のView
     private let titleView = ArticleNavigationTitleView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44))
 
     // MEMO: UICollectionViewCell内に表示させる要素を格納するための変数
     private var displayViewControllerSet: [DisplayViewControllerSet] = []
+
+    // MARK: - @IBOutlet
 
     // MEMO: UICollectionViewCell内にContainerViewとして他のViewControllerを配置する
     @IBOutlet weak private var collectionView: UICollectionView!

@@ -11,6 +11,8 @@ import Blueprints
 
 final class CategoryViewController: UIViewController {
 
+    // MARK: - Property
+
     // カスタムトランジションを実行するためのクラス
     private let detailTransition = DetailTransition()
 
@@ -21,13 +23,15 @@ final class CategoryViewController: UIViewController {
     // ViewController要素を生成する際に必要な情報
     private var bluePrintPatternLayout: VerticalMosaicBlueprintLayout!
 
+    // MARK: - @IBOutlet
+
     @IBOutlet weak private var collectionView: UICollectionView!
 
     // MARK: - Typealias
 
     typealias CategoryInformation = (title: String, layoutPattern: VerticalMosaicBlueprintLayout)
 
-    // MARK: - Static Function
+    // MARK: - Static Function (for Dependency Injection)
 
     static func make(with dependency: CategoryInformation) -> ArticleViewController.DisplayViewControllerSet {
 
