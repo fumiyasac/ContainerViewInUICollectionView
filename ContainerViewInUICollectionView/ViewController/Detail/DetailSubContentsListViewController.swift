@@ -10,6 +10,8 @@ import UIKit
 
 final class DetailSubContentsListViewController: UIViewController {
 
+    private var scrollBeginingPoint: CGPoint!
+
     @IBOutlet weak private(set) var tableView: UITableView!
 
     // MARK: - Override
@@ -31,14 +33,11 @@ final class DetailSubContentsListViewController: UIViewController {
 
     // MEMO: Notification名「ActivateMainContentsScrollNotification」にて実行される処理
     @objc private func resetTableViewPosition() {
-        tableView.bounces = false
         tableView.isScrollEnabled = false
-        tableView.contentOffset.y = 0
     }
 
     // MEMO: Notification名「ActivateSubContentsScrollNotification」にて実行される処理
     @objc private func enableTableViewPosition() {
-        tableView.bounces = true
         tableView.isScrollEnabled = true
     }
 
@@ -59,7 +58,6 @@ final class DetailSubContentsListViewController: UIViewController {
         tableView.rowHeight = 68.0
         tableView.delaysContentTouches = false
         tableView.isScrollEnabled = false
-        tableView.bounces = false
         tableView.contentInset.bottom = UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0
         tableView.registerCustomCell(SubContentsTableViewCell.self)
     }
@@ -84,12 +82,17 @@ extension DetailSubContentsListViewController: UITableViewDataSource, UITableVie
 
 extension DetailSubContentsListViewController: UIScrollViewDelegate {
 
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    // REMARK: 現在表示中のUITableViewのY軸方向のオフセット値がマイナスになったらDetailViewController.swiftのスクロールを有効にする
+    // → しかしながらこの手法では引っかかる感じになってしまっている...
 
-        // REMARK: 現在表示中のUITableViewのY軸方向のオフセット値がマイナスになったらDetailViewController.swiftのスクロールを有効にする
-        // → しかしながらこの手法では引っかかる感じになってしまっている...
-        if scrollView.contentOffset.y < 0.0 {
-            scrollView.contentOffset.y = 0.0
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        scrollBeginingPoint = scrollView.contentOffset
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let currentPoint = scrollView.contentOffset
+        if scrollView.contentOffset.y < 0 && scrollBeginingPoint.y > currentPoint.y {
+            // Notification名「ActivateMainContentsScrollNotification」を送信する
             NotificationCenter.default.post(name: Notification.Name(rawValue: SynchronizeScreenNotification.ActivateMainContentsScrollNotification.rawValue), object: self, userInfo: nil)
         }
     }

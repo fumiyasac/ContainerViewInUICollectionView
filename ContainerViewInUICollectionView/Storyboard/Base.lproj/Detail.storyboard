@@ -224,7 +224,7 @@
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" red="0.21176470589999999" green="0.74117647060000003" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7df-TY-2Zg" firstAttribute="top" secondItem="VIt-7f-oH0" secondAttribute="top" id="9Vr-AR-Nn6"/>
                             <constraint firstItem="7df-TY-2Zg" firstAttribute="bottom" secondItem="HSl-Ib-CZG" secondAttribute="bottom" id="Aqy-5Q-r77"/>

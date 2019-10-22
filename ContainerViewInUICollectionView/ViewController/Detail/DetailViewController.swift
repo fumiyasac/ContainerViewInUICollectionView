@@ -236,7 +236,7 @@ extension DetailViewController: UIScrollViewDelegate {
         // MEMO: サブコンテンツを画面全体に表示する状態まで到達したら、スクロール可否を切り替える処理を実施する
         if detailSubContentsTabViewInitialPositionY - yOffset < fakeNavigationBarHeight {
 
-            // Notification名「ActivateSubContentsScrollNotification」を監視対象に登録する
+            // Notification名「ActivateSubContentsScrollNotification」を送信する
             NotificationCenter.default.post(name: Notification.Name(rawValue: SynchronizeScreenNotification.ActivateSubContentsScrollNotification.rawValue), object: self, userInfo: nil)
         }
     }
