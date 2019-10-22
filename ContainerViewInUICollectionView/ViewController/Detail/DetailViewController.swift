@@ -43,30 +43,28 @@ final class DetailViewController: UIViewController {
 
     // MARK: - @IBOutlet
 
-    //
+    // コンテンツ表示用のUIScrollView
     @IBOutlet weak private var detailScrollView: UIScrollView!
 
-    //
+    // サムネイル画像のUIImageViewと制約値
     @IBOutlet weak private var detailImageView: UIImageView!
     @IBOutlet weak private var detailImageViewTopConstraint: NSLayoutConstraint!
 
-    //
+    // サムネイル画像の上にかぶせているマスク用のUIViewと制約値
     @IBOutlet weak private var detailImageMaskView: UIView!
     @IBOutlet weak private var detailImageMaskViewTopConstraint: NSLayoutConstraint!
 
-    //
+    // ダミーのNavigationBar表示をするDetailEffectiveHeaderViewと制約値
     @IBOutlet weak private var detailEffectiveHeaderView: DetailEffectiveHeaderView!
     @IBOutlet weak private var detailEffectiveHeaderHeightConstraint: NSLayoutConstraint!
 
-    //
+    // タイトルと概要を表示しているUIView及び内部要素と制約値
     @IBOutlet weak private var detailTitleLabel: UILabel!
     @IBOutlet weak private var detailDescriptionLabel: UILabel!
     @IBOutlet weak private var detailParagraphView: UIView!
     
-    //
+    // サブコンテンツを表示しているContainerViewの制約値
     @IBOutlet weak private var detailSubContentsTabViewTopConstraint: NSLayoutConstraint!
-
-    //
     @IBOutlet weak private var detailSubContentsViewHeightConstraint: NSLayoutConstraint!
     
     // MARK: - Override
@@ -74,7 +72,8 @@ final class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // MEMO: プロパティを反映させる順番に注意しないとクラッシュしてしまう...
+        // REMARK: プロパティを反映させる順番を間違えるとクラッシュしうる点に注意する
+        setupNotificationCenter()
         setupScrollView()
         setupDetailSubContentsViewHeight()
         setupDetailImageViewAndMask()
@@ -82,17 +81,8 @@ final class DetailViewController: UIViewController {
         setupPresentedImageFrameForTransition()
         setupStickyOffsetLimit()
 
-        //
-        setDetailParagraphAndLayout() // FIXME: Refactoring
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        //
-        NotificationCenter.default.addObserver(self, selector: #selector(self.enableDetailScroll), name: Notification.Name(rawValue: SynchronizeScreenNotification.ActivateMainContentsScrollNotification.rawValue), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.disableDetailScroll), name: Notification.Name(rawValue: SynchronizeScreenNotification.ActivateSubContentsScrollNotification.rawValue), object: nil)
-
+        // REMARK: タイトルと概要表示の部分が定型文の場合で成り立つ処理に現状はしている点に注意する
+        setDetailParagraphAndLayout()
     }
 
     // MARK: - deinit
@@ -103,15 +93,25 @@ final class DetailViewController: UIViewController {
     
     // MARK: - Private Function (for NotificationCenter)
 
+    // MEMO: Notification名「ActivateMainContentsScrollNotification」にて実行される処理
     @objc private func enableDetailScroll() {
         detailScrollView.isScrollEnabled = true
     }
 
+    // MEMO: Notification名「ActivateSubContentsScrollNotification」にて実行される処理
     @objc private func disableDetailScroll() {
         detailScrollView.isScrollEnabled = false
     }
 
     // MARK: - Private Function (for Initial Settings)
+
+    // 監視対象NotificationCenterの設定
+    private func setupNotificationCenter() {
+
+        // Notification名「ActivateMainContentsScrollNotification / ActivateSubContentsScrollNotification」を監視対象に登録する
+        NotificationCenter.default.addObserver(self, selector: #selector(self.enableDetailScroll), name: Notification.Name(rawValue: SynchronizeScreenNotification.ActivateMainContentsScrollNotification.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.disableDetailScroll), name: Notification.Name(rawValue: SynchronizeScreenNotification.ActivateSubContentsScrollNotification.rawValue), object: nil)
+    }
 
     private func setupScrollView() {
         // MEMO: NavigationBar分のスクロール位置がずれてしまうのでその考慮を行う
@@ -188,21 +188,21 @@ final class DetailViewController: UIViewController {
 
     private func setDetailParagraphAndLayout() {
 
-        //
-        let sampleTitle = "僕の超絶大嫌いな天声人語です〜。新聞に掲載してあったら切り抜いて保存しないで速攻捨てましょう。"
+        // タイトル文言の反映
+        let sampleTitle = "こちらはサンプル表示用のUI実装になります。処理としてはかなり強引かつ無理やりな手法である点に注意。"
         let attrForTitle: UILabelDecorator.KeysForDecoration = (lineSpacing: 6.0, font: UIFont(name: "HiraKakuProN-W6", size: 15.0)!, foregroundColor: UIColor.black)
         detailTitleLabel.attributedText = NSAttributedString(string: sampleTitle, attributes: UILabelDecorator.getLabelAttributesBy(keys: attrForTitle))
 
-        //
-        let sampleDescription = "天声人語（てんせいじんご）は、朝日新聞の朝刊に長期連載中の1面コラムである。1904年1月5日付の『大阪朝日新聞』2面に初めて掲載され（初期は必ずしも1面に掲載されるとは限らなかった）、以後、別の題名となった時期を挟みながら1世紀以上にわたって継続して掲載されている。最近のニュース、話題を題材にして朝日新聞の論説委員が執筆し、社説とは異なる角度から分析を加えている。特定の論説委員が一定期間「天声人語子」として匿名で執筆している。朝日新聞本紙では見出しは付けられていないが、朝日新聞デジタルでは見出しが付けられている。また、書籍化される際には標題が付けられる。"
+        // 概要文言の反映
+        let sampleDescription = "なんとなく思い立ってTwitterのプロフィールページの様なUIを作ってみようと思ったのですが、なかなかどうしてこれが難しかった。まだこのサンプル実装はAPI処理を伴うことがないのでNotificationCenterを利用した処理を駆使して無理やりにお互いのViewControllerにおける処理を電動させる方式をとっているのだが、実際に利用する際には気をつけなければならない点が出てくる気もしています。特にReactiveなフレームワークを利用しない場合等においてはコードも煩雑化しやすい ＆ AutoLayout制約調整だけではまかないきれない部分がでるという点に注意するとよいのではないかと改めて感じている次第です。"
         let attrForDescription: UILabelDecorator.KeysForDecoration = (lineSpacing: 7.0, font: UIFont(name: "HiraKakuProN-W3", size: 12.0)!, foregroundColor: UIColor(code: "#777777"))
         detailDescriptionLabel.attributedText = NSAttributedString(string: sampleDescription, attributes: UILabelDecorator.getLabelAttributesBy(keys: attrForDescription))
 
-        //
+        // MEMO: 文言を反映した状態でのdetailParagraphViewの高さを取得するための処理
         detailParagraphView.layoutIfNeeded()
         detailSubContentsTabViewInitialPositionY = detailParagraphView.frame.height + originalImageHeight
 
-        //
+        // MEMO: サブコンテンツを表示しているContainerViewもここで決定させる
         detailSubContentsTabViewTopConstraint.constant = detailSubContentsTabViewInitialPositionY
     }
 }
@@ -230,11 +230,13 @@ extension DetailViewController: UIScrollViewDelegate {
             dismissScreenDependOnVertialPosition()
         }
 
-        //
+        // スクロールで変化する上方向のサブコンテンツを表示しているContainerViewの制約を更新する
         detailSubContentsTabViewTopConstraint.constant = max(detailSubContentsTabViewInitialPositionY - yOffset, fakeNavigationBarHeight)
-        
-        //
+
+        // MEMO: サブコンテンツを画面全体に表示する状態まで到達したら、スクロール可否を切り替える処理を実施する
         if detailSubContentsTabViewInitialPositionY - yOffset < fakeNavigationBarHeight {
+
+            // Notification名「ActivateSubContentsScrollNotification」を監視対象に登録する
             NotificationCenter.default.post(name: Notification.Name(rawValue: SynchronizeScreenNotification.ActivateSubContentsScrollNotification.rawValue), object: self, userInfo: nil)
         }
     }

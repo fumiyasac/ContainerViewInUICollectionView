@@ -221,6 +221,15 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		DE9CF1C2235F3601002984BF /* SubContentsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DE4EAED6235DBA7300D89BF0 /* SubContentsTableViewCell.xib */,
+				DE4EAED5235DBA7300D89BF0 /* SubContentsTableViewCell.swift */,
+			);
+			path = SubContentsTableViewCell;
+			sourceTree = "<group>";
+		};
 		DECBB5802307CD8100F7D2CC /* CategoryPatternCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,12 +330,11 @@
 		DED26CBF22D5953F00A36FB4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DE9CF1C2235F3601002984BF /* SubContentsTableViewCell */,
 				DE475F34234D408D00D5B8B5 /* DetailEffectiveHeaderView */,
 				DE54C88D22F5059900F777BD /* ArticleNavigationTitleView */,
 				DECBB5802307CD8100F7D2CC /* CategoryPatternCollectionViewCell */,
 				DED26CC922D597EB00A36FB4 /* ContainerCollectionViewCell */,
-				DE4EAED5235DBA7300D89BF0 /* SubContentsTableViewCell.swift */,
-				DE4EAED6235DBA7300D89BF0 /* SubContentsTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";

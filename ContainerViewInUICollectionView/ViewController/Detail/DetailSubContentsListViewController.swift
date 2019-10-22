@@ -17,15 +17,8 @@ final class DetailSubContentsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupNotificationCenter()
         setupTableView()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        //
-        NotificationCenter.default.addObserver(self, selector: #selector(self.resetTableViewPosition), name: Notification.Name(rawValue: SynchronizeScreenNotification.ActivateMainContentsScrollNotification.rawValue), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.enableTableViewPosition), name: Notification.Name(rawValue: SynchronizeScreenNotification.ActivateSubContentsScrollNotification.rawValue), object: nil)
     }
 
     // MARK: - deinit
@@ -34,30 +27,39 @@ final class DetailSubContentsListViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
 
-    // MARK: -  Private Function
+    // MARK: - Private Function (for NotificationCenter)
 
-    //
-    @objc private func enableTableViewPosition() {
-        tableView.bounces = true
-        tableView.isScrollEnabled = true
-    }
-
-    //
+    // MEMO: Notification名「ActivateMainContentsScrollNotification」にて実行される処理
     @objc private func resetTableViewPosition() {
         tableView.bounces = false
         tableView.isScrollEnabled = false
         tableView.contentOffset.y = 0
     }
 
+    // MEMO: Notification名「ActivateSubContentsScrollNotification」にて実行される処理
+    @objc private func enableTableViewPosition() {
+        tableView.bounces = true
+        tableView.isScrollEnabled = true
+    }
+
+    // MARK: - Private Function
+
+    // 監視対象NotificationCenterの設定
+    private func setupNotificationCenter() {
+
+        // Notification名「ActivateMainContentsScrollNotification / ActivateSubContentsScrollNotification」を監視対象に登録する
+        NotificationCenter.default.addObserver(self, selector: #selector(self.resetTableViewPosition), name: Notification.Name(rawValue: SynchronizeScreenNotification.ActivateMainContentsScrollNotification.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.enableTableViewPosition), name: Notification.Name(rawValue: SynchronizeScreenNotification.ActivateSubContentsScrollNotification.rawValue), object: nil)
+    }
+
+    // UITableViewの設定
     private func setupTableView() {
-        tableView.bounces = false
         tableView.delegate = self
         tableView.dataSource = self
-        //tableView.estimatedRowHeight = 86.0
-        tableView.rowHeight = 60.0 //UITableView.automaticDimension
+        tableView.rowHeight = 68.0
         tableView.delaysContentTouches = false
         tableView.isScrollEnabled = false
-
+        tableView.bounces = false
         tableView.contentInset.bottom = UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0
         tableView.registerCustomCell(SubContentsTableViewCell.self)
     }
@@ -73,7 +75,7 @@ extension DetailSubContentsListViewController: UITableViewDataSource, UITableVie
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCustomCell(with: SubContentsTableViewCell.self)
-            cell.titleLabel.text = "Sample(\(indexPath.row))"
+        cell.setCell(title: "Title of (\(indexPath.row))", description: "Description of (\(indexPath.row))")
         return cell
     }
 }
@@ -83,13 +85,11 @@ extension DetailSubContentsListViewController: UITableViewDataSource, UITableVie
 extension DetailSubContentsListViewController: UIScrollViewDelegate {
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
+        // REMARK: 現在表示中のUITableViewのY軸方向のオフセット値がマイナスになったらDetailViewController.swiftのスクロールを有効にする
+        // → しかしながらこの手法では引っかかる感じになってしまっている...
         if scrollView.contentOffset.y < 0.0 {
             scrollView.contentOffset.y = 0.0
-        }
-    }
-
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y == 0.0 {
             NotificationCenter.default.post(name: Notification.Name(rawValue: SynchronizeScreenNotification.ActivateMainContentsScrollNotification.rawValue), object: self, userInfo: nil)
         }
     }

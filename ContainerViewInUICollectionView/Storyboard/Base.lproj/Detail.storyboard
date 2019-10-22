@@ -287,12 +287,22 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCW-E6-skn">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3T-Hl-FMb">
+                                <rect key="frame" x="0.0" y="43.5" width="375" height="0.5"/>
+                                <color key="backgroundColor" red="0.80784313730000001" green="0.80784313730000001" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="bdy-Mc-wp4"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vCW-E6-skn" firstAttribute="leading" secondItem="aqW-qL-zJy" secondAttribute="leading" id="375-Uk-8Ex"/>
                             <constraint firstAttribute="bottom" secondItem="vCW-E6-skn" secondAttribute="bottom" id="AUi-QT-SxP"/>
                             <constraint firstItem="vCW-E6-skn" firstAttribute="top" secondItem="aqW-qL-zJy" secondAttribute="top" id="BU7-Sm-345"/>
+                            <constraint firstAttribute="bottom" secondItem="x3T-Hl-FMb" secondAttribute="bottom" id="Fjv-Bb-woL"/>
+                            <constraint firstItem="aqW-qL-zJy" firstAttribute="trailing" secondItem="x3T-Hl-FMb" secondAttribute="trailing" id="JGh-yE-HgS"/>
+                            <constraint firstItem="x3T-Hl-FMb" firstAttribute="leading" secondItem="aqW-qL-zJy" secondAttribute="leading" id="TpD-nZ-Ipk"/>
                             <constraint firstItem="vCW-E6-skn" firstAttribute="trailing" secondItem="aqW-qL-zJy" secondAttribute="trailing" id="mWP-JM-c7p"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aqW-qL-zJy"/>

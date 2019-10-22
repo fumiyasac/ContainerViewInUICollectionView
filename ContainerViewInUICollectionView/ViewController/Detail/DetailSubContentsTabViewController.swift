@@ -42,13 +42,8 @@ final class DetailSubContentsTabViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        //
-        NotificationCenter.default.addObserver(self, selector: #selector(self.updatebottomLineViewPosition(_:)), name: Notification.Name(rawValue: SynchronizeScreenNotification.UpdateSliderNotification.rawValue), object: nil)
+        setupNotificationCenter()
     }
 
     override func viewDidLayoutSubviews() {
@@ -66,30 +61,40 @@ final class DetailSubContentsTabViewController: UIViewController {
 
     // MARK: - Private Function (for NotificationCenter)
 
-    // 
+    // MEMO: Notification名「UpdateSliderNotification」にて実行される処理
     @objc private func updatebottomLineViewPosition(_ notification: Notification) {
-        if let page = notification.userInfo?["page"] as? Int {
+        if let targetIndex = notification.userInfo?["targetIndex"] as? Int {
+
             // UIScrollView内に配置したUIButtonの色とボタン下部でスライドするBar用Viewの位置調整
-            setButtonsColorBy(page: page)
-            setSliderPositionBy(page: page)
+            setButtonsColorBy(targetIndex: targetIndex)
+            setSliderPositionBy(targetIndex: targetIndex)
         }
     }
-    
+
+    // MARK: - Private Function (for addTarget)
+
     // 配置したUIScrollView内に配置したUIButton押下時のアクション設定
     @objc private func tabButtonTapped(button: UIButton) {
 
         // 押されたボタンのタグを取得
-        let page: Int = button.tag
+        let targetIndex: Int = button.tag
 
         // UIScrollView内に配置したUIButtonの色とボタン下部でスライドするBar用Viewの位置調整
-        setButtonsColorBy(page: page)
-        setSliderPositionBy(page: page)
+        setButtonsColorBy(targetIndex: targetIndex)
+        setSliderPositionBy(targetIndex: targetIndex)
 
-        //
-        NotificationCenter.default.post(name: Notification.Name(rawValue: SynchronizeScreenNotification.MoveToSelectedSubContentsNotification.rawValue), object: self, userInfo: ["page" : page])
+        // Notification名「MoveToSelectedSubContentsNotification」を送信する
+        NotificationCenter.default.post(name: Notification.Name(rawValue: SynchronizeScreenNotification.MoveToSelectedSubContentsNotification.rawValue), object: self, userInfo: ["targetIndex" : targetIndex])
     }
 
     // MARK: -  Private Function
+
+    // 監視対象NotificationCenterの設定
+    private func setupNotificationCenter() {
+
+        // Notification名「UpdateSliderNotification」を監視対象に登録する
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updatebottomLineViewPosition(_:)), name: Notification.Name(rawValue: SynchronizeScreenNotification.UpdateSliderNotification.rawValue), object: nil)
+    }
 
     // コンテンツ表示用のUIScrollViewの設定
     private func setupTabScrollView() {
@@ -139,17 +144,17 @@ final class DetailSubContentsTabViewController: UIViewController {
     }
 
     // UIScrollView内に配置したUIButtonの色設定
-    private func setButtonsColorBy(page: Int) {
+    private func setButtonsColorBy(targetIndex: Int) {
         tabButtons.enumerated().forEach{ (i, button) in
-            let selectedColor = (i == page) ? UIColor(code: "#ffaa00") : .lightGray
+            let selectedColor = (i == targetIndex) ? UIColor(code: "#ffaa00") : .lightGray
             button.setTitleColor(selectedColor, for: UIControl.State())
         }
     }
 
     // ボタン下部でスライドするBar用Viewの設定
-    private func setSliderPositionBy(page: Int) {
+    private func setSliderPositionBy(targetIndex: Int) {
         let afterFrame = CGRect(
-            x: tabWidth * CGFloat(page),
+            x: tabWidth * CGFloat(targetIndex),
             y: tabHeight - barHeight,
             width: tabWidth,
             height: tabHeight

@@ -24,14 +24,8 @@ final class DetailSubContentsBaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupNotificationCenter()
         setupPageViewController()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        //
-        NotificationCenter.default.addObserver(self, selector: #selector(self.updateSelectedContents(_:)), name: Notification.Name(rawValue: SynchronizeScreenNotification.MoveToSelectedSubContentsNotification.rawValue), object: nil)
     }
 
     // MARK: - deinit
@@ -41,26 +35,28 @@ final class DetailSubContentsBaseViewController: UIViewController {
     }
     
     // MARK: - Private Function (for NotificationCenter)
-    
-    //
+
+    // MEMO: Notification名「MoveToSelectedSubContentsNotification」にて実行される処理
     @objc private func updateSelectedContents(_ notification: Notification) {
-        if let page = notification.userInfo?["page"] as? Int {
+        if let targetIndex = notification.userInfo?["targetIndex"] as? Int {
 
             let beforeIndex = currentIndex
-            print(beforeIndex)
-            let targetIndex = page
-            print(page)
-            
-            
-            //
-            moveToPageViewControllerForReverse(beforeIndex: beforeIndex, targetIndex: targetIndex)
+            let afterIndex = targetIndex
 
-            //
-            currentIndex = page
+            // UIPageViewControllerの移動処理とインデックス値の更新を実行する
+            moveToTargetPageViewControllerFor(beforeIndex: beforeIndex, afterIndex: afterIndex, byTabTapped: true)
+            currentIndex = afterIndex
         }
     }
 
     // MARK: -  Private Function
+    
+    // 監視対象NotificationCenterの設定
+    private func setupNotificationCenter() {
+
+        // Notification名「MoveToSelectedSubContentsNotification」を監視対象に登録する
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateSelectedContents(_:)), name: Notification.Name(rawValue: SynchronizeScreenNotification.MoveToSelectedSubContentsNotification.rawValue), object: nil)
+    }
 
     // UIPageViewControllerの設定
     private func setupPageViewController() {
@@ -87,43 +83,29 @@ final class DetailSubContentsBaseViewController: UIViewController {
             targetPageViewController.delegate = self
             targetPageViewController.dataSource = self
 
-            for view in targetPageViewController.view.subviews {
-                if let scrollView = view as? UIScrollView {
-                    scrollView.delegate = self
-                }
-            }
-
             // 最初に表示する画面として配列の先頭のViewControllerを設定する
             targetPageViewController.setViewControllers([targetViewControllerLists[0]], direction: .forward, animated: false, completion: nil)
         }
     }
 
     // 該当のIndex値と動かす方向に合わせて表示対象のUIViewControllerを表示させる
-    private func moveToPageViewControllerFor(beforeIndex: Int, targetIndex: Int) {
+    private func moveToTargetPageViewControllerFor(beforeIndex: Int, afterIndex: Int, byTabTapped: Bool = false) {
 
-        //
-        if beforeIndex == targetIndex {
+        // 変更前と変更後のインデックス値が等しい場合は以降の処理を行わない
+        if beforeIndex == afterIndex {
             return
         }
 
-        //
-        let targetDirection: UIPageViewController.NavigationDirection = (beforeIndex < targetIndex) ? .reverse : .forward
-        if let targetPageViewController = pageViewController {
-            targetPageViewController.setViewControllers([targetViewControllerLists[targetIndex]], direction: targetDirection, animated: true, completion: nil)
+        // 変更前と変更後のインデックス値の差分および処理の実行先を判断してPageViewControllerを動かす方向を決める
+        var targetDirection: UIPageViewController.NavigationDirection
+        if byTabTapped {
+            targetDirection = (beforeIndex < afterIndex) ? .forward : .reverse
+        } else {
+            targetDirection = (beforeIndex < afterIndex) ? .reverse : .forward
         }
-    }
 
-    private func moveToPageViewControllerForReverse(beforeIndex: Int, targetIndex: Int) {
-        
-        //
-        if beforeIndex == targetIndex {
-            return
-        }
-        
-        //
-        let targetDirection: UIPageViewController.NavigationDirection = (beforeIndex < targetIndex) ? .forward : .reverse
         if let targetPageViewController = pageViewController {
-            targetPageViewController.setViewControllers([targetViewControllerLists[targetIndex]], direction: targetDirection, animated: true, completion: nil)
+            targetPageViewController.setViewControllers([targetViewControllerLists[afterIndex]], direction: targetDirection, animated: true, completion: nil)
         }
     }
 }
@@ -147,18 +129,17 @@ extension DetailSubContentsBaseViewController: UIPageViewControllerDelegate, UIP
         // ここから先はUIPageViewControllerのスワイプアニメーション完了時に発動する
         if let targetViewControllers = pageViewController.viewControllers {
             if let targetViewController = targetViewControllers.last {
+
                 // 受け取ったインデックス値を元にコンテンツ表示を更新する
                 let beforeIndex = currentIndex
-                let targetIndex = targetViewController.view.tag
+                let afterIndex = targetViewController.view.tag
 
-                //
-                moveToPageViewControllerFor(beforeIndex: beforeIndex, targetIndex: targetIndex)
+                // UIPageViewControllerの移動処理とインデックス値の更新を実行する
+                moveToTargetPageViewControllerFor(beforeIndex: beforeIndex, afterIndex: afterIndex, byTabTapped: false)
+                currentIndex = afterIndex
 
-                //
-                currentIndex = targetViewController.view.tag
-
-                //
-                NotificationCenter.default.post(name: Notification.Name(rawValue: SynchronizeScreenNotification.UpdateSliderNotification.rawValue), object: self, userInfo: ["page" : currentIndex])
+                // Notification名「UpdateSliderNotification」を送信する
+                NotificationCenter.default.post(name: Notification.Name(rawValue: SynchronizeScreenNotification.UpdateSliderNotification.rawValue), object: self, userInfo: ["targetIndex" : currentIndex])
             }
         }
     }

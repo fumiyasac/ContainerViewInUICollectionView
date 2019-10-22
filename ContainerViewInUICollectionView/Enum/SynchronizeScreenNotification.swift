@@ -10,7 +10,7 @@ import Foundation
 
 enum SynchronizeScreenNotification: String {
     case ActivateMainContentsScrollNotification = "ActivateMainContentsScrollNotification"
-    case ActivateSubContentsScrollNotification = "ActivateSubContentsScrollNotification"
-    case UpdateSliderNotification = "UpdateSliderNotification"
-    case MoveToSelectedSubContentsNotification = "MoveToSelectedSubContentsNotification"
+    case ActivateSubContentsScrollNotification  = "ActivateSubContentsScrollNotification"
+    case UpdateSliderNotification               = "UpdateSliderNotification"
+    case MoveToSelectedSubContentsNotification  = "MoveToSelectedSubContentsNotification"
 }
