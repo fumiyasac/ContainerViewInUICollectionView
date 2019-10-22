@@ -12,5 +12,5 @@ enum SynchronizeScreenNotification: String {
     case ActivateMainContentsScrollNotification = "ActivateMainContentsScrollNotification"
     case ActivateSubContentsScrollNotification = "ActivateSubContentsScrollNotification"
     case UpdateSliderNotification = "UpdateSliderNotification"
-    case MoveToSelectedTabNotification = "MoveToSelectedTabNotification"
+    case MoveToSelectedSubContentsNotification = "MoveToSelectedSubContentsNotification"
 }

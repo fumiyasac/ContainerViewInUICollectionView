@@ -84,6 +84,9 @@ final class DetailSubContentsTabViewController: UIViewController {
         // UIScrollView内に配置したUIButtonの色とボタン下部でスライドするBar用Viewの位置調整
         setButtonsColorBy(page: page)
         setSliderPositionBy(page: page)
+
+        //
+        NotificationCenter.default.post(name: Notification.Name(rawValue: SynchronizeScreenNotification.MoveToSelectedSubContentsNotification.rawValue), object: self, userInfo: ["page" : page])
     }
 
     // MARK: -  Private Function

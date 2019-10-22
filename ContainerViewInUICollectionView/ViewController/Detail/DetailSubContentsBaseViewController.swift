@@ -27,6 +27,39 @@ final class DetailSubContentsBaseViewController: UIViewController {
         setupPageViewController()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateSelectedContents(_:)), name: Notification.Name(rawValue: SynchronizeScreenNotification.MoveToSelectedSubContentsNotification.rawValue), object: nil)
+    }
+
+    // MARK: - deinit
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    // MARK: - Private Function (for NotificationCenter)
+    
+    //
+    @objc private func updateSelectedContents(_ notification: Notification) {
+        if let page = notification.userInfo?["page"] as? Int {
+
+            let beforeIndex = currentIndex
+            print(beforeIndex)
+            let targetIndex = page
+            print(page)
+            
+            
+            //
+            moveToPageViewControllerForReverse(beforeIndex: beforeIndex, targetIndex: targetIndex)
+
+            //
+            currentIndex = page
+        }
+    }
+
     // MARK: -  Private Function
 
     // UIPageViewControllerの設定
@@ -75,6 +108,20 @@ final class DetailSubContentsBaseViewController: UIViewController {
 
         //
         let targetDirection: UIPageViewController.NavigationDirection = (beforeIndex < targetIndex) ? .reverse : .forward
+        if let targetPageViewController = pageViewController {
+            targetPageViewController.setViewControllers([targetViewControllerLists[targetIndex]], direction: targetDirection, animated: true, completion: nil)
+        }
+    }
+
+    private func moveToPageViewControllerForReverse(beforeIndex: Int, targetIndex: Int) {
+        
+        //
+        if beforeIndex == targetIndex {
+            return
+        }
+        
+        //
+        let targetDirection: UIPageViewController.NavigationDirection = (beforeIndex < targetIndex) ? .forward : .reverse
         if let targetPageViewController = pageViewController {
             targetPageViewController.setViewControllers([targetViewControllerLists[targetIndex]], direction: targetDirection, animated: true, completion: nil)
         }

@@ -10,7 +10,7 @@ import UIKit
 
 final class DetailSubContentsListViewController: UIViewController {
 
-    @IBOutlet weak private var tableView: UITableView!
+    @IBOutlet weak private(set) var tableView: UITableView!
 
     // MARK: - Override
 
@@ -46,7 +46,7 @@ final class DetailSubContentsListViewController: UIViewController {
     @objc private func resetTableViewPosition() {
         tableView.bounces = false
         tableView.isScrollEnabled = false
-        tableView.scrollsToTop = true
+        tableView.contentOffset.y = 0
     }
 
     private func setupTableView() {
@@ -57,6 +57,8 @@ final class DetailSubContentsListViewController: UIViewController {
         tableView.rowHeight = 60.0 //UITableView.automaticDimension
         tableView.delaysContentTouches = false
         tableView.isScrollEnabled = false
+
+        tableView.contentInset.bottom = UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0
         tableView.registerCustomCell(SubContentsTableViewCell.self)
     }
 }
@@ -81,8 +83,13 @@ extension DetailSubContentsListViewController: UITableViewDataSource, UITableVie
 extension DetailSubContentsListViewController: UIScrollViewDelegate {
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y <= 0.0 {
+        if scrollView.contentOffset.y < 0.0 {
             scrollView.contentOffset.y = 0.0
+        }
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y == 0.0 {
             NotificationCenter.default.post(name: Notification.Name(rawValue: SynchronizeScreenNotification.ActivateMainContentsScrollNotification.rawValue), object: self, userInfo: nil)
         }
     }
