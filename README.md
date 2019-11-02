@@ -52,6 +52,15 @@ __【2. 実際にトレースをした際の知見】__
 + Code: 
   [GitHub - roytang121/iOS-TwitterProfile: Twitter-like Profile viewController with easy to use API](https://github.com/roytang121/iOS-TwitterProfile)
 
+※ さらに見つけた実装例:
+
++ UIScrollViewとUITableViewの組み合わせ事例:
+  + 記事: [Twitterアプリのプロフィール風UI](https://qiita.com/netetahito/items/11c97092f75b91af9804)
+  + サンプル: [TwitterLikeUI](https://github.com/osanaikoutarou/TwitterLikeUI)
++ 画面を切り替える部分にライブラリを利用するのも良い案のようにも思います:
+  + 記事: [タブスワイプで画面を切り替えるメニューUI](https://qiita.com/yysskk/items/fe4cdd58209384270ce3)
+  + サンプル: [SwipeMenuViewController](https://github.com/yysskk/SwipeMenuViewController)
+
 __【3. ライブラリを利用した実装の参考資料】__
 
 このタイプのUIは自前で実装すると、派手にとっちらかりやすいものの代表例。特にStoryboardをなるべく活用して簡単に管理する方針にするためにライブラリを活用した実装へ寄せていく方針をとっても良さそうです。
