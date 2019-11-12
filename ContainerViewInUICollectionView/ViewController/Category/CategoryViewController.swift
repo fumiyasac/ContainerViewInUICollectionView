@@ -93,6 +93,11 @@ extension CategoryViewController: UICollectionViewDataSource {
 
             let detailViewController = DetailViewController.instantiate()
             detailViewController.transitioningDelegate = self
+
+            // MEMO: iOS13以降のPresent/Dismiss時の調整
+            if #available(iOS 13.0, *) {
+                detailViewController.modalPresentationStyle = .fullScreen
+            }
             self.present(detailViewController, animated: true, completion: nil)
         }
         return cell

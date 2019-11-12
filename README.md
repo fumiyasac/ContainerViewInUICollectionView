@@ -82,7 +82,7 @@ __【3. ライブラリを利用した実装の参考資料】__
 
 ### このサンプルでのDetailViewControllerにおける簡単な図解
 
-この様に、複雑にそれぞれのView同士の位置関係が変化したり、UIScrollViewの操作のハンドリングを伴う処理の場合は、このようにお互いの関係が見えにくくなってしまう場合も...、。
-（ちなみにこの部分はアンチパターンな実装だと個人的には思っています。）
+この様に、複雑にそれぞれのView同士の位置関係が変化したり、UIScrollViewの操作のハンドリングを伴う処理の場合は、このようにお互いの関係が見えにくくなってしまう場合も...。
+（ちなみにこの部分はアンチパターンな実装だと個人的には思っています。contentInsetでの調整の方が現実的なのでは？）
 
 ![概要図](https://github.com/fumiyasac/ContainerViewInUICollectionView/blob/master/images/design_structure.png)
